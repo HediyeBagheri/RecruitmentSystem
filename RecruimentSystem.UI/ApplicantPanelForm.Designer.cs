@@ -31,11 +31,12 @@
             this.recruitBtn = new System.Windows.Forms.Button();
             this.trainingBtn = new System.Windows.Forms.Button();
             this.editResumeBtn = new System.Windows.Forms.Button();
+            this.BtnProfileUpdate = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // recruitBtn
             // 
-            this.recruitBtn.Location = new System.Drawing.Point(549, 87);
+            this.recruitBtn.Location = new System.Drawing.Point(674, 382);
             this.recruitBtn.Name = "recruitBtn";
             this.recruitBtn.Size = new System.Drawing.Size(94, 29);
             this.recruitBtn.TabIndex = 0;
@@ -45,7 +46,7 @@
             // 
             // trainingBtn
             // 
-            this.trainingBtn.Location = new System.Drawing.Point(549, 179);
+            this.trainingBtn.Location = new System.Drawing.Point(557, 382);
             this.trainingBtn.Name = "trainingBtn";
             this.trainingBtn.Size = new System.Drawing.Size(94, 29);
             this.trainingBtn.TabIndex = 1;
@@ -55,7 +56,7 @@
             // 
             // editResumeBtn
             // 
-            this.editResumeBtn.Location = new System.Drawing.Point(331, 87);
+            this.editResumeBtn.Location = new System.Drawing.Point(405, 382);
             this.editResumeBtn.Name = "editResumeBtn";
             this.editResumeBtn.Size = new System.Drawing.Size(129, 29);
             this.editResumeBtn.TabIndex = 2;
@@ -63,11 +64,22 @@
             this.editResumeBtn.UseVisualStyleBackColor = true;
             this.editResumeBtn.Click += new System.EventHandler(this.editResumeBtn_Click);
             // 
+            // BtnProfileUpdate
+            // 
+            this.BtnProfileUpdate.Location = new System.Drawing.Point(254, 382);
+            this.BtnProfileUpdate.Name = "BtnProfileUpdate";
+            this.BtnProfileUpdate.Size = new System.Drawing.Size(129, 29);
+            this.BtnProfileUpdate.TabIndex = 3;
+            this.BtnProfileUpdate.Text = "تکمیل مشخصات";
+            this.BtnProfileUpdate.UseVisualStyleBackColor = true;
+            this.BtnProfileUpdate.Click += new System.EventHandler(this.BtnProfileUpdate_Click);
+            // 
             // ApplicantPanelForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.BtnProfileUpdate);
             this.Controls.Add(this.editResumeBtn);
             this.Controls.Add(this.trainingBtn);
             this.Controls.Add(this.recruitBtn);
@@ -82,5 +94,6 @@
         private System.Windows.Forms.Button recruitBtn;
         private System.Windows.Forms.Button trainingBtn;
         private System.Windows.Forms.Button editResumeBtn;
+        private System.Windows.Forms.Button BtnProfileUpdate;
     }
 }

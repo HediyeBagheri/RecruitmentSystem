@@ -8,19 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace RecruimentSystem.UI
+namespace RecruitmentSystem.UI
 {
-    public partial class MainForm : Form
+    public partial class ApplicantProfile : Form
     {
-        public MainForm()
+        public ApplicantProfile()
         {
             InitializeComponent();
-        }
-
-        private void user_Click(object sender, EventArgs e)
-        {
-            var frm = new LoginOrCreateUserForm();
-            frm.Show();
         }
     }
 }

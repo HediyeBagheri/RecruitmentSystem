@@ -12,7 +12,7 @@ namespace RecruitmentSystem.UI
 {
     public partial class CompanyPanelForm : Form
     {
-        public CompanyPanelForm()
+        public CompanyPanelForm(int ID)
         {
             InitializeComponent();
         }
@@ -23,10 +23,15 @@ namespace RecruitmentSystem.UI
             frm.Show();
         }
 
-        private void educationBtn_Click(object sender, EventArgs e)
+        private void EducationBtn_Click(object sender, EventArgs e)
         {
             var frm = new EducationForm();
             frm.Show();
+        }
+
+        private void Request_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

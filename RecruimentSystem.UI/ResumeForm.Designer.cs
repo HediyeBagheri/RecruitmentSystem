@@ -30,13 +30,13 @@
         {
             this.saveResumeBtn = new System.Windows.Forms.Button();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.Description = new System.Windows.Forms.Label();
             this.jobNameLbl = new System.Windows.Forms.Label();
             this.salaryRequestLbl = new System.Windows.Forms.Label();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.workExperienceLbl = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // saveResumeBtn
@@ -56,14 +56,14 @@
             this.richTextBox1.TabIndex = 25;
             this.richTextBox1.Text = "";
             // 
-            // label1
+            // Description
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(652, 262);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(79, 20);
-            this.label1.TabIndex = 24;
-            this.label1.Text = "سابقه کاری";
+            this.Description.AutoSize = true;
+            this.Description.Location = new System.Drawing.Point(652, 262);
+            this.Description.Name = "Description";
+            this.Description.Size = new System.Drawing.Size(69, 20);
+            this.Description.TabIndex = 24;
+            this.Description.Text = "توضیحات";
             // 
             // jobNameLbl
             // 
@@ -91,33 +91,6 @@
             this.comboBox3.Size = new System.Drawing.Size(151, 28);
             this.comboBox3.TabIndex = 21;
             // 
-            // comboBox2
-            // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(477, 123);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(151, 28);
-            this.comboBox2.TabIndex = 20;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "1-3",
-            "3-6",
-            "6-9",
-            "9-12",
-            "12-15",
-            "15-18",
-            "18-21",
-            "21-24",
-            "24-27",
-            "27-30"});
-            this.comboBox1.Location = new System.Drawing.Point(477, 57);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(151, 28);
-            this.comboBox1.TabIndex = 19;
-            // 
             // workExperienceLbl
             // 
             this.workExperienceLbl.AutoSize = true;
@@ -127,19 +100,33 @@
             this.workExperienceLbl.TabIndex = 18;
             this.workExperienceLbl.Text = "سابقه کاری";
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(477, 62);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(151, 27);
+            this.textBox1.TabIndex = 27;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(477, 123);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(151, 27);
+            this.textBox2.TabIndex = 28;
+            // 
             // ResumeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.saveResumeBtn);
             this.Controls.Add(this.richTextBox1);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.Description);
             this.Controls.Add(this.jobNameLbl);
             this.Controls.Add(this.salaryRequestLbl);
             this.Controls.Add(this.comboBox3);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.workExperienceLbl);
             this.Name = "ResumeForm";
             this.Text = "ResumeForm";
@@ -152,12 +139,12 @@
 
         private System.Windows.Forms.Button saveResumeBtn;
         private System.Windows.Forms.RichTextBox richTextBox1;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label Description;
         private System.Windows.Forms.Label jobNameLbl;
         private System.Windows.Forms.Label salaryRequestLbl;
         private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label workExperienceLbl;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBox2;
     }
 }

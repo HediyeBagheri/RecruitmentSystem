@@ -17,7 +17,7 @@ namespace RecruitmentSystem.UI
     {
         private readonly IUserRepository userRepository;
 
-        public ApplicantPanelForm()
+        public ApplicantPanelForm(int ID)
         {
             InitializeComponent();
             userRepository = new UserRepository();
@@ -39,6 +39,12 @@ namespace RecruitmentSystem.UI
         {
             var frm = new ResumeForm();
             frm.Show();
+        }
+
+        private void BtnProfileUpdate_Click(object sender, EventArgs e)
+        {
+            var frm = new ApplicantProfile();
+            frm.Show(); 
         }
     }
 }

@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cmbUserType = new System.Windows.Forms.ComboBox();
+            this.userTypeId = new System.Windows.Forms.Label();
             this.save = new System.Windows.Forms.Button();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.txtPhoneNumber = new System.Windows.Forms.TextBox();
@@ -38,14 +40,12 @@
             this.phoneNumber = new System.Windows.Forms.Label();
             this.email = new System.Windows.Forms.Label();
             this.userName = new System.Windows.Forms.Label();
-            this.userTypeId = new System.Windows.Forms.Label();
-            this.txtUserTypeId = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.txtUserTypeId);
+            this.groupBox1.Controls.Add(this.cmbUserType);
             this.groupBox1.Controls.Add(this.userTypeId);
             this.groupBox1.Controls.Add(this.save);
             this.groupBox1.Controls.Add(this.txtPassword);
@@ -63,6 +63,24 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "groupBox1";
             // 
+            // cmbUserType
+            // 
+            this.cmbUserType.FormattingEnabled = true;
+            this.cmbUserType.Location = new System.Drawing.Point(217, 314);
+            this.cmbUserType.Name = "cmbUserType";
+            this.cmbUserType.Size = new System.Drawing.Size(314, 28);
+            this.cmbUserType.TabIndex = 28;
+            this.cmbUserType.SelectedIndexChanged += new System.EventHandler(this.cmbUserType_SelectedIndexChanged);
+            // 
+            // userTypeId
+            // 
+            this.userTypeId.AutoSize = true;
+            this.userTypeId.Location = new System.Drawing.Point(587, 314);
+            this.userTypeId.Name = "userTypeId";
+            this.userTypeId.Size = new System.Drawing.Size(69, 20);
+            this.userTypeId.TabIndex = 27;
+            this.userTypeId.Text = "UserType";
+            // 
             // save
             // 
             this.save.Location = new System.Drawing.Point(35, 363);
@@ -71,12 +89,13 @@
             this.save.TabIndex = 26;
             this.save.Text = "ثبت";
             this.save.UseVisualStyleBackColor = true;
-            this.save.Click += new System.EventHandler(this.save_Click);
+            this.save.Click += new System.EventHandler(this.Save_Click);
             // 
             // txtPassword
             // 
             this.txtPassword.Location = new System.Drawing.Point(217, 128);
             this.txtPassword.Name = "txtPassword";
+            this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(314, 27);
             this.txtPassword.TabIndex = 25;
             // 
@@ -137,22 +156,6 @@
             this.userName.TabIndex = 18;
             this.userName.Text = "UserName";
             // 
-            // userTypeId
-            // 
-            this.userTypeId.AutoSize = true;
-            this.userTypeId.Location = new System.Drawing.Point(587, 314);
-            this.userTypeId.Name = "userTypeId";
-            this.userTypeId.Size = new System.Drawing.Size(69, 20);
-            this.userTypeId.TabIndex = 27;
-            this.userTypeId.Text = "UserType";
-            // 
-            // txtUserTypeId
-            // 
-            this.txtUserTypeId.Location = new System.Drawing.Point(217, 311);
-            this.txtUserTypeId.Name = "txtUserTypeId";
-            this.txtUserTypeId.Size = new System.Drawing.Size(314, 27);
-            this.txtUserTypeId.TabIndex = 28;
-            // 
             // CreateUserForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -161,6 +164,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "CreateUserForm";
             this.Text = "CreateUserForm";
+            this.Load += new System.EventHandler(this.Form_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -179,7 +183,7 @@
         private System.Windows.Forms.Label phoneNumber;
         private System.Windows.Forms.Label email;
         private System.Windows.Forms.Label userName;
-        private System.Windows.Forms.TextBox txtUserTypeId;
         private System.Windows.Forms.Label userTypeId;
+        private System.Windows.Forms.ComboBox cmbUserType;
     }
 }

@@ -1,4 +1,5 @@
-﻿using RecruitmentSystem.InfraStructure.IRepositories;
+﻿using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using RecruitmentSystem.InfraStructure.IRepositories;
 using RecruitmentSystem.InfraStructure.Repositories;
 using RecruitmentSystem.Model.Models.Users;
 using RecruitmentSystem.UI;
@@ -23,21 +24,25 @@ namespace RecruimentSystem.UI
             userRepository = new UserRepository();
         }
 
-        private void save_Click(object sender, EventArgs e)
+        private void Form_Load(object sender, EventArgs e)
         {
-            ValidateUser();
-            var user = new User()
+            var dt = userRepository.GetUserTypeData();
+            KeyValue keyValue=default;
+
+            List<KeyValue> list = new List<KeyValue>();
+            foreach (var dataRow in dt.Select())
             {
-                UserName = txtUserName.Text,
-                Email = txtEmail.Text,
-                Password = txtPassword.Text,
-                PhoneNumber = txtPhoneNumber.Text,
-                UserTypeId = Convert.ToInt32(txtUserTypeId.Text),
-            };
-            userRepository.Add(user);
-            var frm = new ResumeForm();
-            frm.Show();
-            
+                keyValue = new KeyValue()
+                {
+                    Value = Convert.ToInt32(dataRow["Value"].ToString()),
+                    Key = dataRow["Key"].ToString(),
+                };
+                list.Add(keyValue);
+            }
+            cmbUserType.DataSource = list;
+            cmbUserType.ValueMember = "Value";
+            cmbUserType.DisplayMember = "Key";
+
         }
 
         private void ValidateUser()
@@ -59,6 +64,25 @@ namespace RecruimentSystem.UI
 
         }
 
-        
+        private void Save_Click(object sender, EventArgs e)
+        {
+            ValidateUser();
+            var user = new User()
+            {
+                UserName = txtUserName.Text,
+                Email = txtEmail.Text,
+                Password = txtPassword.Text,
+                PhoneNumber = txtPhoneNumber.Text,
+                UserTypeId = cmbUserType.SelectedIndex+1,
+            };
+            userRepository.Add(user);
+            var frm = new LoginOrCreateUserForm();
+            frm.Show();
+        }
+
+        private void cmbUserType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

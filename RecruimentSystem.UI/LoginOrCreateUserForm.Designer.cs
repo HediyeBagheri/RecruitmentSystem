@@ -34,8 +34,6 @@
             this.txtPassForLogin = new System.Windows.Forms.TextBox();
             this.createUser = new System.Windows.Forms.Button();
             this.loginToUserPanel = new System.Windows.Forms.Button();
-            this.userTypeLbl = new System.Windows.Forms.Label();
-            this.userTypeCmbBox = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // userNameForLogin
@@ -67,56 +65,35 @@
             // 
             this.txtPassForLogin.Location = new System.Drawing.Point(255, 156);
             this.txtPassForLogin.Name = "txtPassForLogin";
+            this.txtPassForLogin.PasswordChar = '*';
             this.txtPassForLogin.Size = new System.Drawing.Size(226, 27);
             this.txtPassForLogin.TabIndex = 3;
             // 
             // createUser
             // 
-            this.createUser.Location = new System.Drawing.Point(255, 355);
+            this.createUser.Location = new System.Drawing.Point(255, 295);
             this.createUser.Name = "createUser";
             this.createUser.Size = new System.Drawing.Size(94, 29);
             this.createUser.TabIndex = 4;
             this.createUser.Text = "عضویت";
             this.createUser.UseVisualStyleBackColor = true;
-            this.createUser.Click += new System.EventHandler(this.createUser_Click);
+            this.createUser.Click += new System.EventHandler(this.CreateUser_Click);
             // 
             // loginToUserPanel
             // 
-            this.loginToUserPanel.Location = new System.Drawing.Point(479, 355);
+            this.loginToUserPanel.Location = new System.Drawing.Point(487, 295);
             this.loginToUserPanel.Name = "loginToUserPanel";
             this.loginToUserPanel.Size = new System.Drawing.Size(94, 29);
             this.loginToUserPanel.TabIndex = 5;
             this.loginToUserPanel.Text = "ورود";
             this.loginToUserPanel.UseVisualStyleBackColor = true;
-            this.loginToUserPanel.Click += new System.EventHandler(this.loginToUserPanel_Click);
-            // 
-            // userTypeLbl
-            // 
-            this.userTypeLbl.AutoSize = true;
-            this.userTypeLbl.Location = new System.Drawing.Point(503, 228);
-            this.userTypeLbl.Name = "userTypeLbl";
-            this.userTypeLbl.Size = new System.Drawing.Size(69, 20);
-            this.userTypeLbl.TabIndex = 7;
-            this.userTypeLbl.Text = "UserType";
-            // 
-            // userTypeCmbBox
-            // 
-            this.userTypeCmbBox.FormattingEnabled = true;
-            this.userTypeCmbBox.Items.AddRange(new object[] {
-            "Applicant",
-            "Company"});
-            this.userTypeCmbBox.Location = new System.Drawing.Point(255, 225);
-            this.userTypeCmbBox.Name = "userTypeCmbBox";
-            this.userTypeCmbBox.Size = new System.Drawing.Size(226, 28);
-            this.userTypeCmbBox.TabIndex = 6;
+            this.loginToUserPanel.Click += new System.EventHandler(this.LoginToUserPanel_Click);
             // 
             // LoginOrCreateUserForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.userTypeLbl);
-            this.Controls.Add(this.userTypeCmbBox);
             this.Controls.Add(this.loginToUserPanel);
             this.Controls.Add(this.createUser);
             this.Controls.Add(this.txtPassForLogin);
@@ -125,6 +102,7 @@
             this.Controls.Add(this.userNameForLogin);
             this.Name = "LoginOrCreateUserForm";
             this.Text = "LoginOrCreateUserForm";
+            this.Load += new System.EventHandler(this.LoginOrCreateUserForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -138,7 +116,5 @@
         private System.Windows.Forms.TextBox txtPassForLogin;
         private System.Windows.Forms.Button createUser;
         private System.Windows.Forms.Button loginToUserPanel;
-        private System.Windows.Forms.Label userTypeLbl;
-        private System.Windows.Forms.ComboBox userTypeCmbBox;
     }
 }
