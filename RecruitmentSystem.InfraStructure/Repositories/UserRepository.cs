@@ -53,6 +53,25 @@ namespace RecruitmentSystem.InfraStructure.Repositories
             return dataTable;
         }
 
+        public DataTable GetJobData()
+        {
+            DataTable dataTable = new DataTable();
+
+            var cmd = new SqlCommand("Usp_Job_Select", sqlConnection);
+
+            cmd.CommandType = CommandType.StoredProcedure;
+
+
+
+            sqlConnection.Open();
+
+            var reader = cmd.ExecuteReader();
+
+            dataTable.Load(reader);
+            sqlConnection.Close();
+            return dataTable;
+        }
+
         public DataTable GetUserLoginData(string UserName,string Password)
         {
             DataTable dataTable = new DataTable();
@@ -92,6 +111,9 @@ namespace RecruitmentSystem.InfraStructure.Repositories
             sqlConnection.Close();
         }
 
-        
+        public void CompanyUpdate()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

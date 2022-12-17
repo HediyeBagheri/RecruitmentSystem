@@ -33,7 +33,7 @@
             this.Description = new System.Windows.Forms.Label();
             this.jobNameLbl = new System.Windows.Forms.Label();
             this.salaryRequestLbl = new System.Windows.Forms.Label();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.JobCmbBox = new System.Windows.Forms.ComboBox();
             this.workExperienceLbl = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
@@ -83,13 +83,13 @@
             this.salaryRequestLbl.TabIndex = 22;
             this.salaryRequestLbl.Text = "حقوق درخواستی";
             // 
-            // comboBox3
+            // JobCmbBox
             // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(477, 192);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(151, 28);
-            this.comboBox3.TabIndex = 21;
+            this.JobCmbBox.FormattingEnabled = true;
+            this.JobCmbBox.Location = new System.Drawing.Point(477, 192);
+            this.JobCmbBox.Name = "JobCmbBox";
+            this.JobCmbBox.Size = new System.Drawing.Size(151, 28);
+            this.JobCmbBox.TabIndex = 21;
             // 
             // workExperienceLbl
             // 
@@ -126,10 +126,11 @@
             this.Controls.Add(this.Description);
             this.Controls.Add(this.jobNameLbl);
             this.Controls.Add(this.salaryRequestLbl);
-            this.Controls.Add(this.comboBox3);
+            this.Controls.Add(this.JobCmbBox);
             this.Controls.Add(this.workExperienceLbl);
             this.Name = "ResumeForm";
             this.Text = "ResumeForm";
+            this.Load += new System.EventHandler(this.ResumeForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -142,7 +143,7 @@
         private System.Windows.Forms.Label Description;
         private System.Windows.Forms.Label jobNameLbl;
         private System.Windows.Forms.Label salaryRequestLbl;
-        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.ComboBox JobCmbBox;
         private System.Windows.Forms.Label workExperienceLbl;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox2;

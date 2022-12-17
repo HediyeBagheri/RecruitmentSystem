@@ -13,8 +13,8 @@ namespace RecruitmentSystem.InfraStructure.IRepositories
         void CompanyUpdate();
          DataTable GetUserTypeData();
         DataTable GetUserLoginData(string UserName, string Password);
-        
 
+         DataTable GetJobData();
 
 
     }
