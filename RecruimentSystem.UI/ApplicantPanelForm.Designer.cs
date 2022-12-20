@@ -28,72 +28,90 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.recruitBtn = new System.Windows.Forms.Button();
-            this.trainingBtn = new System.Windows.Forms.Button();
-            this.editResumeBtn = new System.Windows.Forms.Button();
-            this.BtnProfileUpdate = new System.Windows.Forms.Button();
+            this.panelMenu = new System.Windows.Forms.MenuStrip();
+            this.tsmRecruitItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmTrainingItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmProfileItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmEditResumeItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmExitItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.panelMenu.SuspendLayout();
             this.SuspendLayout();
             // 
-            // recruitBtn
+            // panelMenu
             // 
-            this.recruitBtn.Location = new System.Drawing.Point(674, 382);
-            this.recruitBtn.Name = "recruitBtn";
-            this.recruitBtn.Size = new System.Drawing.Size(94, 29);
-            this.recruitBtn.TabIndex = 0;
-            this.recruitBtn.Text = "استخدام";
-            this.recruitBtn.UseVisualStyleBackColor = true;
-            this.recruitBtn.Click += new System.EventHandler(this.recruitBtn_Click);
+            this.panelMenu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.panelMenu.Dock = System.Windows.Forms.DockStyle.None;
+            this.panelMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmRecruitItem,
+            this.tsmTrainingItem,
+            this.tsmProfileItem,
+            this.tsmEditResumeItem,
+            this.tsmExitItem});
+            this.panelMenu.Location = new System.Drawing.Point(9, 9);
+            this.panelMenu.Name = "panelMenu";
+            this.panelMenu.Size = new System.Drawing.Size(500, 24);
+            this.panelMenu.TabIndex = 4;
+            this.panelMenu.Text = "menuStrip1";
             // 
-            // trainingBtn
+            // tsmRecruitItem
             // 
-            this.trainingBtn.Location = new System.Drawing.Point(557, 382);
-            this.trainingBtn.Name = "trainingBtn";
-            this.trainingBtn.Size = new System.Drawing.Size(94, 29);
-            this.trainingBtn.TabIndex = 1;
-            this.trainingBtn.Text = "اموزش";
-            this.trainingBtn.UseVisualStyleBackColor = true;
-            this.trainingBtn.Click += new System.EventHandler(this.trainingBtn_Click);
+            this.tsmRecruitItem.Name = "tsmRecruitItem";
+            this.tsmRecruitItem.Size = new System.Drawing.Size(89, 20);
+            this.tsmRecruitItem.Text = "فرایند استخدام";
+            this.tsmRecruitItem.Click += new System.EventHandler(this.tsmRecruitItem_Click);
             // 
-            // editResumeBtn
+            // tsmTrainingItem
             // 
-            this.editResumeBtn.Location = new System.Drawing.Point(405, 382);
-            this.editResumeBtn.Name = "editResumeBtn";
-            this.editResumeBtn.Size = new System.Drawing.Size(129, 29);
-            this.editResumeBtn.TabIndex = 2;
-            this.editResumeBtn.Text = "ویرایش رزومه";
-            this.editResumeBtn.UseVisualStyleBackColor = true;
-            this.editResumeBtn.Click += new System.EventHandler(this.editResumeBtn_Click);
+            this.tsmTrainingItem.Name = "tsmTrainingItem";
+            this.tsmTrainingItem.Size = new System.Drawing.Size(53, 20);
+            this.tsmTrainingItem.Text = "آموزش";
+            this.tsmTrainingItem.Click += new System.EventHandler(this.tsmTrainingItem_Click);
             // 
-            // BtnProfileUpdate
+            // tsmProfileItem
             // 
-            this.BtnProfileUpdate.Location = new System.Drawing.Point(254, 382);
-            this.BtnProfileUpdate.Name = "BtnProfileUpdate";
-            this.BtnProfileUpdate.Size = new System.Drawing.Size(129, 29);
-            this.BtnProfileUpdate.TabIndex = 3;
-            this.BtnProfileUpdate.Text = "تکمیل مشخصات";
-            this.BtnProfileUpdate.UseVisualStyleBackColor = true;
-            this.BtnProfileUpdate.Click += new System.EventHandler(this.BtnProfileUpdate_Click);
+            this.tsmProfileItem.Name = "tsmProfileItem";
+            this.tsmProfileItem.Size = new System.Drawing.Size(101, 20);
+            this.tsmProfileItem.Text = "تکمیل مشخصات";
+            this.tsmProfileItem.Click += new System.EventHandler(this.tsmProfileItem_Click);
+            // 
+            // tsmEditResumeItem
+            // 
+            this.tsmEditResumeItem.Name = "tsmEditResumeItem";
+            this.tsmEditResumeItem.Size = new System.Drawing.Size(85, 20);
+            this.tsmEditResumeItem.Text = "ویرایش رزومه";
+            this.tsmEditResumeItem.Click += new System.EventHandler(this.tsmEditResumeItem_Click);
+            // 
+            // tsmExitItem
+            // 
+            this.tsmExitItem.Name = "tsmExitItem";
+            this.tsmExitItem.Size = new System.Drawing.Size(44, 20);
+            this.tsmExitItem.Text = "خروج";
+            this.tsmExitItem.Click += new System.EventHandler(this.tsmExitItem_Click);
             // 
             // ApplicantPanelForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.BtnProfileUpdate);
-            this.Controls.Add(this.editResumeBtn);
-            this.Controls.Add(this.trainingBtn);
-            this.Controls.Add(this.recruitBtn);
+            this.ClientSize = new System.Drawing.Size(523, 338);
+            this.Controls.Add(this.panelMenu);
+            this.MainMenuStrip = this.panelMenu;
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "ApplicantPanelForm";
             this.Text = "UserPanelForm";
+            this.panelMenu.ResumeLayout(false);
+            this.panelMenu.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Button recruitBtn;
-        private System.Windows.Forms.Button trainingBtn;
-        private System.Windows.Forms.Button editResumeBtn;
-        private System.Windows.Forms.Button BtnProfileUpdate;
+        private System.Windows.Forms.MenuStrip panelMenu;
+        private System.Windows.Forms.ToolStripMenuItem tsmRecruitItem;
+        private System.Windows.Forms.ToolStripMenuItem tsmTrainingItem;
+        private System.Windows.Forms.ToolStripMenuItem tsmProfileItem;
+        private System.Windows.Forms.ToolStripMenuItem tsmEditResumeItem;
+        private System.Windows.Forms.ToolStripMenuItem tsmExitItem;
     }
 }

@@ -28,20 +28,119 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.cmbUserType = new System.Windows.Forms.ComboBox();
-            this.userTypeId = new System.Windows.Forms.Label();
-            this.save = new System.Windows.Forms.Button();
-            this.txtPassword = new System.Windows.Forms.TextBox();
-            this.txtPhoneNumber = new System.Windows.Forms.TextBox();
-            this.txtEmail = new System.Windows.Forms.TextBox();
-            this.txtUserName = new System.Windows.Forms.TextBox();
-            this.password = new System.Windows.Forms.Label();
-            this.phoneNumber = new System.Windows.Forms.Label();
-            this.email = new System.Windows.Forms.Label();
             this.userName = new System.Windows.Forms.Label();
+            this.email = new System.Windows.Forms.Label();
+            this.phoneNumber = new System.Windows.Forms.Label();
+            this.password = new System.Windows.Forms.Label();
+            this.txtUserName = new System.Windows.Forms.TextBox();
+            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.txtPhoneNumber = new System.Windows.Forms.TextBox();
+            this.txtPassword = new System.Windows.Forms.TextBox();
+            this.save = new System.Windows.Forms.Button();
+            this.userTypeId = new System.Windows.Forms.Label();
+            this.cmbUserType = new System.Windows.Forms.ComboBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // userName
+            // 
+            this.userName.AutoSize = true;
+            this.userName.Location = new System.Drawing.Point(414, 59);
+            this.userName.Name = "userName";
+            this.userName.Size = new System.Drawing.Size(55, 15);
+            this.userName.TabIndex = 18;
+            this.userName.Text = "نام کاربری";
+            // 
+            // email
+            // 
+            this.email.AutoSize = true;
+            this.email.Location = new System.Drawing.Point(438, 203);
+            this.email.Name = "email";
+            this.email.Size = new System.Drawing.Size(33, 15);
+            this.email.TabIndex = 19;
+            this.email.Text = "ایمیل";
+            // 
+            // phoneNumber
+            // 
+            this.phoneNumber.AutoSize = true;
+            this.phoneNumber.Location = new System.Drawing.Point(407, 156);
+            this.phoneNumber.Name = "phoneNumber";
+            this.phoneNumber.Size = new System.Drawing.Size(62, 15);
+            this.phoneNumber.TabIndex = 20;
+            this.phoneNumber.Text = "شماره تلفن";
+            // 
+            // password
+            // 
+            this.password.AutoSize = true;
+            this.password.Location = new System.Drawing.Point(417, 107);
+            this.password.Name = "password";
+            this.password.Size = new System.Drawing.Size(55, 15);
+            this.password.TabIndex = 21;
+            this.password.Text = "کلمه عبور";
+            // 
+            // txtUserName
+            // 
+            this.txtUserName.Location = new System.Drawing.Point(86, 56);
+            this.txtUserName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtUserName.Name = "txtUserName";
+            this.txtUserName.Size = new System.Drawing.Size(275, 23);
+            this.txtUserName.TabIndex = 0;
+            // 
+            // txtEmail
+            // 
+            this.txtEmail.Location = new System.Drawing.Point(86, 200);
+            this.txtEmail.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(275, 23);
+            this.txtEmail.TabIndex = 3;
+            // 
+            // txtPhoneNumber
+            // 
+            this.txtPhoneNumber.Location = new System.Drawing.Point(86, 153);
+            this.txtPhoneNumber.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtPhoneNumber.Name = "txtPhoneNumber";
+            this.txtPhoneNumber.Size = new System.Drawing.Size(275, 23);
+            this.txtPhoneNumber.TabIndex = 2;
+            // 
+            // txtPassword
+            // 
+            this.txtPassword.Location = new System.Drawing.Point(86, 104);
+            this.txtPassword.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.PasswordChar = '*';
+            this.txtPassword.Size = new System.Drawing.Size(275, 23);
+            this.txtPassword.TabIndex = 1;
+            // 
+            // save
+            // 
+            this.save.Location = new System.Drawing.Point(86, 305);
+            this.save.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.save.Name = "save";
+            this.save.Size = new System.Drawing.Size(99, 30);
+            this.save.TabIndex = 5;
+            this.save.Text = "ثبت کن";
+            this.save.UseVisualStyleBackColor = true;
+            this.save.Click += new System.EventHandler(this.Save_Click);
+            // 
+            // userTypeId
+            // 
+            this.userTypeId.AutoSize = true;
+            this.userTypeId.Location = new System.Drawing.Point(419, 253);
+            this.userTypeId.Name = "userTypeId";
+            this.userTypeId.Size = new System.Drawing.Size(50, 15);
+            this.userTypeId.TabIndex = 27;
+            this.userTypeId.Text = "نوع کاربر";
+            // 
+            // cmbUserType
+            // 
+            this.cmbUserType.FormattingEnabled = true;
+            this.cmbUserType.Location = new System.Drawing.Point(86, 250);
+            this.cmbUserType.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cmbUserType.Name = "cmbUserType";
+            this.cmbUserType.Size = new System.Drawing.Size(275, 23);
+            this.cmbUserType.TabIndex = 4;
+            this.cmbUserType.SelectedIndexChanged += new System.EventHandler(this.cmbUserType_SelectedIndexChanged);
             // 
             // groupBox1
             // 
@@ -56,114 +155,24 @@
             this.groupBox1.Controls.Add(this.phoneNumber);
             this.groupBox1.Controls.Add(this.email);
             this.groupBox1.Controls.Add(this.userName);
-            this.groupBox1.Location = new System.Drawing.Point(3, 1);
+            this.groupBox1.Location = new System.Drawing.Point(12, 11);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(785, 437);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox1.Size = new System.Drawing.Size(528, 374);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "groupBox1";
             // 
-            // cmbUserType
-            // 
-            this.cmbUserType.FormattingEnabled = true;
-            this.cmbUserType.Location = new System.Drawing.Point(217, 314);
-            this.cmbUserType.Name = "cmbUserType";
-            this.cmbUserType.Size = new System.Drawing.Size(314, 28);
-            this.cmbUserType.TabIndex = 28;
-            this.cmbUserType.SelectedIndexChanged += new System.EventHandler(this.cmbUserType_SelectedIndexChanged);
-            // 
-            // userTypeId
-            // 
-            this.userTypeId.AutoSize = true;
-            this.userTypeId.Location = new System.Drawing.Point(587, 314);
-            this.userTypeId.Name = "userTypeId";
-            this.userTypeId.Size = new System.Drawing.Size(69, 20);
-            this.userTypeId.TabIndex = 27;
-            this.userTypeId.Text = "UserType";
-            // 
-            // save
-            // 
-            this.save.Location = new System.Drawing.Point(35, 363);
-            this.save.Name = "save";
-            this.save.Size = new System.Drawing.Size(94, 29);
-            this.save.TabIndex = 26;
-            this.save.Text = "ثبت";
-            this.save.UseVisualStyleBackColor = true;
-            this.save.Click += new System.EventHandler(this.Save_Click);
-            // 
-            // txtPassword
-            // 
-            this.txtPassword.Location = new System.Drawing.Point(217, 128);
-            this.txtPassword.Name = "txtPassword";
-            this.txtPassword.PasswordChar = '*';
-            this.txtPassword.Size = new System.Drawing.Size(314, 27);
-            this.txtPassword.TabIndex = 25;
-            // 
-            // txtPhoneNumber
-            // 
-            this.txtPhoneNumber.Location = new System.Drawing.Point(217, 191);
-            this.txtPhoneNumber.Name = "txtPhoneNumber";
-            this.txtPhoneNumber.Size = new System.Drawing.Size(314, 27);
-            this.txtPhoneNumber.TabIndex = 24;
-            // 
-            // txtEmail
-            // 
-            this.txtEmail.Location = new System.Drawing.Point(217, 252);
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(314, 27);
-            this.txtEmail.TabIndex = 23;
-            // 
-            // txtUserName
-            // 
-            this.txtUserName.Location = new System.Drawing.Point(217, 68);
-            this.txtUserName.Name = "txtUserName";
-            this.txtUserName.Size = new System.Drawing.Size(314, 27);
-            this.txtUserName.TabIndex = 22;
-            // 
-            // password
-            // 
-            this.password.AutoSize = true;
-            this.password.Location = new System.Drawing.Point(587, 135);
-            this.password.Name = "password";
-            this.password.Size = new System.Drawing.Size(70, 20);
-            this.password.TabIndex = 21;
-            this.password.Text = "Password";
-            // 
-            // phoneNumber
-            // 
-            this.phoneNumber.AutoSize = true;
-            this.phoneNumber.Location = new System.Drawing.Point(587, 194);
-            this.phoneNumber.Name = "phoneNumber";
-            this.phoneNumber.Size = new System.Drawing.Size(104, 20);
-            this.phoneNumber.TabIndex = 20;
-            this.phoneNumber.Text = "PhoneNumber";
-            // 
-            // email
-            // 
-            this.email.AutoSize = true;
-            this.email.Location = new System.Drawing.Point(587, 255);
-            this.email.Name = "email";
-            this.email.Size = new System.Drawing.Size(46, 20);
-            this.email.TabIndex = 19;
-            this.email.Text = "Email";
-            // 
-            // userName
-            // 
-            this.userName.AutoSize = true;
-            this.userName.Location = new System.Drawing.Point(587, 71);
-            this.userName.Name = "userName";
-            this.userName.Size = new System.Drawing.Size(78, 20);
-            this.userName.TabIndex = 18;
-            this.userName.Text = "UserName";
-            // 
             // CreateUserForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(536, 386);
             this.Controls.Add(this.groupBox1);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "CreateUserForm";
-            this.Text = "CreateUserForm";
+            this.Text = "Sign Up Form";
             this.Load += new System.EventHandler(this.Form_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -173,17 +182,17 @@
 
         #endregion
 
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button save;
-        private System.Windows.Forms.TextBox txtPassword;
-        private System.Windows.Forms.TextBox txtPhoneNumber;
-        private System.Windows.Forms.TextBox txtEmail;
-        private System.Windows.Forms.TextBox txtUserName;
-        private System.Windows.Forms.Label password;
-        private System.Windows.Forms.Label phoneNumber;
-        private System.Windows.Forms.Label email;
         private System.Windows.Forms.Label userName;
+        private System.Windows.Forms.Label email;
+        private System.Windows.Forms.Label phoneNumber;
+        private System.Windows.Forms.Label password;
+        private System.Windows.Forms.TextBox txtUserName;
+        private System.Windows.Forms.TextBox txtEmail;
+        private System.Windows.Forms.TextBox txtPhoneNumber;
+        private System.Windows.Forms.TextBox txtPassword;
+        private System.Windows.Forms.Button save;
         private System.Windows.Forms.Label userTypeId;
         private System.Windows.Forms.ComboBox cmbUserType;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }

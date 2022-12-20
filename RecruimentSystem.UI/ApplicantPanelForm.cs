@@ -1,4 +1,5 @@
-﻿using RecruitmentSystem.InfraStructure.IRepositories;
+﻿using RecruimentSystem.UI;
+using RecruitmentSystem.InfraStructure.IRepositories;
 using RecruitmentSystem.InfraStructure.Repositories;
 using System;
 using System.Collections.Generic;
@@ -23,28 +24,34 @@ namespace RecruitmentSystem.UI
             userRepository = new UserRepository();
         }
 
-        private void recruitBtn_Click(object sender, EventArgs e)
+        private void tsmRecruitItem_Click(object sender, EventArgs e)
         {
             var frm = new RecruitForm();
             frm.Show();
         }
 
-        private void trainingBtn_Click(object sender, EventArgs e)
+        private void tsmTrainingItem_Click(object sender, EventArgs e)
         {
             var frm = new TrainingForm();
             frm.Show();
         }
 
-        private void editResumeBtn_Click(object sender, EventArgs e)
+        private void tsmProfileItem_Click(object sender, EventArgs e)
+        {
+            var frm = new ApplicantProfile();
+            frm.Show();
+        }
+
+        private void tsmEditResumeItem_Click(object sender, EventArgs e)
         {
             var frm = new ResumeForm();
             frm.Show();
         }
 
-        private void BtnProfileUpdate_Click(object sender, EventArgs e)
+        private void tsmExitItem_Click(object sender, EventArgs e)
         {
-            var frm = new ApplicantProfile();
-            frm.Show(); 
+            var frm = new LoginOrCreateUserForm();
+            frm.Show();
         }
     }
 }
