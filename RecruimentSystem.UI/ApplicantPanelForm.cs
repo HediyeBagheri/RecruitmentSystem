@@ -17,27 +17,21 @@ namespace RecruitmentSystem.UI
     {
         private readonly IUserRepository userRepository;
 
-        public ApplicantPanelForm(int ID)
+        public ApplicantPanelForm(int Id)
         {
             InitializeComponent();
             userRepository = new UserRepository();
         }
 
-        private void recruitBtn_Click(object sender, EventArgs e)
+        private void RecruitBtn_Click(object sender, EventArgs e)
         {
-            var frm = new RecruitForm();
+            var frm = new CompanyOfferForm();
             frm.Show();
         }
 
-        private void trainingBtn_Click(object sender, EventArgs e)
+        private void TrainingBtn_Click(object sender, EventArgs e)
         {
             var frm = new TrainingForm();
-            frm.Show();
-        }
-
-        private void editResumeBtn_Click(object sender, EventArgs e)
-        {
-            var frm = new ResumeForm();
             frm.Show();
         }
 

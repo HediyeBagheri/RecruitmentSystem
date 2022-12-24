@@ -17,7 +17,7 @@ namespace RecruitmentSystem.UI
             InitializeComponent();
         }
 
-        private void companyRecruitBtn_Click(object sender, EventArgs e)
+        private void CompanyRecruitBtn_Click(object sender, EventArgs e)
         {
             var frm = new RecruitmentForm();
             frm.Show();
@@ -31,6 +31,8 @@ namespace RecruitmentSystem.UI
 
         private void Request_Click(object sender, EventArgs e)
         {
+            var frm = new CompanyRequestForm();
+            frm.Show();
 
         }
     }

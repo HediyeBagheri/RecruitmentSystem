@@ -80,9 +80,6 @@ namespace RecruimentSystem.UI
             frm.Show();
         }
 
-        private void cmbUserType_SelectedIndexChanged(object sender, EventArgs e)
-        {
 
-        }
     }
 }

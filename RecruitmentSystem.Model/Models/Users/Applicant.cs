@@ -13,8 +13,19 @@ namespace RecruitmentSystem.Model.Models.Users
         public string LastName { get; set; }
 
         [StringLength(64)]
-        public string FatherName { get; set; }
+        public string FathersName { get; set; }
+
         public int Age { get; set; }
-        public int ServeStatus { get; set;}
+
+        public int ServeStatusTypeId { get; set;}
+
+        public string WorkExperience { get; set; }
+
+        public decimal SalaryRequest { get; set; }
+
+        [StringLength(64)]
+        public string JobName { get; set; }
+
+        public string ResumeDescription { get; set; }
     }
 }

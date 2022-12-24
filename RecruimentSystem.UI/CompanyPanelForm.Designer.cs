@@ -41,7 +41,7 @@
             this.companyRecruitBtn.TabIndex = 0;
             this.companyRecruitBtn.Text = "استخدام";
             this.companyRecruitBtn.UseVisualStyleBackColor = true;
-            this.companyRecruitBtn.Click += new System.EventHandler(this.companyRecruitBtn_Click);
+            this.companyRecruitBtn.Click += new System.EventHandler(this.CompanyRecruitBtn_Click);
             // 
             // educationBtn
             // 

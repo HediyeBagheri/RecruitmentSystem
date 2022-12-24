@@ -30,7 +30,6 @@
         {
             this.recruitBtn = new System.Windows.Forms.Button();
             this.trainingBtn = new System.Windows.Forms.Button();
-            this.editResumeBtn = new System.Windows.Forms.Button();
             this.BtnProfileUpdate = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -42,7 +41,7 @@
             this.recruitBtn.TabIndex = 0;
             this.recruitBtn.Text = "استخدام";
             this.recruitBtn.UseVisualStyleBackColor = true;
-            this.recruitBtn.Click += new System.EventHandler(this.recruitBtn_Click);
+            this.recruitBtn.Click += new System.EventHandler(this.RecruitBtn_Click);
             // 
             // trainingBtn
             // 
@@ -52,25 +51,15 @@
             this.trainingBtn.TabIndex = 1;
             this.trainingBtn.Text = "اموزش";
             this.trainingBtn.UseVisualStyleBackColor = true;
-            this.trainingBtn.Click += new System.EventHandler(this.trainingBtn_Click);
-            // 
-            // editResumeBtn
-            // 
-            this.editResumeBtn.Location = new System.Drawing.Point(405, 382);
-            this.editResumeBtn.Name = "editResumeBtn";
-            this.editResumeBtn.Size = new System.Drawing.Size(129, 29);
-            this.editResumeBtn.TabIndex = 2;
-            this.editResumeBtn.Text = "ویرایش رزومه";
-            this.editResumeBtn.UseVisualStyleBackColor = true;
-            this.editResumeBtn.Click += new System.EventHandler(this.editResumeBtn_Click);
+            this.trainingBtn.Click += new System.EventHandler(this.TrainingBtn_Click);
             // 
             // BtnProfileUpdate
             // 
-            this.BtnProfileUpdate.Location = new System.Drawing.Point(254, 382);
+            this.BtnProfileUpdate.Location = new System.Drawing.Point(393, 382);
             this.BtnProfileUpdate.Name = "BtnProfileUpdate";
             this.BtnProfileUpdate.Size = new System.Drawing.Size(129, 29);
             this.BtnProfileUpdate.TabIndex = 3;
-            this.BtnProfileUpdate.Text = "تکمیل مشخصات";
+            this.BtnProfileUpdate.Text = "تکمیل رزومه";
             this.BtnProfileUpdate.UseVisualStyleBackColor = true;
             this.BtnProfileUpdate.Click += new System.EventHandler(this.BtnProfileUpdate_Click);
             // 
@@ -80,11 +69,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.BtnProfileUpdate);
-            this.Controls.Add(this.editResumeBtn);
             this.Controls.Add(this.trainingBtn);
             this.Controls.Add(this.recruitBtn);
             this.Name = "ApplicantPanelForm";
-            this.Text = "UserPanelForm";
+            this.Text = "ApplicantPanelForm";
             this.ResumeLayout(false);
 
         }
@@ -93,7 +81,6 @@
 
         private System.Windows.Forms.Button recruitBtn;
         private System.Windows.Forms.Button trainingBtn;
-        private System.Windows.Forms.Button editResumeBtn;
         private System.Windows.Forms.Button BtnProfileUpdate;
     }
 }

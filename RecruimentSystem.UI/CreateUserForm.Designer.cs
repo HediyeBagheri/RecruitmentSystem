@@ -70,7 +70,6 @@
             this.cmbUserType.Name = "cmbUserType";
             this.cmbUserType.Size = new System.Drawing.Size(314, 28);
             this.cmbUserType.TabIndex = 28;
-            this.cmbUserType.SelectedIndexChanged += new System.EventHandler(this.cmbUserType_SelectedIndexChanged);
             // 
             // userTypeId
             // 
