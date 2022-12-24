@@ -139,7 +139,7 @@
             this.cmbUserType.Name = "cmbUserType";
             this.cmbUserType.Size = new System.Drawing.Size(275, 23);
             this.cmbUserType.TabIndex = 4;
-            this.cmbUserType.SelectedIndexChanged += new System.EventHandler(this.cmbUserType_SelectedIndexChanged);
+            //this.cmbUserType.SelectedIndexChanged += new System.EventHandler(this.cmbUserType_SelectedIndexChanged);
             // 
             // groupBox1
             // 
