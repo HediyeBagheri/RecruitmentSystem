@@ -1,4 +1,5 @@
-﻿using RecruitmentSystem.InfraStructure.IRepositories;
+﻿using RecruimentSystem.UI;
+using RecruitmentSystem.InfraStructure.IRepositories;
 using RecruitmentSystem.InfraStructure.Repositories;
 using System;
 using System.Collections.Generic;
@@ -37,8 +38,8 @@ namespace RecruitmentSystem.UI
 
         private void BtnProfileUpdate_Click(object sender, EventArgs e)
         {
-            var frm = new ApplicantProfile();
-            frm.Show(); 
+            var frm = new LoginOrCreateUserForm();
+            frm.Show();
         }
     }
 }

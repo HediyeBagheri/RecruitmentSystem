@@ -33,7 +33,7 @@
             this.BtnProfileUpdate = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // recruitBtn
+            // panelMenu
             // 
             this.recruitBtn.Location = new System.Drawing.Point(674, 382);
             this.recruitBtn.Name = "recruitBtn";
@@ -43,7 +43,7 @@
             this.recruitBtn.UseVisualStyleBackColor = true;
             this.recruitBtn.Click += new System.EventHandler(this.RecruitBtn_Click);
             // 
-            // trainingBtn
+            // tsmRecruitItem
             // 
             this.trainingBtn.Location = new System.Drawing.Point(557, 382);
             this.trainingBtn.Name = "trainingBtn";
@@ -65,7 +65,7 @@
             // 
             // ApplicantPanelForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.BtnProfileUpdate);
@@ -74,6 +74,7 @@
             this.Name = "ApplicantPanelForm";
             this.Text = "ApplicantPanelForm";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 

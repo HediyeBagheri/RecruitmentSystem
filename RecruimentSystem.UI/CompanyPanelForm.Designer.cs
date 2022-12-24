@@ -35,9 +35,10 @@
             // 
             // companyRecruitBtn
             // 
-            this.companyRecruitBtn.Location = new System.Drawing.Point(656, 369);
+            this.companyRecruitBtn.Location = new System.Drawing.Point(356, 277);
+            this.companyRecruitBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.companyRecruitBtn.Name = "companyRecruitBtn";
-            this.companyRecruitBtn.Size = new System.Drawing.Size(94, 29);
+            this.companyRecruitBtn.Size = new System.Drawing.Size(82, 22);
             this.companyRecruitBtn.TabIndex = 0;
             this.companyRecruitBtn.Text = "استخدام";
             this.companyRecruitBtn.UseVisualStyleBackColor = true;
@@ -45,9 +46,10 @@
             // 
             // educationBtn
             // 
-            this.educationBtn.Location = new System.Drawing.Point(540, 369);
+            this.educationBtn.Location = new System.Drawing.Point(211, 277);
+            this.educationBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.educationBtn.Name = "educationBtn";
-            this.educationBtn.Size = new System.Drawing.Size(94, 29);
+            this.educationBtn.Size = new System.Drawing.Size(82, 22);
             this.educationBtn.TabIndex = 1;
             this.educationBtn.Text = "اموزش";
             this.educationBtn.UseVisualStyleBackColor = true;
@@ -55,9 +57,10 @@
             // 
             // Request
             // 
-            this.Request.Location = new System.Drawing.Point(389, 369);
+            this.Request.Location = new System.Drawing.Point(47, 277);
+            this.Request.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Request.Name = "Request";
-            this.Request.Size = new System.Drawing.Size(129, 29);
+            this.Request.Size = new System.Drawing.Size(113, 22);
             this.Request.TabIndex = 2;
             this.Request.Text = "ارسال درخواست";
             this.Request.UseVisualStyleBackColor = true;
@@ -65,12 +68,13 @@
             // 
             // CompanyPanelForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(527, 338);
             this.Controls.Add(this.Request);
             this.Controls.Add(this.educationBtn);
             this.Controls.Add(this.companyRecruitBtn);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "CompanyPanelForm";
             this.Text = "CompanyPanelForm";
             this.ResumeLayout(false);
