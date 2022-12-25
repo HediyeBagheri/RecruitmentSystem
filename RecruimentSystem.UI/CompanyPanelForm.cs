@@ -19,14 +19,10 @@ namespace RecruitmentSystem.UI
 
         private void CompanyRecruitBtn_Click(object sender, EventArgs e)
         {
-            var frm = new RecruitmentForm();
-            frm.Show();
         }
 
         private void EducationBtn_Click(object sender, EventArgs e)
         {
-            var frm = new EducationForm();
-            frm.Show();
         }
 
         private void Request_Click(object sender, EventArgs e)

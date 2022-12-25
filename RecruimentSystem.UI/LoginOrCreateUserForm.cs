@@ -20,6 +20,7 @@ namespace RecruimentSystem.UI
         {
             var frm = new CreateUserForm();
             frm.Show();
+            this.Close();
         }
 
 
@@ -61,7 +62,7 @@ namespace RecruimentSystem.UI
             {
                 MessageBox.Show("No User Found");
             }
-
+            this.Hide();
 
         }
 
@@ -70,19 +71,6 @@ namespace RecruimentSystem.UI
 
         }
 
-        //private void loginToUserPanel_Click(object sender, EventArgs e)
-        //{
-        //    ValidateForLogin();
-        //    if (userTypeCmbBox.Text == "Applicant")
-        //    {
-        //        var frm = new ApplicantPanelForm();
-        //        frm.Show();
-        //    }
-        //    else
-        //    {
-        //        var frm = new CompanyPanelForm();
-        //        frm.Show();
-        //    }
-        //}
+       
     }
 }

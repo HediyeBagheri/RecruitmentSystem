@@ -38,7 +38,7 @@ namespace RecruitmentSystem.UI
 
         private void BtnProfileUpdate_Click(object sender, EventArgs e)
         {
-            var frm = new LoginOrCreateUserForm();
+            var frm = new ApplicantProfile();
             frm.Show();
         }
     }

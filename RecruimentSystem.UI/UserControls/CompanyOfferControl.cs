@@ -14,7 +14,6 @@ namespace RecruitmentSystem.UI
 {
     public partial class CompanyOfferControl : UserControl
     {
-       
         public CompanyOfferControl()
         {
             InitializeComponent();

@@ -22,16 +22,16 @@ namespace RecruitmentSystem.InfraStructure.Repositories
                 new CompanyOfferDetail
                 {
 
-                        Id = 1,
-                        CompanyName = "استدیو پیکسیون",
-                        SalaryPropose = 12000000,
-                        JobName = "طراح سایت (Wordpress)",
-                        Location = "تهران",
-                        MinimumWorkExperience = 3,
-                        TypeOfCooperationId = 1,
-                        MinimumEducationDegree = "کارشناسی",
-                        Descreption = "مسلط به وردپرس، المنتور و پلاگین های مرتبط",
-                        ImagePath = @"C:\Users\ADMIN\Pictures\pisicon.png"
+                    Id = 1,
+                    CompanyName = "استدیو پیکسیون",
+                    SalaryPropose = 12000000,
+                    JobName = "طراح سایت (Wordpress)",
+                    Location = "تهران",
+                    MinimumWorkExperience = 3,
+                    TypeOfCooperationId = 1,
+                    MinimumEducationDegree = "کارشناسی",
+                    Descreption = "مسلط به وردپرس، المنتور و پلاگین های مرتبط",
+                    ImagePath = @"C:\Users\ADMIN\Pictures\pisicon.png"
 
 
                 },

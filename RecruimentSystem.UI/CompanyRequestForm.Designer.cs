@@ -46,7 +46,9 @@
             this.SalaryPropose = new System.Windows.Forms.Label();
             this.JobName = new System.Windows.Forms.Label();
             this.CompanyName = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // BtnCompanyReq
@@ -61,6 +63,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.pictureBox1);
             this.groupBox1.Controls.Add(this.CmbJobName);
             this.groupBox1.Controls.Add(this.TxtMinEducationDegree);
             this.groupBox1.Controls.Add(this.CmbTypeOfCooperation);
@@ -215,6 +218,14 @@
             this.CompanyName.TabIndex = 48;
             this.CompanyName.Text = "نام شرکت";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(53, 56);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(179, 151);
+            this.pictureBox1.TabIndex = 71;
+            this.pictureBox1.TabStop = false;
+            // 
             // CompanyRequestForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -227,6 +238,7 @@
             this.Load += new System.EventHandler(this.Form_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -251,5 +263,6 @@
         private System.Windows.Forms.TextBox TxtCompanyName;
         public System.Windows.Forms.RichTextBox TxtDescreption;
         private System.Windows.Forms.ComboBox CmbJobName;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

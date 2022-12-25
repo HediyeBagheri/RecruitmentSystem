@@ -110,8 +110,7 @@ namespace RecruitmentSystem.UI
                 ResumeDescription = TxtDescraption.Text
             };
             applicantRepository.Add(applicant);
-            var frm = new ApplicantProfile();
-            frm.Close();
+            this.Hide();
         }
     }
 }

@@ -78,6 +78,7 @@ namespace RecruimentSystem.UI
             userRepository.Add(user);
             var frm = new LoginOrCreateUserForm();
             frm.Show();
+            this.Hide();
         }
 
 
