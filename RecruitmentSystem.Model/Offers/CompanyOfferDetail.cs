@@ -23,7 +23,7 @@ namespace RecruitmentSystem.Model.Offers
         public int TypeOfCooperationId { get; set; }
         [StringLength(128)]
         public string MinimumEducationDegree { get; set; }
-        public string Descreption { get; set; }
+        public string Description { get; set; }
         [StringLength(128)]
         public string ImagePath { get; set; }
 

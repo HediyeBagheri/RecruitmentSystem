@@ -61,8 +61,6 @@ namespace RecruitmentSystem.InfraStructure.Repositories
 
             cmd.CommandType = CommandType.StoredProcedure;
 
-
-
             sqlConnection.Open();
 
             var reader = cmd.ExecuteReader();

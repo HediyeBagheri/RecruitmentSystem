@@ -1,16 +1,8 @@
-﻿using Microsoft.EntityFrameworkCore.Metadata.Internal;
-using RecruitmentSystem.InfraStructure.IRepositories;
+﻿using RecruitmentSystem.InfraStructure.IRepositories;
 using RecruitmentSystem.InfraStructure.Repositories;
 using RecruitmentSystem.Model.Models.Users;
-using RecruitmentSystem.UI;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace RecruimentSystem.UI
@@ -18,6 +10,7 @@ namespace RecruimentSystem.UI
     public partial class CreateUserForm : Form
     {
         private readonly IUserRepository userRepository;
+        private bool isValid = true;
         public CreateUserForm()
         {
             InitializeComponent();
@@ -27,7 +20,7 @@ namespace RecruimentSystem.UI
         private void Form_Load(object sender, EventArgs e)
         {
             var dt = userRepository.GetUserTypeData();
-            KeyValue keyValue=default;
+            KeyValue keyValue;
 
             List<KeyValue> list = new List<KeyValue>();
             foreach (var dataRow in dt.Select())
@@ -42,44 +35,65 @@ namespace RecruimentSystem.UI
             cmbUserType.DataSource = list;
             cmbUserType.ValueMember = "Value";
             cmbUserType.DisplayMember = "Key";
-
         }
 
         private void ValidateUser()
         {
+            isValid = true;
+
             if (string.IsNullOrEmpty(txtUserName.Text))
-                throw new ArgumentNullException();
+            {
+                MessageBox.Show("Username Is Empty!");
+                isValid = false;
+            }
 
-            if (txtUserName.Text.Length > 64)
-                throw new ArgumentOutOfRangeException();
+            if (txtUserName.Text.Length > 18 || txtUserName.Text.Length < 3)
+            {
+                MessageBox.Show("Username Lenght Must Be More Then 3 Letters And Less Than 18!");
+                isValid = false;
+            }
 
-            if (txtPassword.Text.Length > 64 )
-                throw new ArgumentOutOfRangeException();
+            if (txtPassword.Text.Length > 18 || txtPassword.Text.Length < 8)
+            {
+                MessageBox.Show("Password Characters Must Be Between 8 And 18 Letters!");
+                isValid = false;
+            }
 
             if (txtPhoneNumber.Text.Length > 64)
-                throw new ArgumentOutOfRangeException();
+            {
+                MessageBox.Show("Phone Number Is Not Valid!");
+                isValid = false;
+            }
+
 
             if (txtEmail.Text.Length > 64)
-                throw new ArgumentOutOfRangeException();
+            {
+                MessageBox.Show("EMail Is Not Valid");
+                isValid = false;
+            }
 
         }
 
         private void Save_Click(object sender, EventArgs e)
         {
             ValidateUser();
-            var user = new User()
+            if (isValid)
             {
-                UserName = txtUserName.Text,
-                Email = txtEmail.Text,
-                Password = txtPassword.Text,
-                PhoneNumber = txtPhoneNumber.Text,
-                UserTypeId = cmbUserType.SelectedIndex+1,
-            };
-            userRepository.Add(user);
-            var frm = new LoginOrCreateUserForm();
-            frm.Show();
-        }
+                var user = new User()
+                {
+                    UserName = txtUserName.Text,
+                    Email = txtEmail.Text,
+                    Password = txtPassword.Text,
+                    PhoneNumber = txtPhoneNumber.Text,
+                    UserTypeId = cmbUserType.SelectedIndex + 1,
+                };
+                userRepository.Add(user);
+                var frm = new LoginOrCreateUserForm();
+                frm.Show();
+                this.Hide();
+            }
 
+        }
 
     }
 }

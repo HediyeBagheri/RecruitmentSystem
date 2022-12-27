@@ -20,7 +20,7 @@ namespace RecruitmentSystem.UI
         public CompanyOfferForm()
         {
             InitializeComponent();
-            companyOfferRepository = new CmpanyOfferDetailRepository();
+            companyOfferRepository = new CompanyOfferDetailRepository();
             FillForm();
         }
 
@@ -36,7 +36,7 @@ namespace RecruitmentSystem.UI
                 companyOfferControl.LocationLbl.Text = companyOfferDetail.Location;
                 companyOfferControl.WorkExperienceLbl.Text = companyOfferDetail.MinimumWorkExperience.ToString();
                 companyOfferControl.EducationDegreeLbl.Text = companyOfferDetail.MinimumEducationDegree;
-                companyOfferControl.richTxtDescription.Text = companyOfferDetail.Descreption;
+                companyOfferControl.richTxtDescription.Text = companyOfferDetail.Description;
                 companyOfferControl.LblTypeOfCooperation.Text = companyOfferDetail.TypeOfCooperationId.ToString();
                 companyOfferControl.pictureBox1.Image = Image.FromFile(companyOfferDetail.ImagePath);
                 flowLayoutPanel1.Controls.Add(companyOfferControl);

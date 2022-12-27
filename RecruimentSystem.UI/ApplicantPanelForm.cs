@@ -17,29 +17,39 @@ namespace RecruitmentSystem.UI
     public partial class ApplicantPanelForm : Form
     {
         private readonly IUserRepository userRepository;
-
+        private int applicantId;
         public ApplicantPanelForm(int Id)
         {
             InitializeComponent();
             userRepository = new UserRepository();
+            applicantId = Id;
+            FillWelcomeData();
+        }
+
+        private static void FillWelcomeData()
+        {
+            
         }
 
         private void RecruitBtn_Click(object sender, EventArgs e)
         {
             var frm = new CompanyOfferForm();
             frm.Show();
+            this.Hide();
         }
 
         private void TrainingBtn_Click(object sender, EventArgs e)
         {
             var frm = new TrainingForm();
             frm.Show();
+            this.Hide();
         }
 
         private void BtnProfileUpdate_Click(object sender, EventArgs e)
         {
-            var frm = new LoginOrCreateUserForm();
+            var frm = new ApplicantProfile();
             frm.Show();
+            this.Hide();
         }
     }
 }

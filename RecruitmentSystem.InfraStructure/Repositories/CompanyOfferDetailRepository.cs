@@ -13,7 +13,7 @@ using SqlCommand = System.Data.SqlClient.SqlCommand;
 
 namespace RecruitmentSystem.InfraStructure.Repositories
 {
-    public class CmpanyOfferDetailRepository : QueryRepository, ICompanyOfferDetailRepository
+    public class CompanyOfferDetailRepository : QueryRepository, ICompanyOfferDetailRepository
     {
         public List<CompanyOfferDetail> GetAll()
         {
@@ -30,7 +30,7 @@ namespace RecruitmentSystem.InfraStructure.Repositories
                         MinimumWorkExperience = 3,
                         TypeOfCooperationId = 1,
                         MinimumEducationDegree = "کارشناسی",
-                        Descreption = "مسلط به وردپرس، المنتور و پلاگین های مرتبط",
+                        Description = "مسلط به وردپرس، المنتور و پلاگین های مرتبط",
                         ImagePath = @"C:\Users\ADMIN\Pictures\pisicon.png"
 
 
@@ -46,7 +46,7 @@ namespace RecruitmentSystem.InfraStructure.Repositories
                     MinimumWorkExperience = 3,
                     TypeOfCooperationId = 2,
                     MinimumEducationDegree = "کارشناسی",
-                    Descreption = "مسلط به نرم افزارهای ,AutoCad,3D Max ,Sketch up ,V ray, Photoshop",
+                    Description = "مسلط به نرم افزارهای ,AutoCad,3D Max ,Sketch up ,V ray, Photoshop",
                     ImagePath = @"C:\Users\ADMIN\Pictures\sahlan.png"
                 },
                 new CompanyOfferDetail
@@ -59,7 +59,7 @@ namespace RecruitmentSystem.InfraStructure.Repositories
                     MinimumWorkExperience = 3,
                     TypeOfCooperationId = 2,
                     MinimumEducationDegree = "کارشناسی",
-                    Descreption = "تسلط بر نرم افزارهای WORD و EXCEL و OUTLOOK",
+                    Description = "تسلط بر نرم افزارهای WORD و EXCEL و OUTLOOK",
                     ImagePath = @"C:\Users\ADMIN\Pictures\sanaye.png"
                 }
 
@@ -96,7 +96,7 @@ namespace RecruitmentSystem.InfraStructure.Repositories
             cmd.Parameters.AddWithValue("@MinimumWorkExperience", companyOffer.MinimumWorkExperience);
             cmd.Parameters.AddWithValue("@TypeOfCooperationId", companyOffer.TypeOfCooperationId);
             cmd.Parameters.AddWithValue("@MinimumEducationDegree", companyOffer.MinimumEducationDegree);
-            cmd.Parameters.AddWithValue("@Descreption", companyOffer.Descreption);
+            cmd.Parameters.AddWithValue("@Description", companyOffer.Description);
             cmd.Parameters.AddWithValue("@ImagePath", companyOffer.ImagePath);
 
 
