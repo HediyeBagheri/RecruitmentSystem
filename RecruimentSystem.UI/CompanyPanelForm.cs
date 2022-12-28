@@ -25,9 +25,7 @@ namespace RecruitmentSystem.UI
 
         private void EducationBtn_Click(object sender, EventArgs e)
         {
-            var frm = new EducationForm();
-            this.Hide();
-            frm.Show();
+           
         }
 
         private void Request_Click(object sender, EventArgs e)
