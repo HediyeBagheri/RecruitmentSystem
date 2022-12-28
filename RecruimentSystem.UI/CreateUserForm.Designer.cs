@@ -40,6 +40,7 @@
             this.userTypeId = new System.Windows.Forms.Label();
             this.cmbUserType = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -54,11 +55,10 @@
             // 
             // email
             // 
-            this.cmbUserType.FormattingEnabled = true;
-            this.cmbUserType.Location = new System.Drawing.Point(217, 314);
-            this.cmbUserType.Name = "cmbUserType";
-            this.cmbUserType.Size = new System.Drawing.Size(314, 28);
-            this.cmbUserType.TabIndex = 28;
+            this.email.Location = new System.Drawing.Point(0, 0);
+            this.email.Name = "email";
+            this.email.Size = new System.Drawing.Size(100, 23);
+            this.email.TabIndex = 28;
             // 
             // phoneNumber
             // 
@@ -139,10 +139,10 @@
             this.cmbUserType.Name = "cmbUserType";
             this.cmbUserType.Size = new System.Drawing.Size(275, 23);
             this.cmbUserType.TabIndex = 4;
-            //this.cmbUserType.SelectedIndexChanged += new System.EventHandler(this.cmbUserType_SelectedIndexChanged);
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.cmbUserType);
             this.groupBox1.Controls.Add(this.userTypeId);
             this.groupBox1.Controls.Add(this.save);
@@ -162,6 +162,15 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "groupBox1";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(419, 203);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(33, 15);
+            this.label1.TabIndex = 29;
+            this.label1.Text = "ایمیل";
             // 
             // CreateUserForm
             // 
@@ -193,5 +202,6 @@
         private System.Windows.Forms.Label userTypeId;
         private System.Windows.Forms.ComboBox cmbUserType;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label label1;
     }
 }

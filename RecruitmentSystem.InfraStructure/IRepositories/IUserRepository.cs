@@ -11,10 +11,10 @@ namespace RecruitmentSystem.InfraStructure.IRepositories
     {
         void Add(User user);
         void CompanyUpdate();
-         DataTable GetUserTypeData();
+        DataTable GetUserTypeData();
         DataTable GetUserLoginData(string UserName, string Password);
 
-         DataTable GetJobData();
+        DataTable GetJobData();
 
 
     }

@@ -18,10 +18,10 @@ namespace RecruitmentSystem.InfraStructure.Repositories
             sqlConnection = new SqlConnection(ConnectionString.RecruitmentConnectionString);
         }
 
-        public DataTable GetAll(string procdeureName)
+        public DataTable GetAll(string procedureName)
         {
             var dt = new DataTable();
-            SqlCommand cmd = new SqlCommand(procdeureName, sqlConnection);
+            SqlCommand cmd = new SqlCommand(procedureName, sqlConnection);
             cmd.CommandType = CommandType.StoredProcedure;
             sqlConnection.Open();
 

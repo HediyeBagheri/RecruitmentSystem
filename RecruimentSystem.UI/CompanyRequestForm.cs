@@ -23,14 +23,14 @@ namespace RecruitmentSystem.UI
         public CompanyRequestForm()
         {
             InitializeComponent();
-            companyOfferRepository = new CmpanyOfferDetailRepository();
+            companyOfferRepository = new CompanyOfferDetailRepository();
             FillCmbJob();
         }
 
         private void Form_Load(object sender, EventArgs e)
         {
             var dt = companyOfferRepository.GetComOfferCooperationType();
-            KeyValue keyValue = default;
+            KeyValue keyValue;
 
             List<KeyValue> list = new List<KeyValue>();
             foreach (var dataRow in dt.Select())
@@ -51,7 +51,7 @@ namespace RecruitmentSystem.UI
         private void FillCmbJob()
         {
             var dt = companyOfferRepository.GetJobData();
-            KeyValue keyValue = default;
+            KeyValue keyValue;
 
             List<KeyValue> list = new List<KeyValue>();
             foreach (var dataRow in dt.Select())
@@ -111,7 +111,7 @@ namespace RecruitmentSystem.UI
                 MinimumWorkExperience = Convert.ToInt32(TxtMinWorkExperience.Text),
                 TypeOfCooperationId = CmbTypeOfCooperation.SelectedIndex+1,
                 MinimumEducationDegree = TxtMinEducationDegree.Text,
-                Descreption = TxtDescreption.Text,
+                Description = TxtDescription.Text,
                 //ImagePath = 
             };
             companyOfferRepository.Add(companyOfferDetail);

@@ -37,7 +37,7 @@
             this.TxtLocation = new System.Windows.Forms.TextBox();
             this.TxtMinWorkExperience = new System.Windows.Forms.TextBox();
             this.TxtCompanyName = new System.Windows.Forms.TextBox();
-            this.TxtDescreption = new System.Windows.Forms.RichTextBox();
+            this.TxtDescription = new System.Windows.Forms.RichTextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
@@ -71,7 +71,7 @@
             this.groupBox1.Controls.Add(this.TxtLocation);
             this.groupBox1.Controls.Add(this.TxtMinWorkExperience);
             this.groupBox1.Controls.Add(this.TxtCompanyName);
-            this.groupBox1.Controls.Add(this.TxtDescreption);
+            this.groupBox1.Controls.Add(this.TxtDescription);
             this.groupBox1.Controls.Add(this.label13);
             this.groupBox1.Controls.Add(this.label14);
             this.groupBox1.Controls.Add(this.label15);
@@ -138,13 +138,13 @@
             this.TxtCompanyName.Size = new System.Drawing.Size(208, 27);
             this.TxtCompanyName.TabIndex = 63;
             // 
-            // TxtDescreption
+            // TxtDescription
             // 
-            this.TxtDescreption.Location = new System.Drawing.Point(243, 427);
-            this.TxtDescreption.Name = "TxtDescreption";
-            this.TxtDescreption.Size = new System.Drawing.Size(327, 120);
-            this.TxtDescreption.TabIndex = 62;
-            this.TxtDescreption.Text = "";
+            this.TxtDescription.Location = new System.Drawing.Point(243, 427);
+            this.TxtDescription.Name = "TxtDescription";
+            this.TxtDescription.Size = new System.Drawing.Size(327, 120);
+            this.TxtDescription.TabIndex = 62;
+            this.TxtDescription.Text = "";
             // 
             // label13
             // 
@@ -261,7 +261,7 @@
         private System.Windows.Forms.TextBox TxtLocation;
         private System.Windows.Forms.TextBox TxtMinWorkExperience;
         private System.Windows.Forms.TextBox TxtCompanyName;
-        public System.Windows.Forms.RichTextBox TxtDescreption;
+        public System.Windows.Forms.RichTextBox TxtDescription;
         private System.Windows.Forms.ComboBox CmbJobName;
         private System.Windows.Forms.PictureBox pictureBox1;
     }

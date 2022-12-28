@@ -107,7 +107,6 @@
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "LoginOrCreateUserForm";
             this.Text = "LoginOrCreateUserForm";
-            this.Load += new System.EventHandler(this.LoginOrCreateUserForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

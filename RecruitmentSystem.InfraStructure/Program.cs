@@ -1,12 +1,17 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace RecruitmentSystem.InfraStructure
 {
-    internal class Program
-    {
-        static void Main(string[] args)
+     internal static class Program
         {
-            Console.WriteLine("Hello World!");
+            static void Main()
+            {
+                
+            }
         }
-    }
 }
