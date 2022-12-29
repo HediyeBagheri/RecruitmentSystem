@@ -114,7 +114,8 @@ namespace RecruitmentSystem.UI
                 Description = TxtDescription.Text,
                 //ImagePath = 
             };
-
+            companyOfferRepository.Add(companyOfferDetail);
+            this.Hide();
         }
     }
 }

@@ -1,6 +1,8 @@
 ﻿using RecruitmentSystem.InfraStructure.IRepositories;
 using RecruitmentSystem.InfraStructure.Repositories;
+using RecruitmentSystem.Model.Models.Users;
 using System;
+using System.Data;
 using System.Windows.Forms;
 
 namespace RecruitmentSystem.UI
@@ -8,12 +10,15 @@ namespace RecruitmentSystem.UI
     public partial class CompanyPanelForm : Form
     {
         private readonly IUserRepository userRepository;
-        private int applicantId;
-        public CompanyPanelForm(int ID)
+        private readonly ICompanyRepository companyRepository;
+        private DataTable companyData;
+        private int companyId;
+        public CompanyPanelForm(int id)
         {
             InitializeComponent();
             userRepository = new UserRepository();
-            applicantId = ID;
+            companyRepository = new CompanyRepository();
+            companyId = id;
         }
 
         private void CompanyRecruitBtn_Click(object sender, EventArgs e)
@@ -25,9 +30,7 @@ namespace RecruitmentSystem.UI
 
         private void EducationBtn_Click(object sender, EventArgs e)
         {
-            var frm = new EducationForm();
-            this.Hide();
-            frm.Show();
+           
         }
 
         private void Request_Click(object sender, EventArgs e)
@@ -35,6 +38,12 @@ namespace RecruitmentSystem.UI
             var frm = new CompanyRequestForm();
             this.Hide();
             frm.Show();
+
+        }
+
+        private void LblWelcome_Click()
+        {
+            companyData = companyRepository.GetAll(companyId);
 
         }
     }

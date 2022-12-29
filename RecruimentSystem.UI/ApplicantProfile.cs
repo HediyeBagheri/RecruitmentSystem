@@ -21,9 +21,11 @@ namespace RecruitmentSystem.UI
     public partial class ApplicantProfile : Form
     {
         private readonly IApplicantRepository applicantRepository;
-        public ApplicantProfile()
+        private int applicantId;
+        public ApplicantProfile(int applicantId)
         {
             applicantRepository = new ApplicantRepository();
+            this.applicantId = applicantId;
             InitializeComponent();
             FormLoadJob();
         }
@@ -46,6 +48,9 @@ namespace RecruitmentSystem.UI
                 throw new ArgumentNullException();
 
             if (string.IsNullOrEmpty(JobCmbBox.Text))
+                throw new ArgumentNullException();
+
+            if (string.IsNullOrEmpty(TxtDescraption.Text))
                 throw new ArgumentNullException();
 
 
@@ -103,15 +108,18 @@ namespace RecruitmentSystem.UI
                 LastName = TxtBoxLastName.Text,
                 FathersName = TxtBoxFatherName.Text,
                 Age = Convert.ToInt32(TxtBoxAge.Text),
-                ServeStatusTypeId = CmbBoxServeStatus.SelectedIndex+1,
+                ServeStatusTypeId = CmbBoxServeStatus.SelectedIndex + 1,
                 WorkExperience = TxtWorkExperience.Text,
-                SalaryRequest =Convert.ToDecimal(TxtSalaryPropose.Text),
-                JobName = JobCmbBox.SelectedText ,
+                SalaryRequest = Convert.ToDecimal(TxtSalaryPropose.Text),
+                JobName = JobCmbBox.SelectedText,
                 ResumeDescription = TxtDescraption.Text
             };
-            applicantRepository.Add(applicant);
-            var frm = new ApplicantProfile();
-            frm.Close();
+            applicantRepository.Update(applicant);
+           var frm= Application.OpenForms;
+            var x = frm["ApplicantPanelForm"];
+            x.Show();
+            this.Hide();
+
         }
     }
 }

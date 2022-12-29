@@ -64,14 +64,14 @@ namespace RecruimentSystem.UI
 
                 if (userTypeId == 1)
                 {
-                    var frm = new ApplicantPanelForm(id);
-                    frm.Show();
+                    var appFrm = new ApplicantPanelForm(id);
+                    appFrm.Show();
                     this.Hide();
                 }
                 else if (userTypeId == 2)
                 {
-                    var frm = new CompanyPanelForm(id);
-                    frm.Show();
+                    var comFrm = new CompanyPanelForm(id);
+                    comFrm.Show();
                     this.Hide();
                 }
                 else
@@ -82,19 +82,6 @@ namespace RecruimentSystem.UI
 
 
 
-        //private void loginToUserPanel_Click(object sender, EventArgs e)
-        //{
-        //    ValidateForLogin();
-        //    if (userTypeCmbBox.Text == "Applicant")
-        //    {
-        //        var frm = new ApplicantPanelForm();
-        //        frm.Show();
-        //    }
-        //    else
-        //    {
-        //        var frm = new CompanyPanelForm();
-        //        frm.Show();
-        //    }
-        //}
+
     }
 }

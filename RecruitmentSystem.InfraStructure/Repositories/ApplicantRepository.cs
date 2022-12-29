@@ -13,12 +13,13 @@ namespace RecruitmentSystem.InfraStructure.Repositories
     public class ApplicantRepository : QueryRepository,IApplicantRepository
     {
 
-        public void Add(Applicant applicant)
+        public void Update(Applicant applicant)
         {
-            var cmd = new SqlCommand("Usp_Applicant_Add", sqlConnection);
+            var cmd = new SqlCommand("Usp_Applicant_Update", sqlConnection);
 
             cmd.CommandType = CommandType.StoredProcedure;
 
+            cmd.Parameters.AddWithValue("@Id", applicant.Id);
             cmd.Parameters.AddWithValue("@Name", applicant.Name);
             cmd.Parameters.AddWithValue("@LastName", applicant.LastName);
             cmd.Parameters.AddWithValue("@FathersName", applicant.FathersName);
@@ -75,5 +76,24 @@ namespace RecruitmentSystem.InfraStructure.Repositories
             sqlConnection.Close();
             return dataTable;
         }
+         public DataTable GetAll(int applicantId) 
+        {
+            DataTable dataTable = new DataTable();
+
+            var cmd = new SqlCommand("Usp_Applicant_GetData", sqlConnection);
+            cmd.Parameters.AddWithValue("@Id", applicantId);
+
+            cmd.CommandType = CommandType.StoredProcedure;
+
+
+
+            sqlConnection.Open();
+
+            var reader = cmd.ExecuteReader();
+
+            dataTable.Load(reader);
+            sqlConnection.Close();
+            return dataTable;
+        }    
     }
 }
