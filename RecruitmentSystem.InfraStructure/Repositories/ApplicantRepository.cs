@@ -13,22 +13,22 @@ namespace RecruitmentSystem.InfraStructure.Repositories
     public class ApplicantRepository : QueryRepository,IApplicantRepository
     {
 
-        public void Update(Applicant applicant)
+        public void Update(Applicant applicant,int id)
         {
             var cmd = new SqlCommand("Usp_Applicant_Update", sqlConnection);
 
             cmd.CommandType = CommandType.StoredProcedure;
 
-            cmd.Parameters.AddWithValue("@Id", applicant.Id);
+            cmd.Parameters.AddWithValue("@Id", id);
             cmd.Parameters.AddWithValue("@Name", applicant.Name);
             cmd.Parameters.AddWithValue("@LastName", applicant.LastName);
             cmd.Parameters.AddWithValue("@FathersName", applicant.FathersName);
             cmd.Parameters.AddWithValue("@Age", applicant.Age);
+            cmd.Parameters.AddWithValue("@ServeStatusTypeId", applicant.ServeStatusTypeId);
             cmd.Parameters.AddWithValue("@WorkExperience", applicant.WorkExperience);
             cmd.Parameters.AddWithValue("@SalaryRequest", applicant.SalaryRequest);
             cmd.Parameters.AddWithValue("@JobName", applicant.JobName);
             cmd.Parameters.AddWithValue("@ResumeDescription", applicant.ResumeDescription);
-            cmd.Parameters.AddWithValue("@ServeStatusTypeId", applicant.ServeStatusTypeId);
 
 
             sqlConnection.Open();
