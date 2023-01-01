@@ -15,7 +15,6 @@ namespace RecruimentSystem.UI
         {
             InitializeComponent();
             userRepository = new UserRepository();
-
         }
 
         private void CreateUser_Click(object sender, EventArgs e)
@@ -76,7 +75,6 @@ namespace RecruimentSystem.UI
                 }
                 else
                     MessageBox.Show("No User Found");
-
             }
         }
 

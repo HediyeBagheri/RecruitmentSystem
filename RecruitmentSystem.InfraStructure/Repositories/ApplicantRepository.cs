@@ -13,13 +13,21 @@ namespace RecruitmentSystem.InfraStructure.Repositories
     public class ApplicantRepository : QueryRepository,IApplicantRepository
     {
 
-        public void Update(Applicant applicant,int id)
+ IAmirMoeinBranch
+        public void Update(Applicant applicant, int applicantId)
+=======
+        public void Update(Applicant applicant, int applicantId)
+  main
         {
             var cmd = new SqlCommand("Usp_Applicant_Update", sqlConnection);
 
             cmd.CommandType = CommandType.StoredProcedure;
 
+ IAmirMoeinBranch
+            cmd.Parameters.AddWithValue("@Id", applicantId);
+=======
             cmd.Parameters.AddWithValue("@Id", id);
+ main
             cmd.Parameters.AddWithValue("@Name", applicant.Name);
             cmd.Parameters.AddWithValue("@LastName", applicant.LastName);
             cmd.Parameters.AddWithValue("@FathersName", applicant.FathersName);
@@ -27,7 +35,7 @@ namespace RecruitmentSystem.InfraStructure.Repositories
             cmd.Parameters.AddWithValue("@ServeStatusTypeId", applicant.ServeStatusTypeId);
             cmd.Parameters.AddWithValue("@WorkExperience", applicant.WorkExperience);
             cmd.Parameters.AddWithValue("@SalaryRequest", applicant.SalaryRequest);
-            cmd.Parameters.AddWithValue("@JobName", applicant.JobName);
+            cmd.Parameters.AddWithValue("@JobId", applicant.JobId);
             cmd.Parameters.AddWithValue("@ResumeDescription", applicant.ResumeDescription);
 
 
@@ -37,7 +45,7 @@ namespace RecruitmentSystem.InfraStructure.Repositories
 
             sqlConnection.Close();
         }
-        public DataTable GetSevrveStatusData()
+        public DataTable GetServeStatusData()
         {
             
                 DataTable dataTable = new DataTable();
