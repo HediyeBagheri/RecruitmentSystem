@@ -10,8 +10,10 @@ namespace RecruitmentSystem.InfraStructure.IRepositories
 {
     public interface IApplicantRepository
     {
-        void Update(Applicant applicant, int id);
-        DataTable GetSevrveStatusData();
+
+        void Update(Applicant applicant, int applicantId);
+        DataTable GetServeStatusData();
+   
         DataTable GetJobData();
         DataTable GetAll(int applicantId);
     }

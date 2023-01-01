@@ -1,20 +1,10 @@
-﻿using Microsoft.Data.SqlClient;
-using Microsoft.VisualBasic.ApplicationServices;
-using RecruimentSystem.UI;
-using RecruitmentSystem.InfraStructure.IRepositories;
+﻿using RecruitmentSystem.InfraStructure.IRepositories;
 using RecruitmentSystem.InfraStructure.Repositories;
 using RecruitmentSystem.Model.Models.Users;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace RecruitmentSystem.UI
 {
@@ -27,39 +17,39 @@ namespace RecruitmentSystem.UI
             applicantRepository = new ApplicantRepository();
             this.applicantId = applicantId;
             InitializeComponent();
-            FormLoadJob();
+        }
+
+        private void PutData()
+        {
+            var dt = applicantRepository.GetAll(applicantId);
+            var drs = dt.Select();
+            var dr = drs[0];
+            for (int i = 0; i < dt.Columns.Count; i++)
+            {
+                TxtBoxName.Text = dr[1].ToString();
+                TxtBoxLastName.Text = dr[2].ToString();
+                TxtBoxFatherName.Text = dr[3].ToString();
+                TxtBoxAge.Text = dr[4].ToString();
+                CmbBoxServeStatus.SelectedIndex = Convert.ToInt32(dr[5].ToString());
+                TxtWorkExperience.Text = dr[6].ToString();
+                TxtSalaryPropose.Text = dr[7].ToString();
+                JobCmbBox.SelectedIndex = Convert.ToInt32(dr[8].ToString());
+                TxtDescription.Text = dr[9].ToString();
+            }
+
+           
         }
 
         private void ValidateUser()
         {
-            if (string.IsNullOrEmpty(TxtBoxName.Text))
-                throw new ArgumentNullException();
-
-            if (string.IsNullOrEmpty(TxtBoxLastName.Text))
-                throw new ArgumentNullException();
-
-            if (string.IsNullOrEmpty(TxtBoxAge.Text))
-                throw new ArgumentNullException();
-
-            if (string.IsNullOrEmpty(TxtWorkExperience.Text))
-                throw new ArgumentNullException();
-
-            if (string.IsNullOrEmpty(TxtSalaryPropose.Text))
-                throw new ArgumentNullException();
-
-            if (string.IsNullOrEmpty(JobCmbBox.Text))
-                throw new ArgumentNullException();
-
-            if (string.IsNullOrEmpty(TxtDescraption.Text))
-                throw new ArgumentNullException();
-
 
         }
 
         private void Form_Load(object sender, EventArgs e)
         {
-            var dt = applicantRepository.GetSevrveStatusData();
-            KeyValue keyValue1 = default;
+            FormLoadJob();
+            var dt = applicantRepository.GetServeStatusData();
+            KeyValue keyValue1;
 
             List<KeyValue> list = new List<KeyValue>();
             foreach (var dataRow in dt.Select())
@@ -74,13 +64,14 @@ namespace RecruitmentSystem.UI
             CmbBoxServeStatus.DataSource = list;
             CmbBoxServeStatus.ValueMember = "Value";
             CmbBoxServeStatus.DisplayMember = "Key";
+            PutData();
 
         }
 
         private void FormLoadJob()
         {
             var dt = applicantRepository.GetJobData();
-            KeyValue keyValue = default;
+            KeyValue keyValue;
 
             List<KeyValue> list = new List<KeyValue>();
             foreach (var dataRow in dt.Select())
@@ -111,12 +102,14 @@ namespace RecruitmentSystem.UI
                 ServeStatusTypeId = CmbBoxServeStatus.SelectedIndex + 1,
                 WorkExperience = TxtWorkExperience.Text,
                 SalaryRequest = Convert.ToDecimal(TxtSalaryPropose.Text),
-                JobName = JobCmbBox.SelectedText,
-                ResumeDescription = TxtDescraption.Text
+                JobId = JobCmbBox.SelectedIndex,
+                ResumeDescription = TxtDescription.Text
             };
             applicantRepository.Update(applicant,applicantId);
-           var frm= Application.OpenForms;
+
+            var frm = Application.OpenForms;
             var x = frm["ApplicantPanelForm"];
+            
             x.Show();
             this.Hide();
 

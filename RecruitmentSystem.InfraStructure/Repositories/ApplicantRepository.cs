@@ -1,25 +1,19 @@
-﻿using System.Data.SqlClient;
-using RecruitmentSystem.InfraStructure.IRepositories;
-using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using RecruitmentSystem.InfraStructure.IRepositories;
 using RecruitmentSystem.Model.Models.Users;
+using System.Data;
+using System.Data.SqlClient;
 
 namespace RecruitmentSystem.InfraStructure.Repositories
 {
-    public class ApplicantRepository : QueryRepository,IApplicantRepository
+    public class ApplicantRepository : QueryRepository, IApplicantRepository
     {
-
-        public void Update(Applicant applicant,int id)
+        public void Update(Applicant applicant, int applicantId)
         {
             var cmd = new SqlCommand("Usp_Applicant_Update", sqlConnection);
 
             cmd.CommandType = CommandType.StoredProcedure;
 
-            cmd.Parameters.AddWithValue("@Id", id);
+            cmd.Parameters.AddWithValue("@Id", applicantId);
             cmd.Parameters.AddWithValue("@Name", applicant.Name);
             cmd.Parameters.AddWithValue("@LastName", applicant.LastName);
             cmd.Parameters.AddWithValue("@FathersName", applicant.FathersName);
@@ -27,7 +21,7 @@ namespace RecruitmentSystem.InfraStructure.Repositories
             cmd.Parameters.AddWithValue("@ServeStatusTypeId", applicant.ServeStatusTypeId);
             cmd.Parameters.AddWithValue("@WorkExperience", applicant.WorkExperience);
             cmd.Parameters.AddWithValue("@SalaryRequest", applicant.SalaryRequest);
-            cmd.Parameters.AddWithValue("@JobName", applicant.JobName);
+            cmd.Parameters.AddWithValue("@JobId", applicant.JobId);
             cmd.Parameters.AddWithValue("@ResumeDescription", applicant.ResumeDescription);
 
 
@@ -37,25 +31,25 @@ namespace RecruitmentSystem.InfraStructure.Repositories
 
             sqlConnection.Close();
         }
-        public DataTable GetSevrveStatusData()
+        public DataTable GetServeStatusData()
         {
-            
-                DataTable dataTable = new DataTable();
 
-                var cmd = new SqlCommand("Usp_ServeStatusType_Select", sqlConnection);
+            DataTable dataTable = new DataTable();
 
-                cmd.CommandType = CommandType.StoredProcedure;
+            var cmd = new SqlCommand("Usp_ServeStatusType_Select", sqlConnection);
+
+            cmd.CommandType = CommandType.StoredProcedure;
 
 
 
-                sqlConnection.Open();
+            sqlConnection.Open();
 
-                var reader = cmd.ExecuteReader();
+            var reader = cmd.ExecuteReader();
 
-                dataTable.Load(reader);
-                sqlConnection.Close();
-                return dataTable;
-            
+            dataTable.Load(reader);
+            sqlConnection.Close();
+            return dataTable;
+
         }
 
         public DataTable GetJobData()
@@ -76,7 +70,7 @@ namespace RecruitmentSystem.InfraStructure.Repositories
             sqlConnection.Close();
             return dataTable;
         }
-         public DataTable GetAll(int applicantId) 
+        public DataTable GetAll(int applicantId)
         {
             DataTable dataTable = new DataTable();
 
@@ -94,6 +88,6 @@ namespace RecruitmentSystem.InfraStructure.Repositories
             dataTable.Load(reader);
             sqlConnection.Close();
             return dataTable;
-        }    
+        }
     }
 }

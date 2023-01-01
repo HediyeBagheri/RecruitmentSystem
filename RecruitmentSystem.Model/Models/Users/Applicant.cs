@@ -7,25 +7,25 @@ namespace RecruitmentSystem.Model.Models.Users
         public int Id { get; set; }
 
         [StringLength(64)]
-        public string Name { get; set; }
+        public string? Name { get; set; }
 
         [StringLength(64)]
-        public string LastName { get; set; }
+        public string? LastName { get; set; }
 
         [StringLength(64)]
-        public string FathersName { get; set; }
+        public string? FathersName { get; set; }
 
-        public int Age { get; set; }
+        public int? Age { get; set; }
 
-        public int ServeStatusTypeId { get; set;}
+        public int? ServeStatusTypeId { get; set;}
 
-        public string WorkExperience { get; set; }
+        public string? WorkExperience { get; set; }
 
-        public decimal SalaryRequest { get; set; }
+        public decimal? SalaryRequest { get; set; }
 
         [StringLength(64)]
-        public string JobName { get; set; }
+        public int JobId { get; set; }
 
-        public string ResumeDescription { get; set; }
+        public string? ResumeDescription { get; set; }
     }
 }
