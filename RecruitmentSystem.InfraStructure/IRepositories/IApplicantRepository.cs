@@ -11,7 +11,7 @@ namespace RecruitmentSystem.InfraStructure.IRepositories
     public interface IApplicantRepository
     {
         void Update(Applicant applicant);
-        DataTable GetSevrveStatusData();
+        DataTable GetServeStatusData();
         DataTable GetJobData();
         DataTable GetAll(int applicantId);
     }

@@ -26,7 +26,7 @@ namespace RecruitmentSystem.InfraStructure.Repositories
             cmd.Parameters.AddWithValue("@Age", applicant.Age);
             cmd.Parameters.AddWithValue("@WorkExperience", applicant.WorkExperience);
             cmd.Parameters.AddWithValue("@SalaryRequest", applicant.SalaryRequest);
-            cmd.Parameters.AddWithValue("@JobName", applicant.JobName);
+            cmd.Parameters.AddWithValue("@JobId", applicant.JobId);
             cmd.Parameters.AddWithValue("@ResumeDescription", applicant.ResumeDescription);
             cmd.Parameters.AddWithValue("@ServeStatusTypeId", applicant.ServeStatusTypeId);
 
@@ -37,7 +37,7 @@ namespace RecruitmentSystem.InfraStructure.Repositories
 
             sqlConnection.Close();
         }
-        public DataTable GetSevrveStatusData()
+        public DataTable GetServeStatusData()
         {
             
                 DataTable dataTable = new DataTable();
