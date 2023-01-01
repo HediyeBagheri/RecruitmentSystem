@@ -13,22 +13,30 @@ namespace RecruitmentSystem.InfraStructure.Repositories
     public class ApplicantRepository : QueryRepository,IApplicantRepository
     {
 
+ IAmirMoeinBranch
         public void Update(Applicant applicant, int applicantId)
+=======
+        public void Update(Applicant applicant, int applicantId)
+  main
         {
             var cmd = new SqlCommand("Usp_Applicant_Update", sqlConnection);
 
             cmd.CommandType = CommandType.StoredProcedure;
 
+ IAmirMoeinBranch
             cmd.Parameters.AddWithValue("@Id", applicantId);
+=======
+            cmd.Parameters.AddWithValue("@Id", id);
+ main
             cmd.Parameters.AddWithValue("@Name", applicant.Name);
             cmd.Parameters.AddWithValue("@LastName", applicant.LastName);
             cmd.Parameters.AddWithValue("@FathersName", applicant.FathersName);
             cmd.Parameters.AddWithValue("@Age", applicant.Age);
+            cmd.Parameters.AddWithValue("@ServeStatusTypeId", applicant.ServeStatusTypeId);
             cmd.Parameters.AddWithValue("@WorkExperience", applicant.WorkExperience);
             cmd.Parameters.AddWithValue("@SalaryRequest", applicant.SalaryRequest);
             cmd.Parameters.AddWithValue("@JobId", applicant.JobId);
             cmd.Parameters.AddWithValue("@ResumeDescription", applicant.ResumeDescription);
-            cmd.Parameters.AddWithValue("@ServeStatusTypeId", applicant.ServeStatusTypeId);
 
 
             sqlConnection.Open();

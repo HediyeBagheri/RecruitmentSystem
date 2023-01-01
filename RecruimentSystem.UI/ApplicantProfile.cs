@@ -106,7 +106,11 @@ namespace RecruitmentSystem.UI
                 ResumeDescription = TxtDescription.Text
             };
             applicantRepository.Update(applicant,applicantId);
+IAmirMoeinBranch
             var frm = Application.OpenForms;
+=======
+            var frm = Application.OpenForms;
+ main
             var x = frm["ApplicantPanelForm"];
             
             x.Show();
