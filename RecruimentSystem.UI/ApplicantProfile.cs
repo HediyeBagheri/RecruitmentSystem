@@ -105,7 +105,7 @@ namespace RecruitmentSystem.UI
                 JobId = JobCmbBox.SelectedIndex,
                 ResumeDescription = TxtDescription.Text
             };
-            applicantRepository.Update(applicant);
+            applicantRepository.Update(applicant,applicantId);
             var frm = Application.OpenForms;
             var x = frm["ApplicantPanelForm"];
             
