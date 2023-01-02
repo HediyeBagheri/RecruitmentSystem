@@ -7,6 +7,7 @@ using RecruitmentSystem.Model.Offers;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.ComponentModel.Design;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
@@ -101,21 +102,24 @@ namespace RecruitmentSystem.UI
 
         private void BtnCompanyReq_Click(object sender, EventArgs e)
         {
+            int companyId = 0;
             ValidateCompanyOffer();
             var companyOfferDetail = new CompanyOfferDetail()
-            { 
+            {
                 CompanyName = TxtCompanyName.Text,
                 JobName = CmbJobName.Text,
                 SalaryPropose = Convert.ToDecimal(TxtSalaryPropose.Text),
                 Location = TxtLocation.Text,
                 MinimumWorkExperience = Convert.ToInt32(TxtMinWorkExperience.Text),
-                TypeOfCooperationId = CmbTypeOfCooperation.SelectedIndex+1,
+                TypeOfCooperationId = CmbTypeOfCooperation.SelectedIndex + 1,
                 MinimumEducationDegree = TxtMinEducationDegree.Text,
                 Description = TxtDescription.Text,
-                //ImagePath = 
+                //ImagePath = PicBoxComRequest.ImageLocation
             };
-            companyOfferRepository.Add(companyOfferDetail);
+            companyOfferRepository.Add(companyOfferDetail,companyId);
             this.Hide();
+            var comOfferFrm = new CompanyOfferForm();
+            comOfferFrm.Show();
         }
     }
 }

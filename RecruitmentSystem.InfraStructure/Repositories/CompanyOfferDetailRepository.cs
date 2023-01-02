@@ -4,6 +4,7 @@ using RecruitmentSystem.Model.Models.Users;
 using RecruitmentSystem.Model.Offers;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.Design;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
@@ -15,7 +16,9 @@ namespace RecruitmentSystem.InfraStructure.Repositories
 {
     public class CompanyOfferDetailRepository : QueryRepository, ICompanyOfferDetailRepository
     {
-        public List<CompanyOfferDetail> GetAll()
+       
+
+    public List<CompanyOfferDetail> GetAll()
         {
             return new List<CompanyOfferDetail>
             {
@@ -83,21 +86,22 @@ namespace RecruitmentSystem.InfraStructure.Repositories
             return dataTable;
         }
 
-        public void Add(CompanyOfferDetail companyOffer)
+        public void Add(CompanyOfferDetail companyOffer, int companyId)
         {
-            var cmd = new SqlCommand("Usp_CompanyOfferDetail_Add", sqlConnection);
+            var cmd = new SqlCommand("Usp_CompanyOfferDetail_Update", sqlConnection);
 
             cmd.CommandType = CommandType.StoredProcedure;
 
+            cmd.Parameters.AddWithValue("@Id", companyId);
             cmd.Parameters.AddWithValue("@CompanyName", companyOffer.CompanyName);
-            cmd.Parameters.AddWithValue("@JobName", companyOffer.JobName);
             cmd.Parameters.AddWithValue("@SalaryPropose", companyOffer.SalaryPropose);
+            cmd.Parameters.AddWithValue("@JobName", companyOffer.JobName);
             cmd.Parameters.AddWithValue("@Location", companyOffer.Location);
             cmd.Parameters.AddWithValue("@MinimumWorkExperience", companyOffer.MinimumWorkExperience);
             cmd.Parameters.AddWithValue("@TypeOfCooperationId", companyOffer.TypeOfCooperationId);
             cmd.Parameters.AddWithValue("@MinimumEducationDegree", companyOffer.MinimumEducationDegree);
             cmd.Parameters.AddWithValue("@Description", companyOffer.Description);
-            cmd.Parameters.AddWithValue("@ImagePath", companyOffer.ImagePath);
+            //cmd.Parameters.AddWithValue("@ImagePath", companyOffer.ImagePath);
 
 
             sqlConnection.Open();
@@ -125,6 +129,26 @@ namespace RecruitmentSystem.InfraStructure.Repositories
             sqlConnection.Close();
             return dataTable;
         }
+
+        //public DataTable Get()
+        //{
+        //    DataTable dataTable = new DataTable();
+
+        //    var cmd = new SqlCommand("Usp_CompanyOfferDetail_GetData", sqlConnection);
+        //    //cmd.Parameters.AddWithValue("@Id", companyOfferDetailId);
+
+        //    cmd.CommandType = CommandType.StoredProcedure;
+
+
+
+        //    sqlConnection.Open();
+
+        //    var reader = cmd.ExecuteReader();
+
+        //    dataTable.Load(reader);
+        //    sqlConnection.Close();
+        //    return dataTable;
+        //}
     }
 }
 

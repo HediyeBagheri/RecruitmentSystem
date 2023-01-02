@@ -9,16 +9,14 @@ namespace RecruitmentSystem.UI
 {
     public partial class CompanyPanelForm : Form
     {
-        private readonly IUserRepository userRepository;
         private readonly ICompanyRepository companyRepository;
         private DataTable companyData;
         private int companyId;
-        public CompanyPanelForm(int id)
+        public CompanyPanelForm(int companyId)
         {
             InitializeComponent();
-            userRepository = new UserRepository();
             companyRepository = new CompanyRepository();
-            companyId = id;
+            this.companyId = companyId;
         }
 
         private void CompanyRecruitBtn_Click(object sender, EventArgs e)
@@ -41,10 +39,9 @@ namespace RecruitmentSystem.UI
 
         }
 
-        private void LblWelcome_Click()
-        {
-            companyData = companyRepository.GetAll(companyId);
 
-        }
+     
+
+
     }
 }
