@@ -16,10 +16,17 @@ namespace RecruitmentSystem.UI
     public partial class CompanyProfileForm : Form
     {
         private readonly ICompanyRepository companyRepository;
+        private int companyId;
+
         public CompanyProfileForm()
         {
             InitializeComponent();
             companyRepository = new CompanyRepository();
+        }
+
+        public CompanyProfileForm(int companyId)
+        {
+            this.companyId = companyId;
         }
 
         private void ValidateCompany()

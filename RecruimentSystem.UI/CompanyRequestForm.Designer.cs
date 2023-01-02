@@ -30,6 +30,7 @@
         {
             this.BtnCompanyReq = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.PicBoxComRequest = new System.Windows.Forms.PictureBox();
             this.CmbJobName = new System.Windows.Forms.ComboBox();
             this.TxtMinEducationDegree = new System.Windows.Forms.TextBox();
             this.CmbTypeOfCooperation = new System.Windows.Forms.ComboBox();
@@ -46,9 +47,8 @@
             this.SalaryPropose = new System.Windows.Forms.Label();
             this.JobName = new System.Windows.Forms.Label();
             this.CompanyName = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PicBoxComRequest)).BeginInit();
             this.SuspendLayout();
             // 
             // BtnCompanyReq
@@ -63,7 +63,7 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.pictureBox1);
+            this.groupBox1.Controls.Add(this.PicBoxComRequest);
             this.groupBox1.Controls.Add(this.CmbJobName);
             this.groupBox1.Controls.Add(this.TxtMinEducationDegree);
             this.groupBox1.Controls.Add(this.CmbTypeOfCooperation);
@@ -86,6 +86,14 @@
             this.groupBox1.TabIndex = 49;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "groupBox1";
+            // 
+            // PicBoxComRequest
+            // 
+            this.PicBoxComRequest.Location = new System.Drawing.Point(53, 56);
+            this.PicBoxComRequest.Name = "PicBoxComRequest";
+            this.PicBoxComRequest.Size = new System.Drawing.Size(179, 151);
+            this.PicBoxComRequest.TabIndex = 71;
+            this.PicBoxComRequest.TabStop = false;
             // 
             // CmbJobName
             // 
@@ -218,14 +226,6 @@
             this.CompanyName.TabIndex = 48;
             this.CompanyName.Text = "نام شرکت";
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(53, 56);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(179, 151);
-            this.pictureBox1.TabIndex = 71;
-            this.pictureBox1.TabStop = false;
-            // 
             // CompanyRequestForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -238,7 +238,7 @@
             this.Load += new System.EventHandler(this.Form_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PicBoxComRequest)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -263,6 +263,6 @@
         private System.Windows.Forms.TextBox TxtCompanyName;
         public System.Windows.Forms.RichTextBox TxtDescription;
         private System.Windows.Forms.ComboBox CmbJobName;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox PicBoxComRequest;
     }
 }
