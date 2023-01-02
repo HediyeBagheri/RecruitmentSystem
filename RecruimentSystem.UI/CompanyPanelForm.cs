@@ -11,7 +11,6 @@ namespace RecruitmentSystem.UI
     {
         private readonly IUserRepository userRepository;
         private readonly ICompanyRepository companyRepository;
-        private DataTable companyData;
         private int companyId;
         public CompanyPanelForm(int id)
         {
@@ -43,7 +42,7 @@ namespace RecruitmentSystem.UI
 
         private void LblWelcome_Click()
         {
-            companyData = companyRepository.GetAll(companyId);
+            var companyData = companyRepository.GetAll(companyId);
 
         }
     }
