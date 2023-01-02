@@ -3,7 +3,6 @@ using RecruitmentSystem.InfraStructure.Repositories;
 using RecruitmentSystem.Model.Models.Users;
 using System;
 using System.Collections.Generic;
-using System.Data;
 using System.Windows.Forms;
 
 namespace RecruitmentSystem.UI
@@ -24,20 +23,17 @@ namespace RecruitmentSystem.UI
             var dt = applicantRepository.GetAll(applicantId);
             var drs = dt.Select();
             var dr = drs[0];
-            for (int i = 0; i < dt.Columns.Count; i++)
-            {
-                TxtBoxName.Text = dr[1].ToString();
-                TxtBoxLastName.Text = dr[2].ToString();
-                TxtBoxFatherName.Text = dr[3].ToString();
-                TxtBoxAge.Text = dr[4].ToString();
-                CmbBoxServeStatus.SelectedIndex = Convert.ToInt32(dr[5].ToString());
-                TxtWorkExperience.Text = dr[6].ToString();
-                TxtSalaryPropose.Text = dr[7].ToString();
-                JobCmbBox.SelectedIndex = Convert.ToInt32(dr[8].ToString());
-                TxtDescription.Text = dr[9].ToString();
-            }
 
-           
+            TxtBoxName.Text = dr["Name"].ToString();
+            TxtBoxLastName.Text = dr["LastName"].ToString();
+            TxtBoxFatherName.Text = dr["FathersName"].ToString();
+            TxtBoxAge.Text = dr["Age"].ToString();
+            CmbBoxServeStatus.SelectedIndex = Convert.ToInt32(dr["ServeStatusTypeId"].ToString()) - 1;
+            TxtWorkExperience.Text = dr["WorkExperience"].ToString();
+            TxtSalaryPropose.Text = dr["SalaryRequest"].ToString();
+            JobCmbBox.SelectedIndex = Convert.ToInt32(dr["JobId"].ToString()) - 1;
+            TxtDescription.Text = dr["ResumeDescription"].ToString();
+
         }
 
         private void ValidateUser()
@@ -102,14 +98,14 @@ namespace RecruitmentSystem.UI
                 ServeStatusTypeId = CmbBoxServeStatus.SelectedIndex + 1,
                 WorkExperience = TxtWorkExperience.Text,
                 SalaryRequest = Convert.ToDecimal(TxtSalaryPropose.Text),
-                JobId = JobCmbBox.SelectedIndex,
+                JobId = JobCmbBox.SelectedIndex + 1,
                 ResumeDescription = TxtDescription.Text
             };
-            applicantRepository.Update(applicant,applicantId);
+            applicantRepository.Update(applicant, applicantId);
 
             var frm = Application.OpenForms;
             var x = frm["ApplicantPanelForm"];
-            
+
             x.Show();
             this.Hide();
 
