@@ -10,13 +10,25 @@ namespace RecruitmentSystem.UI
     public partial class CompanyPanelForm : Form
     {
         private readonly ICompanyRepository companyRepository;
-        private DataTable companyData;
         private int companyId;
         public CompanyPanelForm(int companyId)
         {
             InitializeComponent();
             companyRepository = new CompanyRepository();
             this.companyId = companyId;
+        }
+        private void FillWelcomeData()
+        {
+            var companyData = companyRepository.GetAll(companyId);
+            string name = "";
+            foreach (var dataRow in companyData.Select())
+            {
+                name = dataRow["Name"].ToString();
+            }
+
+            string x = LblWelcome.Text;
+            string y = x + " " + name;
+            LblWelcome.Text = y;
         }
 
         private void CompanyRecruitBtn_Click(object sender, EventArgs e)
@@ -26,9 +38,11 @@ namespace RecruitmentSystem.UI
             this.Hide();
         }
 
-        private void EducationBtn_Click(object sender, EventArgs e)
+        private void BtnProfile_Click(object sender, EventArgs e)
         {
-           
+            var frm = new CompanyProfileForm(companyId);
+            frm.Show();
+            this.Hide();
         }
 
         private void Request_Click(object sender, EventArgs e)
@@ -39,9 +53,9 @@ namespace RecruitmentSystem.UI
 
         }
 
-
-     
-
-
+        private void CompanyPanelForm_Load(object sender, EventArgs e)
+        {
+            FillWelcomeData();
+        }
     }
 }
