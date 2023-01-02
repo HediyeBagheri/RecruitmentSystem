@@ -42,8 +42,5 @@ namespace RecruitmentSystem.UI
                 flowLayoutPanel1.Controls.Add(companyOfferControl);
             }
         }
-
-        
-
     }
 }
