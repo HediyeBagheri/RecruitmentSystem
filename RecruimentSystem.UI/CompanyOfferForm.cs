@@ -40,7 +40,6 @@ namespace RecruitmentSystem.UI
                 companyOfferControl.LblTypeOfCooperation.Text = companyOfferDetail.TypeOfCooperationId.ToString();
                 companyOfferControl.pictureBox1.Image = Image.FromFile(companyOfferDetail.ImagePath);
                 flowLayoutPanel1.Controls.Add(companyOfferControl);
-
             }
         }
 
