@@ -94,7 +94,7 @@ namespace RecruitmentSystem.UI
                 Name = TxtBoxName.Text,
                 LastName = TxtBoxLastName.Text,
                 FathersName = TxtBoxFatherName.Text,
-                Age = Convert.ToInt32(TxtBoxAge.Text),
+                Age = Convert.ToInt16(TxtBoxAge.Text),
                 ServeStatusTypeId = CmbBoxServeStatus.SelectedIndex + 1,
                 WorkExperience = TxtWorkExperience.Text,
                 SalaryRequest = Convert.ToDecimal(TxtSalaryPropose.Text),
@@ -103,12 +103,12 @@ namespace RecruitmentSystem.UI
             };
             applicantRepository.Update(applicant, applicantId);
 
-            var frm = Application.OpenForms;
-            var x = frm["ApplicantPanelForm"];
-
-            x.Show();
+            var openForms = Application.OpenForms;
+            var x = openForms["ApplicantPanelForm"];
+            x.Close();
+            var frm = new ApplicantPanelForm(applicantId);
             this.Hide();
-
+            frm.Show();
         }
     }
 }
