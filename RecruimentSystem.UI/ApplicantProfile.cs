@@ -94,7 +94,7 @@ namespace RecruitmentSystem.UI
                 Name = TxtBoxName.Text,
                 LastName = TxtBoxLastName.Text,
                 FathersName = TxtBoxFatherName.Text,
-                Age = Convert.ToInt16(TxtBoxAge.Text),
+                Age = string.IsNullOrEmpty(TxtBoxAge.Text) == false ? Convert.ToInt16(TxtBoxAge.Text) : null,
                 ServeStatusTypeId = CmbBoxServeStatus.SelectedIndex + 1,
                 WorkExperience = TxtWorkExperience.Text,
                 SalaryRequest = Convert.ToDecimal(TxtSalaryPropose.Text),
