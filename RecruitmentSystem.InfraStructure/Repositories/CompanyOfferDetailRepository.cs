@@ -4,6 +4,7 @@ using RecruitmentSystem.Model.Models.Users;
 using RecruitmentSystem.Model.Offers;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.Design;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
@@ -15,6 +16,8 @@ namespace RecruitmentSystem.InfraStructure.Repositories
 {
     public class CompanyOfferDetailRepository : QueryRepository, ICompanyOfferDetailRepository
     {
+
+
         public List<CompanyOfferDetail> GetAll()
         {
             return new List<CompanyOfferDetail>
@@ -85,13 +88,13 @@ namespace RecruitmentSystem.InfraStructure.Repositories
 
         public void Add(CompanyOfferDetail companyOffer)
         {
-            var cmd = new SqlCommand("Usp_CompanyOfferDetail_Add", sqlConnection);
+            var cmd = new SqlCommand("Usp_CompanyOfferDetail_Insert", sqlConnection);
 
             cmd.CommandType = CommandType.StoredProcedure;
 
             cmd.Parameters.AddWithValue("@CompanyName", companyOffer.CompanyName);
-            cmd.Parameters.AddWithValue("@JobName", companyOffer.JobName);
             cmd.Parameters.AddWithValue("@SalaryPropose", companyOffer.SalaryPropose);
+            cmd.Parameters.AddWithValue("@JobName", companyOffer.JobName);
             cmd.Parameters.AddWithValue("@Location", companyOffer.Location);
             cmd.Parameters.AddWithValue("@MinimumWorkExperience", companyOffer.MinimumWorkExperience);
             cmd.Parameters.AddWithValue("@TypeOfCooperationId", companyOffer.TypeOfCooperationId);
@@ -112,6 +115,25 @@ namespace RecruitmentSystem.InfraStructure.Repositories
             DataTable dataTable = new DataTable();
 
             var cmd = new SqlCommand("Usp_Job_Select", sqlConnection);
+
+            cmd.CommandType = CommandType.StoredProcedure;
+
+
+
+            sqlConnection.Open();
+
+            var reader = cmd.ExecuteReader();
+
+            dataTable.Load(reader);
+            sqlConnection.Close();
+            return dataTable;
+        }
+
+        public DataTable GetAll1()
+        {
+            DataTable dataTable = new DataTable();
+
+            var cmd = new SqlCommand("Usp_CompanyOfferDetail_GetData", sqlConnection);
 
             cmd.CommandType = CommandType.StoredProcedure;
 

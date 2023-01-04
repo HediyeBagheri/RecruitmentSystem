@@ -17,16 +17,28 @@ namespace RecruitmentSystem.UI
     {
         private readonly ICompanyRepository companyRepository;
         private int companyId;
-        public CompanyProfileForm(int companyId)
+
+        public CompanyProfileForm()
         {
             InitializeComponent();
             companyRepository = new CompanyRepository();
-            this.companyId=companyId;
+        }
+
+        public CompanyProfileForm(int companyId)
+        {
+            this.companyId = companyId;
         }
 
         private void ValidateCompany()
         {
-         
+            if (string.IsNullOrEmpty(TxtCompanyName.Text))
+                throw new ArgumentNullException();
+
+            if (string.IsNullOrEmpty(TxtManagerName.Text))
+                throw new ArgumentNullException();
+
+            if (string.IsNullOrEmpty(TxtBusiness.Text))
+                throw new ArgumentNullException();
 
 
         }
@@ -41,13 +53,6 @@ namespace RecruitmentSystem.UI
                 Address = TxtAddress.Text
             };
             companyRepository.Update(company);
-
-            var openForms = Application.OpenForms;
-            var x = openForms["CompanyPanelForm"];
-            x.Close();
-            var frm = new CompanyPanelForm(companyId);
-            this.Hide();
-            frm.Show();
         }
     }
 }

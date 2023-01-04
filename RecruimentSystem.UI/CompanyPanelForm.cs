@@ -9,15 +9,13 @@ namespace RecruitmentSystem.UI
 {
     public partial class CompanyPanelForm : Form
     {
-        private readonly IUserRepository userRepository;
         private readonly ICompanyRepository companyRepository;
         private int companyId;
-        public CompanyPanelForm(int id)
+        public CompanyPanelForm(int companyId)
         {
             InitializeComponent();
-            userRepository = new UserRepository();
             companyRepository = new CompanyRepository();
-            companyId = id;
+            this.companyId = companyId;
         }
         private void FillWelcomeData()
         {

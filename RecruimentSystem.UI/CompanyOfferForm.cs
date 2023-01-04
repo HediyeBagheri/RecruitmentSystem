@@ -26,19 +26,19 @@ namespace RecruitmentSystem.UI
 
         public void FillForm()
         {
-            var companyOfferDetails = companyOfferRepository.GetAll();
-            foreach (var companyOfferDetail in companyOfferDetails)
+            var companyOfferDetails = companyOfferRepository.GetAll1();
+            foreach (var companyOfferDetail in companyOfferDetails.Select())
             {
                 var companyOfferControl = new CompanyOfferControl();
-                companyOfferControl.CompanyNameLbl.Text = companyOfferDetail.CompanyName;
-                companyOfferControl.JonNameLbl.Text = companyOfferDetail.JobName;
-                companyOfferControl.SalaryProposeLbl.Text = companyOfferDetail.SalaryPropose.ToString();
-                companyOfferControl.LocationLbl.Text = companyOfferDetail.Location;
-                companyOfferControl.WorkExperienceLbl.Text = companyOfferDetail.MinimumWorkExperience.ToString();
-                companyOfferControl.EducationDegreeLbl.Text = companyOfferDetail.MinimumEducationDegree;
-                companyOfferControl.richTxtDescription.Text = companyOfferDetail.Description;
-                companyOfferControl.LblTypeOfCooperation.Text = companyOfferDetail.TypeOfCooperationId.ToString();
-                companyOfferControl.pictureBox1.Image = Image.FromFile(companyOfferDetail.ImagePath);
+                companyOfferControl.CompanyNameLbl.Text = companyOfferDetail["CompanyName"].ToString();
+                companyOfferControl.JonNameLbl.Text = companyOfferDetail["JobName"].ToString();
+                companyOfferControl.SalaryProposeLbl.Text = companyOfferDetail["SalaryPropose"].ToString();
+                companyOfferControl.LocationLbl.Text = companyOfferDetail["Location"].ToString();
+                companyOfferControl.WorkExperienceLbl.Text = companyOfferDetail["MinimumWorkExperience"].ToString(); 
+                companyOfferControl.EducationDegreeLbl.Text = companyOfferDetail["MinimumEducationDegree"].ToString(); 
+                companyOfferControl.richTxtDescription.Text = companyOfferDetail["SalaryPropose"].ToString();
+                companyOfferControl.LblTypeOfCooperation.Text = companyOfferDetail["TypeOfCooperationId"].ToString();
+                //companyOfferControl.pictureBox1.Image = Image.FromFile(companyOfferDetail["ImagePath"].ToString());
                 flowLayoutPanel1.Controls.Add(companyOfferControl);
             }
         }
