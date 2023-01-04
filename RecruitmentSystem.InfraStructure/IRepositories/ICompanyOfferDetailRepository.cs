@@ -12,8 +12,8 @@ namespace RecruitmentSystem.InfraStructure.IRepositories
     {
         List<CompanyOfferDetail> GetAll();
         DataTable GetComOfferCooperationType();
-        void Add(CompanyOfferDetail companyOffer,int companyId);
+        void Add(CompanyOfferDetail companyOffer);
         DataTable GetJobData();
-       // DataTable Get();
+        DataTable GetAll1();
     }
 }

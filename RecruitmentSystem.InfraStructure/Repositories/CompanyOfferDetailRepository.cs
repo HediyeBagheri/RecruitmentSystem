@@ -16,9 +16,9 @@ namespace RecruitmentSystem.InfraStructure.Repositories
 {
     public class CompanyOfferDetailRepository : QueryRepository, ICompanyOfferDetailRepository
     {
-       
 
-    public List<CompanyOfferDetail> GetAll()
+
+        public List<CompanyOfferDetail> GetAll()
         {
             return new List<CompanyOfferDetail>
             {
@@ -86,13 +86,12 @@ namespace RecruitmentSystem.InfraStructure.Repositories
             return dataTable;
         }
 
-        public void Add(CompanyOfferDetail companyOffer, int companyId)
+        public void Add(CompanyOfferDetail companyOffer)
         {
-            var cmd = new SqlCommand("Usp_CompanyOfferDetail_Update", sqlConnection);
+            var cmd = new SqlCommand("Usp_CompanyOfferDetail_Insert", sqlConnection);
 
             cmd.CommandType = CommandType.StoredProcedure;
 
-            cmd.Parameters.AddWithValue("@Id", companyId);
             cmd.Parameters.AddWithValue("@CompanyName", companyOffer.CompanyName);
             cmd.Parameters.AddWithValue("@SalaryPropose", companyOffer.SalaryPropose);
             cmd.Parameters.AddWithValue("@JobName", companyOffer.JobName);
@@ -101,7 +100,7 @@ namespace RecruitmentSystem.InfraStructure.Repositories
             cmd.Parameters.AddWithValue("@TypeOfCooperationId", companyOffer.TypeOfCooperationId);
             cmd.Parameters.AddWithValue("@MinimumEducationDegree", companyOffer.MinimumEducationDegree);
             cmd.Parameters.AddWithValue("@Description", companyOffer.Description);
-            //cmd.Parameters.AddWithValue("@ImagePath", companyOffer.ImagePath);
+            cmd.Parameters.AddWithValue("@ImagePath", companyOffer.ImagePath);
 
 
             sqlConnection.Open();
@@ -130,25 +129,24 @@ namespace RecruitmentSystem.InfraStructure.Repositories
             return dataTable;
         }
 
-        //public DataTable Get()
-        //{
-        //    DataTable dataTable = new DataTable();
+        public DataTable GetAll1()
+        {
+            DataTable dataTable = new DataTable();
 
-        //    var cmd = new SqlCommand("Usp_CompanyOfferDetail_GetData", sqlConnection);
-        //    //cmd.Parameters.AddWithValue("@Id", companyOfferDetailId);
+            var cmd = new SqlCommand("Usp_CompanyOfferDetail_GetData", sqlConnection);
 
-        //    cmd.CommandType = CommandType.StoredProcedure;
-
+            cmd.CommandType = CommandType.StoredProcedure;
 
 
-        //    sqlConnection.Open();
 
-        //    var reader = cmd.ExecuteReader();
+            sqlConnection.Open();
 
-        //    dataTable.Load(reader);
-        //    sqlConnection.Close();
-        //    return dataTable;
-        //}
+            var reader = cmd.ExecuteReader();
+
+            dataTable.Load(reader);
+            sqlConnection.Close();
+            return dataTable;
+        }
     }
 }
 

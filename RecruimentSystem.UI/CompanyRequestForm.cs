@@ -11,6 +11,7 @@ using System.ComponentModel.Design;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,6 +22,9 @@ namespace RecruitmentSystem.UI
     public partial class CompanyRequestForm : Form
     {
         private readonly ICompanyOfferDetailRepository companyOfferRepository;
+        private string imagePath = default;
+        private string imageName = default;
+
         public CompanyRequestForm()
         {
             InitializeComponent();
@@ -71,39 +75,15 @@ namespace RecruitmentSystem.UI
 
         private void ValidateCompanyOffer()
         {
-            if (string.IsNullOrEmpty(TxtCompanyName.Text))
-                throw new ArgumentNullException();
-            if (string.IsNullOrEmpty(CmbJobName.Text))
-                throw new ArgumentNullException();
-            if (string.IsNullOrEmpty(TxtSalaryPropose.Text))
-                throw new ArgumentNullException();
-            if (string.IsNullOrEmpty(TxtLocation.Text))
-                throw new ArgumentNullException();
-            if (string.IsNullOrEmpty(TxtMinWorkExperience.Text))
-                throw new ArgumentNullException();
-            if (string.IsNullOrEmpty(CmbTypeOfCooperation.Text))
-                throw new ArgumentNullException();
-            if (string.IsNullOrEmpty(TxtMinEducationDegree.Text))
-                throw new ArgumentNullException();
-
-            if (TxtCompanyName.Text.Length > 128)
-                throw new ArgumentOutOfRangeException();
-
-            if (TxtLocation.Text.Length > 64)
-                throw new ArgumentOutOfRangeException();
-
-            if (TxtMinEducationDegree.Text.Length > 64)
-                throw new ArgumentOutOfRangeException();
-
-            if (TxtMinWorkExperience.Text.Length > 128)
-                throw new ArgumentOutOfRangeException();
+            
 
         }
 
         private void BtnCompanyReq_Click(object sender, EventArgs e)
         {
-            int companyId = 0;
+            
             ValidateCompanyOffer();
+            //SaveFile(imagePath);
             var companyOfferDetail = new CompanyOfferDetail()
             {
                 CompanyName = TxtCompanyName.Text,
@@ -114,12 +94,40 @@ namespace RecruitmentSystem.UI
                 TypeOfCooperationId = CmbTypeOfCooperation.SelectedIndex + 1,
                 MinimumEducationDegree = TxtMinEducationDegree.Text,
                 Description = TxtDescription.Text,
-                //ImagePath = PicBoxComRequest.ImageLocation
+                ImagePath = ""
             };
-            companyOfferRepository.Add(companyOfferDetail,companyId);
+            companyOfferRepository.Add(companyOfferDetail);
             this.Hide();
             var comOfferFrm = new CompanyOfferForm();
             comOfferFrm.Show();
+        }
+
+        //private void SaveFile(string imagePath)
+        //{
+        //    using Stream stream = new FileStream(imagePath, FileMode.Open);
+        //    using var memoryStream = new MemoryStream();
+        //    stream.CopyTo(memoryStream);
+
+        //    string directory = string.Concat( AppDomain.CurrentDomain.BaseDirectory,"\\Images\\");
+        //    if (!Directory.Exists(imagePath))
+        //        Directory.CreateDirectory(imagePath);
+        //    File.WriteAllBytes(string.Concat(directory,imageName),
+        //        memoryStream.ToArray());
+
+        //}
+
+        private void openFileDialog1_FileOk(object sender, CancelEventArgs e)
+        {
+
+        }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            //if(openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                PicBoxComRequest.Image = Image.FromFile(openFileDialog1.FileName);
+            }
+
         }
     }
 }
