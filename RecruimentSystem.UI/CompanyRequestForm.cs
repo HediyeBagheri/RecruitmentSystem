@@ -94,7 +94,7 @@ namespace RecruitmentSystem.UI
                 TypeOfCooperationId = CmbTypeOfCooperation.SelectedIndex + 1,
                 MinimumEducationDegree = TxtMinEducationDegree.Text,
                 Description = TxtDescription.Text,
-                ImagePath = ""
+                //ImagePath = ""
             };
             companyOfferRepository.Add(companyOfferDetail);
             this.Hide();
@@ -125,7 +125,7 @@ namespace RecruitmentSystem.UI
         {
             //if(openFileDialog1.ShowDialog() == DialogResult.OK)
             {
-                PicBoxComRequest.Image = Image.FromFile(openFileDialog1.FileName);
+               // PicBoxComRequest.Image = Image.FromFile(openFileDialog1.FileName);
             }
 
         }

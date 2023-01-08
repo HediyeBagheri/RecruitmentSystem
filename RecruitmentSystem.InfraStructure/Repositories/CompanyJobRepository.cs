@@ -88,7 +88,7 @@ namespace RecruitmentSystem.InfraStructure.Repositories
 
         public void Add(CompanyJob companyOffer)
         {
-            var cmd = new SqlCommand("Usp_CompanyOfferDetail_Insert", sqlConnection);
+            var cmd = new SqlCommand("Usp_CompanyJob_Add", sqlConnection);
 
             cmd.CommandType = CommandType.StoredProcedure;
 
@@ -100,7 +100,7 @@ namespace RecruitmentSystem.InfraStructure.Repositories
             cmd.Parameters.AddWithValue("@TypeOfCooperationId", companyOffer.TypeOfCooperationId);
             cmd.Parameters.AddWithValue("@MinimumEducationDegree", companyOffer.MinimumEducationDegree);
             cmd.Parameters.AddWithValue("@Description", companyOffer.Description);
-            cmd.Parameters.AddWithValue("@ImagePath", companyOffer.ImagePath);
+            //cmd.Parameters.AddWithValue("@ImagePath", companyOffer.ImagePath);
 
 
             sqlConnection.Open();
@@ -133,7 +133,7 @@ namespace RecruitmentSystem.InfraStructure.Repositories
         {
             DataTable dataTable = new DataTable();
 
-            var cmd = new SqlCommand("Usp_CompanyOfferDetail_GetData", sqlConnection);
+            var cmd = new SqlCommand("Usp_CompanyJob_Select", sqlConnection);
 
             cmd.CommandType = CommandType.StoredProcedure;
 
