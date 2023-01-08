@@ -10,9 +10,9 @@ namespace RecruitmentSystem.InfraStructure.IRepositories
 {
     public interface ICompanyOfferDetailRepository
     {
-        List<CompanyOfferDetail> GetAll();
+        List<CompanyJob> GetAll();
         DataTable GetComOfferCooperationType();
-        void Add(CompanyOfferDetail companyOffer);
+        void Add(CompanyJob companyOffer);
         DataTable GetJobData();
         DataTable GetAll1();
     }
