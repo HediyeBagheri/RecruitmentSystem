@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace RecruitmentSystem.InfraStructure.IRepositories
 {
-    public interface ICompanyOfferDetailRepository
+    public interface ICompanyJobRepository
     {
         List<CompanyJob> GetAll();
         DataTable GetComOfferCooperationType();
