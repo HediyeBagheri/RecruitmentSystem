@@ -18,11 +18,11 @@ namespace RecruitmentSystem.InfraStructure.Repositories
     {
 
 
-        public List<CompanyOfferDetail> GetAll()
+        public List<CompanyJob> GetAll()
         {
-            return new List<CompanyOfferDetail>
+            return new List<CompanyJob>
             {
-                new CompanyOfferDetail
+                new CompanyJob
                 {
 
                         Id = 1,
@@ -39,7 +39,7 @@ namespace RecruitmentSystem.InfraStructure.Repositories
 
                 },
 
-                new CompanyOfferDetail
+                new CompanyJob
                 {
                     Id = 2,
                     CompanyName = "شرکت سهلان",
@@ -52,7 +52,7 @@ namespace RecruitmentSystem.InfraStructure.Repositories
                     Description = "مسلط به نرم افزارهای ,AutoCad,3D Max ,Sketch up ,V ray, Photoshop",
                     ImagePath = @"C:\Users\ADMIN\Pictures\sahlan.png"
                 },
-                new CompanyOfferDetail
+                new CompanyJob
                 {
                     Id = 2,
                     CompanyName = "شرکت صنایع",
@@ -86,7 +86,7 @@ namespace RecruitmentSystem.InfraStructure.Repositories
             return dataTable;
         }
 
-        public void Add(CompanyOfferDetail companyOffer)
+        public void Add(CompanyJob companyOffer)
         {
             var cmd = new SqlCommand("Usp_CompanyOfferDetail_Insert", sqlConnection);
 
