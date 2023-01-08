@@ -14,7 +14,7 @@ using SqlCommand = System.Data.SqlClient.SqlCommand;
 
 namespace RecruitmentSystem.InfraStructure.Repositories
 {
-    public class CompanyOfferDetailRepository : QueryRepository, ICompanyOfferDetailRepository
+    public class CompanyJobRepository : QueryRepository, ICompanyJobRepository
     {
 
 
