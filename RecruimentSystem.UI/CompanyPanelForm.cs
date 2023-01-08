@@ -11,6 +11,7 @@ namespace RecruitmentSystem.UI
     {
         private readonly ICompanyRepository companyRepository;
         private int companyId;
+        private DataTable companyData;
         public CompanyPanelForm(int companyId)
         {
             InitializeComponent();
@@ -19,7 +20,7 @@ namespace RecruitmentSystem.UI
         }
         private void FillWelcomeData()
         {
-            var companyData = companyRepository.GetAll(companyId);
+            companyData = companyRepository.GetAll(companyId);
             string name = "";
             foreach (var dataRow in companyData.Select())
             {

@@ -37,10 +37,9 @@
             // 
             // companyRecruitBtn
             // 
-            this.companyRecruitBtn.Location = new System.Drawing.Point(378, 261);
-            this.companyRecruitBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.companyRecruitBtn.Location = new System.Drawing.Point(432, 348);
             this.companyRecruitBtn.Name = "companyRecruitBtn";
-            this.companyRecruitBtn.Size = new System.Drawing.Size(95, 38);
+            this.companyRecruitBtn.Size = new System.Drawing.Size(109, 51);
             this.companyRecruitBtn.TabIndex = 0;
             this.companyRecruitBtn.Text = "استخدام";
             this.companyRecruitBtn.UseVisualStyleBackColor = true;
@@ -48,10 +47,9 @@
             // 
             // educationBtn
             // 
-            this.educationBtn.Location = new System.Drawing.Point(58, 261);
-            this.educationBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.educationBtn.Location = new System.Drawing.Point(66, 348);
             this.educationBtn.Name = "educationBtn";
-            this.educationBtn.Size = new System.Drawing.Size(110, 38);
+            this.educationBtn.Size = new System.Drawing.Size(126, 51);
             this.educationBtn.TabIndex = 2;
             this.educationBtn.Text = "تکمیل مشخصات";
             this.educationBtn.UseVisualStyleBackColor = true;
@@ -59,10 +57,9 @@
             // 
             // Request
             // 
-            this.Request.Location = new System.Drawing.Point(219, 261);
-            this.Request.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Request.Location = new System.Drawing.Point(250, 348);
             this.Request.Name = "Request";
-            this.Request.Size = new System.Drawing.Size(101, 38);
+            this.Request.Size = new System.Drawing.Size(115, 51);
             this.Request.TabIndex = 1;
             this.Request.Text = "ارسال درخواست";
             this.Request.UseVisualStyleBackColor = true;
@@ -71,32 +68,31 @@
             // label1
             // 
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(148, 23);
+            this.label1.Location = new System.Drawing.Point(169, 31);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(271, 63);
+            this.label1.Size = new System.Drawing.Size(310, 67);
             this.label1.TabIndex = 3;
             this.label1.Text = "COMPANY PANEL";
             // 
             // LblWelcome
             // 
             this.LblWelcome.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.LblWelcome.Location = new System.Drawing.Point(148, 77);
+            this.LblWelcome.Location = new System.Drawing.Point(169, 124);
             this.LblWelcome.Name = "LblWelcome";
-            this.LblWelcome.Size = new System.Drawing.Size(100, 26);
+            this.LblWelcome.Size = new System.Drawing.Size(372, 35);
             this.LblWelcome.TabIndex = 4;
             this.LblWelcome.Text = "Welcome";
             // 
             // CompanyPanelForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(527, 338);
+            this.ClientSize = new System.Drawing.Size(602, 451);
             this.Controls.Add(this.LblWelcome);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Request);
             this.Controls.Add(this.educationBtn);
             this.Controls.Add(this.companyRecruitBtn);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "CompanyPanelForm";
             this.Text = "CompanyPanelForm";
             this.Load += new System.EventHandler(this.CompanyPanelForm_Load);
