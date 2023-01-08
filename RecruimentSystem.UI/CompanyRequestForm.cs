@@ -84,7 +84,7 @@ namespace RecruitmentSystem.UI
             
             ValidateCompanyOffer();
             //SaveFile(imagePath);
-            var companyOfferDetail = new CompanyOfferDetail()
+            var companyOfferDetail = new CompanyJob()
             {
                 CompanyName = TxtCompanyName.Text,
                 JobName = CmbJobName.Text,

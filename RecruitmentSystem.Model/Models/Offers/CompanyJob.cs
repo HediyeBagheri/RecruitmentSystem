@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace RecruitmentSystem.Model.Offers
 {
-    public class CompanyOfferDetail
+    public class CompanyJob
     {
         public int Id { get; set; }
         [StringLength(128)]
