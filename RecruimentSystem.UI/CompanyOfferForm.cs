@@ -15,12 +15,12 @@ namespace RecruitmentSystem.UI
 {
     public partial class CompanyOfferForm : Form
     {
-        private readonly ICompanyOfferDetailRepository companyOfferRepository;
+        private readonly ICompanyJobRepository companyOfferRepository;
 
         public CompanyOfferForm()
         {
             InitializeComponent();
-            companyOfferRepository = new CompanyOfferDetailRepository();
+            companyOfferRepository = new CompanyJobRepository();
             FillForm();
         }
 
