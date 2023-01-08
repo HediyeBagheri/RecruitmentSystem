@@ -21,14 +21,14 @@ namespace RecruitmentSystem.UI
 {
     public partial class CompanyRequestForm : Form
     {
-        private readonly ICompanyOfferDetailRepository companyOfferRepository;
+        private readonly ICompanyJobRepository companyOfferRepository;
         private string imagePath = default;
         private string imageName = default;
 
         public CompanyRequestForm()
         {
             InitializeComponent();
-            companyOfferRepository = new CompanyOfferDetailRepository();
+            companyOfferRepository = new CompanyJobRepository();
             FillCmbJob();
         }
 
