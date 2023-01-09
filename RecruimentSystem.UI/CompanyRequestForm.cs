@@ -108,6 +108,8 @@ namespace RecruitmentSystem.UI
                 TypeOfCooperationId = CmbTypeOfCooperation.SelectedIndex + 1,
                 MinimumEducationDegree = TxtMinEducationDegree.Text,
                 Description = TxtDescription.Text,
+                Date = DateTime.Now,
+                
                 //ImagePath = ""
             };
             companyJobRepository.Add(companyOfferDetail);

@@ -1,5 +1,7 @@
-﻿using RecruitmentSystem.InfraStructure.IRepositories;
+﻿using RecruimentSystem.UI;
+using RecruitmentSystem.InfraStructure.IRepositories;
 using RecruitmentSystem.InfraStructure.Repositories;
+using RecruitmentSystem.Model.Models.Users;
 using System;
 using System.Data;
 using System.Windows.Forms;
@@ -65,6 +67,16 @@ namespace RecruitmentSystem.UI
         private void BtnMyRequests_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void BtnExit_Click(object sender, EventArgs e)
+        {
+            var openForms = Application.OpenForms;
+            var x = openForms["CompanyPanelForm"];
+            x.Close();
+            var frm = new LoginOrCreateUserForm();
+            this.Hide();
+            frm.Show();
         }
     }
 }
