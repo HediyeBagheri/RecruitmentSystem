@@ -50,7 +50,7 @@ namespace RecruitmentSystem.UI
         private void Request_Click(object sender, EventArgs e)
         {
             var openForms = Application.OpenForms;
-            var x = openForms["ApplicantRequestForm"];
+            var x = openForms["CompanyRequestForm"];
             if (x != null)
                 x.Close();
 
@@ -66,7 +66,14 @@ namespace RecruitmentSystem.UI
 
         private void BtnMyRequests_Click(object sender, EventArgs e)
         {
+            var openForms = Application.OpenForms;
+            var x = openForms["MyOffers"];
+            if (x != null)
+                x.Close();
 
+            var frm = new MyOffers(companyId);
+            this.Hide();
+            frm.Show();
         }
 
         private void BtnExit_Click(object sender, EventArgs e)
