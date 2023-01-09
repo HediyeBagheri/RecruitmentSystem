@@ -1,4 +1,5 @@
-﻿using RecruitmentSystem.InfraStructure.IRepositories;
+﻿using RecruimentSystem.UI;
+using RecruitmentSystem.InfraStructure.IRepositories;
 using RecruitmentSystem.InfraStructure.Repositories;
 using System;
 using System.Data;
@@ -63,6 +64,16 @@ namespace RecruitmentSystem.UI
         {
             FillWelcomeData();
 
+        }
+
+        private void BtnExit_Click(object sender, EventArgs e)
+        {
+            var openForms = Application.OpenForms;
+            var x = openForms["ApplicantPanelForm"];
+            x.Close();
+            var frm = new LoginOrCreateUserForm();
+            this.Hide();
+            frm.Show();
         }
 
         //public new void Show(IWin32Window owner)

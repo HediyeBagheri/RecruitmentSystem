@@ -100,6 +100,7 @@ namespace RecruitmentSystem.InfraStructure.Repositories
             cmd.Parameters.AddWithValue("@TypeOfCooperationId", companyOffer.TypeOfCooperationId);
             cmd.Parameters.AddWithValue("@MinimumEducationDegree", companyOffer.MinimumEducationDegree);
             cmd.Parameters.AddWithValue("@Description", companyOffer.Description);
+            cmd.Parameters.AddWithValue("@Date", companyOffer.Date);
             //cmd.Parameters.AddWithValue("@ImagePath", companyOffer.ImagePath);
 
 

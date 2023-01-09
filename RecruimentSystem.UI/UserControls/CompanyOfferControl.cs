@@ -14,12 +14,19 @@ namespace RecruitmentSystem.UI
 {
     public partial class CompanyOfferControl : UserControl
     {
-        public CompanyOfferControl()
+        private int offerId;
+        public CompanyOfferControl(int offerId)
         {
             InitializeComponent();
+            this.offerId = offerId;
         }
 
         private void SendingResumeBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ShowDetailsBtn_Click(object sender, EventArgs e)
         {
 
         }

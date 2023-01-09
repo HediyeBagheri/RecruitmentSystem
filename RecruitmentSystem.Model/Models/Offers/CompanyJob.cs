@@ -29,5 +29,7 @@ namespace RecruitmentSystem.Model.Offers
         [StringLength(128)]
         public string ImagePath { get; set; }
 
+        public DateTime Date { get; set; }
+
     }
 }
