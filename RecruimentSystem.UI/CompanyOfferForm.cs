@@ -27,7 +27,7 @@ namespace RecruitmentSystem.UI
 
         public void FillForm()
         {
-            var companyOfferDetails = companyJobRepository.GetAll1();
+            var companyOfferDetails = companyJobRepository.GetAll();
             foreach (var companyOfferDetail in companyOfferDetails.Select())
             {
                 var companyOfferControl = new CompanyOfferControl(Convert.ToInt16(companyOfferDetail["Id"].ToString()));

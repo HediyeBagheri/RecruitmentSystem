@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lblDate = new System.Windows.Forms.Label();
             this.ShowDetailsBtn = new System.Windows.Forms.Button();
             this.SendingResumeBtn = new System.Windows.Forms.Button();
             this.JobName = new System.Windows.Forms.Label();
             this.LblCompanyName = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.lblDate = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -47,20 +47,29 @@
             this.groupBox1.Controls.Add(this.JobName);
             this.groupBox1.Controls.Add(this.LblCompanyName);
             this.groupBox1.Controls.Add(this.pictureBox1);
-            this.groupBox1.Location = new System.Drawing.Point(59, 2);
+            this.groupBox1.Location = new System.Drawing.Point(30, 2);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox1.Size = new System.Drawing.Size(305, 390);
+            this.groupBox1.Size = new System.Drawing.Size(264, 390);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
+            // lblDate
+            // 
+            this.lblDate.AutoSize = true;
+            this.lblDate.Location = new System.Drawing.Point(66, 343);
+            this.lblDate.Name = "lblDate";
+            this.lblDate.Size = new System.Drawing.Size(31, 15);
+            this.lblDate.TabIndex = 30;
+            this.lblDate.Text = "Date";
+            // 
             // ShowDetailsBtn
             // 
-            this.ShowDetailsBtn.Location = new System.Drawing.Point(19, 287);
+            this.ShowDetailsBtn.Location = new System.Drawing.Point(16, 276);
             this.ShowDetailsBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ShowDetailsBtn.Name = "ShowDetailsBtn";
-            this.ShowDetailsBtn.Size = new System.Drawing.Size(117, 29);
+            this.ShowDetailsBtn.Size = new System.Drawing.Size(104, 40);
             this.ShowDetailsBtn.TabIndex = 1;
             this.ShowDetailsBtn.Text = "اطلاعات بیشتر";
             this.ShowDetailsBtn.UseVisualStyleBackColor = true;
@@ -68,10 +77,10 @@
             // 
             // SendingResumeBtn
             // 
-            this.SendingResumeBtn.Location = new System.Drawing.Point(171, 287);
+            this.SendingResumeBtn.Location = new System.Drawing.Point(126, 276);
             this.SendingResumeBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.SendingResumeBtn.Name = "SendingResumeBtn";
-            this.SendingResumeBtn.Size = new System.Drawing.Size(117, 29);
+            this.SendingResumeBtn.Size = new System.Drawing.Size(100, 40);
             this.SendingResumeBtn.TabIndex = 0;
             this.SendingResumeBtn.Text = "ارسال رزومه";
             this.SendingResumeBtn.UseVisualStyleBackColor = true;
@@ -81,7 +90,7 @@
             // 
             this.JobName.AutoSize = true;
             this.JobName.Font = new System.Drawing.Font("Algerian", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.JobName.Location = new System.Drawing.Point(116, 181);
+            this.JobName.Location = new System.Drawing.Point(76, 184);
             this.JobName.Name = "JobName";
             this.JobName.Size = new System.Drawing.Size(63, 26);
             this.JobName.TabIndex = 29;
@@ -91,7 +100,7 @@
             // 
             this.LblCompanyName.AutoSize = true;
             this.LblCompanyName.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.LblCompanyName.Location = new System.Drawing.Point(116, 231);
+            this.LblCompanyName.Location = new System.Drawing.Point(76, 224);
             this.LblCompanyName.Name = "LblCompanyName";
             this.LblCompanyName.Size = new System.Drawing.Size(73, 21);
             this.LblCompanyName.TabIndex = 28;
@@ -99,22 +108,13 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(51, 28);
+            this.pictureBox1.Location = new System.Drawing.Point(16, 20);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(196, 129);
+            this.pictureBox1.Size = new System.Drawing.Size(210, 129);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 27;
             this.pictureBox1.TabStop = false;
-            // 
-            // lblDate
-            // 
-            this.lblDate.AutoSize = true;
-            this.lblDate.Location = new System.Drawing.Point(129, 341);
-            this.lblDate.Name = "lblDate";
-            this.lblDate.Size = new System.Drawing.Size(31, 15);
-            this.lblDate.TabIndex = 30;
-            this.lblDate.Text = "Date";
             // 
             // CompanyOfferControl
             // 
@@ -123,7 +123,7 @@
             this.Controls.Add(this.groupBox1);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "CompanyOfferControl";
-            this.Size = new System.Drawing.Size(416, 416);
+            this.Size = new System.Drawing.Size(326, 416);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
