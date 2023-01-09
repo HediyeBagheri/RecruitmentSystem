@@ -1,16 +1,7 @@
-﻿using RecruimentSystem.UI;
-using RecruitmentSystem.InfraStructure.IRepositories;
+﻿using RecruitmentSystem.InfraStructure.IRepositories;
 using RecruitmentSystem.InfraStructure.Repositories;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Configuration;
 using System.Data;
-using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace RecruitmentSystem.UI
@@ -28,7 +19,7 @@ namespace RecruitmentSystem.UI
             applicantId = id;
 
         }
-        
+
         private void FillWelcomeData()
         {
             applicantData = applicantRepository.GetAll(applicantId);
@@ -45,9 +36,13 @@ namespace RecruitmentSystem.UI
 
         private void RecruitBtn_Click(object sender, EventArgs e)
         {
-            var frm = new CompanyOfferForm();
-            frm.Show();
+            var openForms = Application.OpenForms;
+            var x = openForms["CompanyOfferForm"];
+            if (x!=null)
+                x.Close();
+            var frm = new CompanyOfferForm(applicantId);
             this.Hide();
+            frm.Show();
         }
 
         private void TrainingBtn_Click(object sender, EventArgs e)

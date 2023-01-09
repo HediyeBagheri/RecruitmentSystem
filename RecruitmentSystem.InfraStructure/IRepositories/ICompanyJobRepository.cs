@@ -15,5 +15,10 @@ namespace RecruitmentSystem.InfraStructure.IRepositories
         void Add(CompanyJob companyOffer);
         DataTable GetJobData();
         DataTable GetAll1();
+
+        DataTable GetName(int id);
+
+
+
     }
 }

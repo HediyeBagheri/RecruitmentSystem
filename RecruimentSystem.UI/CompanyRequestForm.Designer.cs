@@ -55,10 +55,11 @@
             // 
             // BtnCompanyReq
             // 
-            this.BtnCompanyReq.Location = new System.Drawing.Point(44, 627);
+            this.BtnCompanyReq.Location = new System.Drawing.Point(38, 470);
+            this.BtnCompanyReq.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BtnCompanyReq.Name = "BtnCompanyReq";
-            this.BtnCompanyReq.Size = new System.Drawing.Size(148, 47);
-            this.BtnCompanyReq.TabIndex = 48;
+            this.BtnCompanyReq.Size = new System.Drawing.Size(130, 35);
+            this.BtnCompanyReq.TabIndex = 8;
             this.BtnCompanyReq.Text = "ثبت درخواست";
             this.BtnCompanyReq.UseVisualStyleBackColor = true;
             this.BtnCompanyReq.Click += new System.EventHandler(this.BtnCompanyReq_Click);
@@ -83,19 +84,22 @@
             this.groupBox1.Controls.Add(this.SalaryPropose);
             this.groupBox1.Controls.Add(this.JobName);
             this.groupBox1.Controls.Add(this.CompanyName);
-            this.groupBox1.Location = new System.Drawing.Point(12, 12);
+            this.groupBox1.Location = new System.Drawing.Point(10, 9);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(773, 596);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox1.Size = new System.Drawing.Size(676, 447);
             this.groupBox1.TabIndex = 49;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "groupBox1";
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(53, 228);
+            this.button1.Location = new System.Drawing.Point(46, 171);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(179, 29);
-            this.button1.TabIndex = 72;
+            this.button1.Size = new System.Drawing.Size(157, 22);
+            this.button1.TabIndex = 7;
             this.button1.Text = "انتخاب تصویر";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.Button1_Click);
@@ -103,140 +107,150 @@
             // PicBoxComRequest
             // 
             this.PicBoxComRequest.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.PicBoxComRequest.Location = new System.Drawing.Point(53, 56);
+            this.PicBoxComRequest.Location = new System.Drawing.Point(46, 42);
+            this.PicBoxComRequest.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.PicBoxComRequest.Name = "PicBoxComRequest";
-            this.PicBoxComRequest.Size = new System.Drawing.Size(179, 151);
+            this.PicBoxComRequest.Size = new System.Drawing.Size(157, 113);
             this.PicBoxComRequest.TabIndex = 71;
             this.PicBoxComRequest.TabStop = false;
             // 
             // CmbJobName
             // 
             this.CmbJobName.FormattingEnabled = true;
-            this.CmbJobName.Location = new System.Drawing.Point(362, 109);
+            this.CmbJobName.Location = new System.Drawing.Point(317, 82);
+            this.CmbJobName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CmbJobName.Name = "CmbJobName";
-            this.CmbJobName.Size = new System.Drawing.Size(208, 28);
-            this.CmbJobName.TabIndex = 70;
+            this.CmbJobName.Size = new System.Drawing.Size(182, 23);
+            this.CmbJobName.TabIndex = 0;
             // 
             // TxtMinEducationDegree
             // 
-            this.TxtMinEducationDegree.Location = new System.Drawing.Point(362, 370);
+            this.TxtMinEducationDegree.Location = new System.Drawing.Point(317, 278);
+            this.TxtMinEducationDegree.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TxtMinEducationDegree.Name = "TxtMinEducationDegree";
-            this.TxtMinEducationDegree.Size = new System.Drawing.Size(208, 27);
-            this.TxtMinEducationDegree.TabIndex = 69;
+            this.TxtMinEducationDegree.Size = new System.Drawing.Size(182, 23);
+            this.TxtMinEducationDegree.TabIndex = 5;
             // 
             // CmbTypeOfCooperation
             // 
             this.CmbTypeOfCooperation.FormattingEnabled = true;
-            this.CmbTypeOfCooperation.Location = new System.Drawing.Point(362, 314);
+            this.CmbTypeOfCooperation.Location = new System.Drawing.Point(317, 236);
+            this.CmbTypeOfCooperation.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.CmbTypeOfCooperation.Name = "CmbTypeOfCooperation";
-            this.CmbTypeOfCooperation.Size = new System.Drawing.Size(208, 28);
-            this.CmbTypeOfCooperation.TabIndex = 68;
+            this.CmbTypeOfCooperation.Size = new System.Drawing.Size(182, 23);
+            this.CmbTypeOfCooperation.TabIndex = 4;
             // 
             // TxtSalaryPropose
             // 
-            this.TxtSalaryPropose.Location = new System.Drawing.Point(362, 158);
+            this.TxtSalaryPropose.Location = new System.Drawing.Point(317, 118);
+            this.TxtSalaryPropose.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TxtSalaryPropose.Name = "TxtSalaryPropose";
-            this.TxtSalaryPropose.Size = new System.Drawing.Size(208, 27);
-            this.TxtSalaryPropose.TabIndex = 66;
+            this.TxtSalaryPropose.Size = new System.Drawing.Size(182, 23);
+            this.TxtSalaryPropose.TabIndex = 1;
             // 
             // TxtLocation
             // 
-            this.TxtLocation.Location = new System.Drawing.Point(362, 208);
+            this.TxtLocation.Location = new System.Drawing.Point(317, 156);
+            this.TxtLocation.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TxtLocation.Name = "TxtLocation";
-            this.TxtLocation.Size = new System.Drawing.Size(208, 27);
-            this.TxtLocation.TabIndex = 65;
+            this.TxtLocation.Size = new System.Drawing.Size(182, 23);
+            this.TxtLocation.TabIndex = 2;
             // 
             // TxtMinWorkExperience
             // 
-            this.TxtMinWorkExperience.Location = new System.Drawing.Point(362, 264);
+            this.TxtMinWorkExperience.Location = new System.Drawing.Point(317, 198);
+            this.TxtMinWorkExperience.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TxtMinWorkExperience.Name = "TxtMinWorkExperience";
-            this.TxtMinWorkExperience.Size = new System.Drawing.Size(208, 27);
-            this.TxtMinWorkExperience.TabIndex = 64;
+            this.TxtMinWorkExperience.Size = new System.Drawing.Size(182, 23);
+            this.TxtMinWorkExperience.TabIndex = 3;
             // 
             // TxtCompanyName
             // 
-            this.TxtCompanyName.Location = new System.Drawing.Point(362, 56);
+            this.TxtCompanyName.Location = new System.Drawing.Point(317, 42);
+            this.TxtCompanyName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TxtCompanyName.Name = "TxtCompanyName";
-            this.TxtCompanyName.Size = new System.Drawing.Size(208, 27);
+            this.TxtCompanyName.ReadOnly = true;
+            this.TxtCompanyName.Size = new System.Drawing.Size(182, 23);
             this.TxtCompanyName.TabIndex = 63;
             // 
             // TxtDescription
             // 
-            this.TxtDescription.Location = new System.Drawing.Point(243, 427);
+            this.TxtDescription.Location = new System.Drawing.Point(213, 320);
+            this.TxtDescription.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TxtDescription.Name = "TxtDescription";
-            this.TxtDescription.Size = new System.Drawing.Size(327, 120);
-            this.TxtDescription.TabIndex = 62;
+            this.TxtDescription.Size = new System.Drawing.Size(287, 91);
+            this.TxtDescription.TabIndex = 6;
             this.TxtDescription.Text = "";
             // 
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(672, 427);
+            this.label13.Location = new System.Drawing.Point(588, 320);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(69, 20);
+            this.label13.Size = new System.Drawing.Size(54, 15);
             this.label13.TabIndex = 55;
             this.label13.Text = "توضیحات";
             // 
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(597, 377);
+            this.label14.Location = new System.Drawing.Point(522, 283);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(144, 20);
+            this.label14.Size = new System.Drawing.Size(112, 15);
             this.label14.TabIndex = 54;
             this.label14.Text = "حداقل مدرک تحصیلی";
             // 
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(659, 322);
+            this.label15.Location = new System.Drawing.Point(577, 242);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(82, 20);
+            this.label15.Size = new System.Drawing.Size(64, 15);
             this.label15.TabIndex = 53;
             this.label15.Text = "نوع همکاری";
             // 
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(619, 271);
+            this.label16.Location = new System.Drawing.Point(542, 203);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(122, 20);
+            this.label16.Size = new System.Drawing.Size(94, 15);
             this.label16.TabIndex = 52;
             this.label16.Text = "حداقل سابقه کاری";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(636, 215);
+            this.label4.Location = new System.Drawing.Point(556, 161);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(105, 20);
+            this.label4.Size = new System.Drawing.Size(81, 15);
             this.label4.TabIndex = 51;
             this.label4.Text = "موقعیت مکانی";
             // 
             // SalaryPropose
             // 
             this.SalaryPropose.AutoSize = true;
-            this.SalaryPropose.Location = new System.Drawing.Point(633, 165);
+            this.SalaryPropose.Location = new System.Drawing.Point(554, 124);
             this.SalaryPropose.Name = "SalaryPropose";
-            this.SalaryPropose.Size = new System.Drawing.Size(108, 20);
+            this.SalaryPropose.Size = new System.Drawing.Size(84, 15);
             this.SalaryPropose.TabIndex = 50;
             this.SalaryPropose.Text = "حقوق پیشنهادی";
             // 
             // JobName
             // 
             this.JobName.AutoSize = true;
-            this.JobName.Location = new System.Drawing.Point(678, 117);
+            this.JobName.Location = new System.Drawing.Point(593, 88);
             this.JobName.Name = "JobName";
-            this.JobName.Size = new System.Drawing.Size(63, 20);
+            this.JobName.Size = new System.Drawing.Size(49, 15);
             this.JobName.TabIndex = 49;
             this.JobName.Text = "نام شغل";
             // 
             // CompanyName
             // 
             this.CompanyName.AutoSize = true;
-            this.CompanyName.Location = new System.Drawing.Point(672, 59);
+            this.CompanyName.Location = new System.Drawing.Point(588, 44);
             this.CompanyName.Name = "CompanyName";
-            this.CompanyName.Size = new System.Drawing.Size(69, 20);
+            this.CompanyName.Size = new System.Drawing.Size(54, 15);
             this.CompanyName.TabIndex = 48;
             this.CompanyName.Text = "نام شرکت";
             // 
@@ -247,11 +261,12 @@
             // 
             // CompanyRequestForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(797, 699);
+            this.ClientSize = new System.Drawing.Size(697, 524);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.BtnCompanyReq);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "CompanyRequestForm";
             this.Text = "CompanyRequest";
             this.Load += new System.EventHandler(this.Form_Load);

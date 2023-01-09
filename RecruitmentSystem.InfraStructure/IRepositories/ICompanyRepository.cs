@@ -11,7 +11,8 @@ namespace RecruitmentSystem.InfraStructure.IRepositories
 {
     public interface ICompanyRepository
     {
-        void Update(Company company);
+        void Update(Company company, int id);
         DataTable GetAll(int companyId);
+        
     }
 }

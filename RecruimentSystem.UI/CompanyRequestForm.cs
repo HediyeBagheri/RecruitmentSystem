@@ -21,20 +21,25 @@ namespace RecruitmentSystem.UI
 {
     public partial class CompanyRequestForm : Form
     {
-        private readonly ICompanyJobRepository companyOfferRepository;
+        private readonly ICompanyJobRepository companyJobRepository;
+       
+        private int companyId;
         private string imagePath = default;
         private string imageName = default;
 
-        public CompanyRequestForm()
+        public CompanyRequestForm(int companyId)
         {
             InitializeComponent();
-            companyOfferRepository = new CompanyJobRepository();
+            companyJobRepository = new CompanyJobRepository();
+            
+            this.companyId = companyId;
             FillCmbJob();
         }
 
         private void Form_Load(object sender, EventArgs e)
         {
-            var dt = companyOfferRepository.GetComOfferCooperationType();
+            FillName();
+            var dt = companyJobRepository.GetComOfferCooperationType();
             KeyValue keyValue;
 
             List<KeyValue> list = new List<KeyValue>();
@@ -53,9 +58,17 @@ namespace RecruitmentSystem.UI
 
         }
 
+        private void FillName()
+        {
+            var dt = companyJobRepository.GetName(companyId);
+            var drs = dt.Select();
+            var dr = drs[0];
+            TxtCompanyName.Text = dr["Name"].ToString();
+        }
+
         private void FillCmbJob()
         {
-            var dt = companyOfferRepository.GetJobData();
+            var dt = companyJobRepository.GetJobData();
             KeyValue keyValue;
 
             List<KeyValue> list = new List<KeyValue>();
@@ -86,6 +99,7 @@ namespace RecruitmentSystem.UI
             //SaveFile(imagePath);
             var companyOfferDetail = new CompanyJob()
             {
+                CompanyId= this.companyId,
                 CompanyName = TxtCompanyName.Text,
                 JobName = CmbJobName.Text,
                 SalaryPropose = Convert.ToDecimal(TxtSalaryPropose.Text),
@@ -96,10 +110,12 @@ namespace RecruitmentSystem.UI
                 Description = TxtDescription.Text,
                 //ImagePath = ""
             };
-            companyOfferRepository.Add(companyOfferDetail);
+            companyJobRepository.Add(companyOfferDetail);
+            var openForms = Application.OpenForms;
+            var x = openForms["CompanyPanelForm"];
+            MessageBox.Show("Request Sent SuccessFully !");
             this.Hide();
-            var comOfferFrm = new CompanyOfferForm();
-            comOfferFrm.Show();
+            x.Show();
         }
 
         //private void SaveFile(string imagePath)

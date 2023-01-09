@@ -147,6 +147,27 @@ namespace RecruitmentSystem.InfraStructure.Repositories
             sqlConnection.Close();
             return dataTable;
         }
+
+
+        public DataTable GetName(int id)
+        {
+
+            DataTable dataTable = new DataTable();
+
+            var cmd = new SqlCommand("Usp_CompanyJob_GetName", sqlConnection);
+
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@Id", id);
+
+            sqlConnection.Open();
+
+            var reader = cmd.ExecuteReader();
+
+            dataTable.Load(reader);
+            sqlConnection.Close();
+            return dataTable;
+
+        }
     }
 }
 
