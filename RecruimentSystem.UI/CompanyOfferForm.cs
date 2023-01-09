@@ -15,18 +15,19 @@ namespace RecruitmentSystem.UI
 {
     public partial class CompanyOfferForm : Form
     {
-        private readonly ICompanyJobRepository companyOfferRepository;
-
-        public CompanyOfferForm()
+        private readonly ICompanyJobRepository companyJobRepository;
+        private int applicantId;
+        public CompanyOfferForm(int applicantId)
         {
             InitializeComponent();
-            companyOfferRepository = new CompanyJobRepository();
+            this.applicantId = applicantId;
+            companyJobRepository = new CompanyJobRepository();
             FillForm();
         }
 
         public void FillForm()
         {
-            var companyOfferDetails = companyOfferRepository.GetAll1();
+            var companyOfferDetails = companyJobRepository.GetAll1();
             foreach (var companyOfferDetail in companyOfferDetails.Select())
             {
                 var companyOfferControl = new CompanyOfferControl();
@@ -41,6 +42,14 @@ namespace RecruitmentSystem.UI
                 //companyOfferControl.pictureBox1.Image = Image.FromFile(companyOfferDetail["ImagePath"].ToString());
                 flowLayoutPanel1.Controls.Add(companyOfferControl);
             }
+        }
+
+        private void BtnBack_Click(object sender, EventArgs e)
+        {
+            var openForms = Application.OpenForms;
+            var x = openForms["ApplicantPanelForm"];
+            this.Hide();
+            x.Show();
         }
     }
 }
