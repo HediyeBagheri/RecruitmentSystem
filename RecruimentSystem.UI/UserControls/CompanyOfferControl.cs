@@ -23,10 +23,15 @@ namespace RecruitmentSystem.UI
 
         private void SendingResumeBtn_Click(object sender, EventArgs e)
         {
-
+             
         }
 
         private void ShowDetailsBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void JobName_Click(object sender, EventArgs e)
         {
 
         }

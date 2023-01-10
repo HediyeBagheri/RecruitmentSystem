@@ -25,11 +25,15 @@ namespace RecruitmentSystem.UI
             FillForm();
         }
 
+        
+
         public void FillForm()
         {
+            
             var companyOfferDetails = companyJobRepository.GetAll();
             foreach (var companyOfferDetail in companyOfferDetails.Select())
             {
+                
                 var companyOfferControl = new CompanyOfferControl(Convert.ToInt16(companyOfferDetail["Id"].ToString()));
                 companyOfferControl.LblCompanyName.Text = companyOfferDetail["CompanyName"].ToString();
                 companyOfferControl.JobName.Text = companyOfferDetail["JobName"].ToString();
@@ -39,9 +43,9 @@ namespace RecruitmentSystem.UI
                 //companyOfferControl.EducationDegreeLbl.Text = companyOfferDetail["MinimumEducationDegree"].ToString(); 
                 //companyOfferControl.richTxtDescription.Text = companyOfferDetail["Description"].ToString();
                 //companyOfferControl.LblTypeOfCooperation.Text = companyOfferDetail["TypeOfCooperationId"].ToString();
-                //companyOfferControl.pictureBox1.Image = Image.FromFile(companyOfferDetail["ImagePath"].ToString());
+                companyOfferControl.PicBoxOfferControll.Image = Image.FromFile(companyOfferDetail["ImagePath"].ToString());
                 companyOfferControl.lblDate.Text = companyOfferDetail["Date"].ToString();
-
+                
                 flowLayoutPanel1.Controls.Add(companyOfferControl);
             }
         }
@@ -52,6 +56,11 @@ namespace RecruitmentSystem.UI
             var x = openForms["ApplicantPanelForm"];
             this.Hide();
             x.Show();
+        }
+
+        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
