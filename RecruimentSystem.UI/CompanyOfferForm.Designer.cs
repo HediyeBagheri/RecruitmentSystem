@@ -35,17 +35,18 @@
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.AutoScroll = true;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 4);
-            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 5);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(372, 424);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(425, 565);
             this.flowLayoutPanel1.TabIndex = 0;
+            this.flowLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel1_Paint);
             // 
             // BtnBack
             // 
-            this.BtnBack.Location = new System.Drawing.Point(393, 354);
+            this.BtnBack.Location = new System.Drawing.Point(449, 472);
+            this.BtnBack.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.BtnBack.Name = "BtnBack";
-            this.BtnBack.Size = new System.Drawing.Size(80, 50);
+            this.BtnBack.Size = new System.Drawing.Size(91, 67);
             this.BtnBack.TabIndex = 1;
             this.BtnBack.Text = "بازگشت";
             this.BtnBack.UseVisualStyleBackColor = true;
@@ -53,14 +54,14 @@
             // 
             // CompanyOfferForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(494, 434);
+            this.ClientSize = new System.Drawing.Size(565, 579);
             this.Controls.Add(this.BtnBack);
             this.Controls.Add(this.flowLayoutPanel1);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "CompanyOfferForm";
             this.Text = "CompanyOfferForm";
+            this.Load += new System.EventHandler(this.CompanyOfferForm_Load);
             this.ResumeLayout(false);
 
         }

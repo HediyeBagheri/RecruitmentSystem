@@ -37,6 +37,7 @@ namespace RecruitmentSystem.UI
                 var myOffer = new MyOffer(Convert.ToInt32(companyOfferDetail["Id"].ToString()));
                 myOffer.LblJob.Text = companyOfferDetail["JobName"].ToString();
                 myOffer.LblDate.Text = companyOfferDetail["Date"].ToString();
+                myOffer.PicBoxMyOffer.Image =Image.FromFile(companyOfferDetail["ImagePath"].ToString());
                 flowLayoutPanel1.Controls.Add(myOffer);
             }
         }
@@ -47,6 +48,11 @@ namespace RecruitmentSystem.UI
             var x = openForms["CompanyPanelForm"];
             this.Hide();
             x.Show();
+        }
+
+        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

@@ -96,7 +96,8 @@ namespace RecruitmentSystem.UI
         {
             
             ValidateCompanyOffer();
-            //SaveFile(imagePath);
+            SaveFile(imagePath);
+            
             var companyOfferDetail = new CompanyJob()
             {
                 CompanyId= this.companyId,
@@ -109,8 +110,7 @@ namespace RecruitmentSystem.UI
                 MinimumEducationDegree = TxtMinEducationDegree.Text,
                 Description = TxtDescription.Text,
                 Date = DateTime.Now,
-                
-                //ImagePath = ""
+                ImagePath = imageName
             };
             companyJobRepository.Add(companyOfferDetail);
             var openForms = Application.OpenForms;
@@ -120,19 +120,19 @@ namespace RecruitmentSystem.UI
             x.Show();
         }
 
-        //private void SaveFile(string imagePath)
-        //{
-        //    using Stream stream = new FileStream(imagePath, FileMode.Open);
-        //    using var memoryStream = new MemoryStream();
-        //    stream.CopyTo(memoryStream);
+        private void SaveFile(string imagePath)
+        {
+            using Stream stream = new FileStream(imagePath, FileMode.Open);
+            using var memoryStream = new MemoryStream();
+            stream.CopyTo(memoryStream);
 
-        //    string directory = string.Concat( AppDomain.CurrentDomain.BaseDirectory,"\\Images\\");
-        //    if (!Directory.Exists(imagePath))
-        //        Directory.CreateDirectory(imagePath);
-        //    File.WriteAllBytes(string.Concat(directory,imageName),
-        //        memoryStream.ToArray());
+            string directory = string.Concat(AppDomain.CurrentDomain.BaseDirectory);
+            if (!Directory.Exists(directory))
+                Directory.CreateDirectory(directory);
 
-        //}
+            File.WriteAllBytes(string.Concat(directory, imageName), memoryStream.ToArray());
+
+        }
 
         private void openFileDialog1_FileOk(object sender, CancelEventArgs e)
         {
@@ -141,9 +141,12 @@ namespace RecruitmentSystem.UI
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            //if(openFileDialog1.ShowDialog() == DialogResult.OK)
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
-               // PicBoxComRequest.Image = Image.FromFile(openFileDialog1.FileName);
+              // PicBoxComRequest.BackgroundImage = new Bitmap(openFileDialog1.FileName);
+
+                imagePath = openFileDialog1.FileName;
+                imageName = "Images\\"+openFileDialog1.SafeFileName;
             }
 
         }
@@ -154,6 +157,11 @@ namespace RecruitmentSystem.UI
             var x = openForms["CompanyPanelForm"];
             this.Hide();
             x.Show();
+        }
+
+        private void TxtCompanyName_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

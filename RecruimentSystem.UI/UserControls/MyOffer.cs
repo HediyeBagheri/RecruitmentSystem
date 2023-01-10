@@ -28,5 +28,10 @@ namespace RecruitmentSystem.UI.UserControls
             companyJobRepository.Delete(companyJobId);
             this.Hide();
         }
+
+        private void MyOffer_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
