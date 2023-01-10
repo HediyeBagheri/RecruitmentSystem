@@ -66,8 +66,6 @@ namespace RecruitmentSystem.InfraStructure.Repositories
 
             cmd.CommandType = CommandType.StoredProcedure;
 
-
-
             sqlConnection.Open();
 
             var reader = cmd.ExecuteReader();
@@ -135,6 +133,20 @@ namespace RecruitmentSystem.InfraStructure.Repositories
             dataTable.Load(reader);
             sqlConnection.Close();
             return dataTable;
+        }
+
+        public void Delete(int id)
+        {
+            var cmd = new SqlCommand("Usp_CompanyJob_Delete", sqlConnection);
+
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@Id", id);
+
+            sqlConnection.Open();
+
+            cmd.ExecuteNonQuery();
+            sqlConnection.Close();
+            
         }
     }
 }

@@ -49,6 +49,7 @@
             this.JobName = new System.Windows.Forms.Label();
             this.CompanyName = new System.Windows.Forms.Label();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.BtnBack = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PicBoxComRequest)).BeginInit();
             this.SuspendLayout();
@@ -259,11 +260,23 @@
             this.openFileDialog1.FileName = "openFileDialog1";
             this.openFileDialog1.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog1_FileOk);
             // 
+            // BtnBack
+            // 
+            this.BtnBack.Location = new System.Drawing.Point(204, 470);
+            this.BtnBack.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.BtnBack.Name = "BtnBack";
+            this.BtnBack.Size = new System.Drawing.Size(130, 35);
+            this.BtnBack.TabIndex = 9;
+            this.BtnBack.Text = "بازگشت";
+            this.BtnBack.UseVisualStyleBackColor = true;
+            this.BtnBack.Click += new System.EventHandler(this.BtnBack_Click);
+            // 
             // CompanyRequestForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(697, 524);
+            this.Controls.Add(this.BtnBack);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.BtnCompanyReq);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -300,5 +313,6 @@
         private System.Windows.Forms.PictureBox PicBoxComRequest;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.Button BtnBack;
     }
 }

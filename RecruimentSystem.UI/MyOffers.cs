@@ -34,11 +34,19 @@ namespace RecruitmentSystem.UI
             var companyOfferDetails = companyJobRepository.GetById(companyId);
             foreach (var companyOfferDetail in companyOfferDetails.Select())
             {
-                var myOffer = new MyOffer();
+                var myOffer = new MyOffer(Convert.ToInt32(companyOfferDetail["Id"].ToString()));
                 myOffer.LblJob.Text = companyOfferDetail["JobName"].ToString();
                 myOffer.LblDate.Text = companyOfferDetail["Date"].ToString();
                 flowLayoutPanel1.Controls.Add(myOffer);
             }
+        }
+
+        private void BtnBack_Click(object sender, EventArgs e)
+        {
+            var openForms = Application.OpenForms;
+            var x = openForms["CompanyPanelForm"];
+            this.Hide();
+            x.Show();
         }
     }
 }

@@ -17,6 +17,7 @@ namespace RecruitmentSystem.InfraStructure.IRepositories
         DataTable GetAll();
         DataTable GetById(int id);
 
+        void Delete(int id);
         DataTable GetName(int id);
 
 

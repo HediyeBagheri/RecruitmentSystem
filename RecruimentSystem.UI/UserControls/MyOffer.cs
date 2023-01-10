@@ -1,4 +1,6 @@
-﻿using System;
+﻿using RecruitmentSystem.InfraStructure.IRepositories;
+using RecruitmentSystem.InfraStructure.Repositories;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +14,19 @@ namespace RecruitmentSystem.UI.UserControls
 {
     public partial class MyOffer : UserControl
     {
-        public MyOffer()
+        private readonly ICompanyJobRepository companyJobRepository;
+        private int companyJobId;
+        public MyOffer(int companyJobId)
         {
             InitializeComponent();
+            companyJobRepository = new CompanyJobRepository();
+            this.companyJobId = companyJobId;
+        }
+
+        private void BtnDelete_Click(object sender, EventArgs e)
+        {
+            companyJobRepository.Delete(companyJobId);
+            this.Hide();
         }
     }
 }
