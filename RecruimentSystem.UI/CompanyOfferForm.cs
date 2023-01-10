@@ -45,6 +45,7 @@ namespace RecruitmentSystem.UI
                 //companyOfferControl.LblTypeOfCooperation.Text = companyOfferDetail["TypeOfCooperationId"].ToString();
                 companyOfferControl.PicBoxOfferControll.Image = Image.FromFile(companyOfferDetail["ImagePath"].ToString());
                 companyOfferControl.lblDate.Text = companyOfferDetail["Date"].ToString();
+
                 
                 flowLayoutPanel1.Controls.Add(companyOfferControl);
             }
@@ -59,6 +60,11 @@ namespace RecruitmentSystem.UI
         }
 
         private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void CompanyOfferForm_Load(object sender, EventArgs e)
         {
 
         }

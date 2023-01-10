@@ -38,7 +38,7 @@ namespace RecruitmentSystem.InfraStructure.Repositories
             var cmd = new SqlCommand("Usp_CompanyJob_Add", sqlConnection);
 
             cmd.CommandType = CommandType.StoredProcedure;
-            //cmd.Parameters.AddWithValue("@CompanyId", companyOffer.CompanyId);
+           cmd.Parameters.AddWithValue("@CompanyId", companyOffer.CompanyId);
             cmd.Parameters.AddWithValue("@CompanyName", companyOffer.CompanyName);
             cmd.Parameters.AddWithValue("@SalaryPropose", companyOffer.SalaryPropose);
             cmd.Parameters.AddWithValue("@JobName", companyOffer.JobName);
