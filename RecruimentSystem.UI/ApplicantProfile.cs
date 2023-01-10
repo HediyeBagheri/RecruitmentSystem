@@ -33,7 +33,6 @@ namespace RecruitmentSystem.UI
             TxtSalaryPropose.Text = dr["SalaryRequest"].ToString();
             JobCmbBox.SelectedIndex = Convert.ToInt32(dr["JobId"].ToString()) - 1;
             TxtDescription.Text = dr["ResumeDescription"].ToString();
-
         }
 
         private void ValidateUser()

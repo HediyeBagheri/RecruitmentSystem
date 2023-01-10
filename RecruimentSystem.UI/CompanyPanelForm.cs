@@ -1,4 +1,5 @@
-﻿using RecruitmentSystem.InfraStructure.IRepositories;
+﻿using RecruimentSystem.UI;
+using RecruitmentSystem.InfraStructure.IRepositories;
 using RecruitmentSystem.InfraStructure.Repositories;
 using RecruitmentSystem.Model.Models.Users;
 using System;
@@ -48,15 +49,41 @@ namespace RecruitmentSystem.UI
 
         private void Request_Click(object sender, EventArgs e)
         {
-            var frm = new CompanyRequestForm();
+            var openForms = Application.OpenForms;
+            var x = openForms["CompanyRequestForm"];
+            if (x != null)
+                x.Close();
+
+            var frm = new CompanyRequestForm(companyId);
             this.Hide();
             frm.Show();
-
         }
 
         private void CompanyPanelForm_Load(object sender, EventArgs e)
         {
             FillWelcomeData();
+        }
+
+        private void BtnMyRequests_Click(object sender, EventArgs e)
+        {
+            var openForms = Application.OpenForms;
+            var x = openForms["MyOffers"];
+            if (x != null)
+                x.Close();
+
+            var frm = new MyOffers(companyId);
+            this.Hide();
+            frm.Show();
+        }
+
+        private void BtnExit_Click(object sender, EventArgs e)
+        {
+            var openForms = Application.OpenForms;
+            var x = openForms["CompanyPanelForm"];
+            x.Close();
+            var frm = new LoginOrCreateUserForm();
+            this.Hide();
+            frm.Show();
         }
     }
 }
