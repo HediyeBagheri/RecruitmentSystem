@@ -10,6 +10,8 @@ namespace RecruitmentSystem.Model.Offers
     public class CompanyJob
     {
         public int Id { get; set; }
+        public int CompanyId { get; set; }
+
         [StringLength(128)]
         public string CompanyName { get; set; }
         [StringLength(64)]
@@ -26,6 +28,8 @@ namespace RecruitmentSystem.Model.Offers
         public string Description { get; set; }
         [StringLength(128)]
         public string ImagePath { get; set; }
+
+        public DateTime Date { get; set; }
 
     }
 }

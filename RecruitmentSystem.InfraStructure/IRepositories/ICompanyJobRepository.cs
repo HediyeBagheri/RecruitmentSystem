@@ -10,10 +10,17 @@ namespace RecruitmentSystem.InfraStructure.IRepositories
 {
     public interface ICompanyJobRepository
     {
-        List<CompanyJob> GetAll();
+        
         DataTable GetComOfferCooperationType();
         void Add(CompanyJob companyOffer);
         DataTable GetJobData();
-        DataTable GetAll1();
+        DataTable GetAll();
+        DataTable GetById(int id);
+
+        void Delete(int id);
+        DataTable GetName(int id);
+
+
+
     }
 }
