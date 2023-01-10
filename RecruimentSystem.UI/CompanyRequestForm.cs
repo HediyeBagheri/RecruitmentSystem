@@ -131,7 +131,6 @@ namespace RecruitmentSystem.UI
                 Directory.CreateDirectory(directory);
 
             File.WriteAllBytes(string.Concat(directory, imageName), memoryStream.ToArray());
-
         }
 
         private void openFileDialog1_FileOk(object sender, CancelEventArgs e)
