@@ -147,5 +147,13 @@ namespace RecruitmentSystem.UI
             }
 
         }
+
+        private void BtnBack_Click(object sender, EventArgs e)
+        {
+            var openForms = Application.OpenForms;
+            var x = openForms["CompanyPanelForm"];
+            this.Hide();
+            x.Show();
+        }
     }
 }
