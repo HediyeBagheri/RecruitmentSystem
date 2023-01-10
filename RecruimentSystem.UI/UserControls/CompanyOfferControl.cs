@@ -30,6 +30,11 @@ namespace RecruitmentSystem.UI
         {
 
         }
+
+        private void JobName_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 
 }

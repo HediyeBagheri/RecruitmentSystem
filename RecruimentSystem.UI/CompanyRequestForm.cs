@@ -110,8 +110,7 @@ namespace RecruitmentSystem.UI
                 MinimumEducationDegree = TxtMinEducationDegree.Text,
                 Description = TxtDescription.Text,
                 Date = DateTime.Now,
-                
-                //ImagePath = ""
+                ImagePath = imageName
             };
             companyJobRepository.Add(companyOfferDetail);
             var openForms = Application.OpenForms;
@@ -127,7 +126,7 @@ namespace RecruitmentSystem.UI
             using var memoryStream = new MemoryStream();
             stream.CopyTo(memoryStream);
 
-            string directory = string.Concat(AppDomain.CurrentDomain.BaseDirectory, "\\Images\\");
+            string directory = string.Concat(AppDomain.CurrentDomain.BaseDirectory);
             if (!Directory.Exists(directory))
                 Directory.CreateDirectory(directory);
 
@@ -147,7 +146,7 @@ namespace RecruitmentSystem.UI
               // PicBoxComRequest.BackgroundImage = new Bitmap(openFileDialog1.FileName);
 
                 imagePath = openFileDialog1.FileName;
-                imageName = openFileDialog1.SafeFileName;
+                imageName = "Images\\"+openFileDialog1.SafeFileName;
             }
 
         }
@@ -158,6 +157,11 @@ namespace RecruitmentSystem.UI
             var x = openForms["CompanyPanelForm"];
             this.Hide();
             x.Show();
+        }
+
+        private void TxtCompanyName_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
