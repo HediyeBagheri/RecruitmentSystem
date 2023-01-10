@@ -61,6 +61,7 @@
             this.Controls.Add(this.flowLayoutPanel1);
             this.Name = "CompanyOfferForm";
             this.Text = "CompanyOfferForm";
+            this.Load += new System.EventHandler(this.CompanyOfferForm_Load);
             this.ResumeLayout(false);
 
         }
