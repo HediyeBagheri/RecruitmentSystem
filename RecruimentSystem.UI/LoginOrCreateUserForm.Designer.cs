@@ -34,6 +34,7 @@
             this.txtPassForLogin = new System.Windows.Forms.TextBox();
             this.createUser = new System.Windows.Forms.Button();
             this.loginToUserPanel = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // userNameForLogin
@@ -73,10 +74,10 @@
             // 
             // createUser
             // 
-            this.createUser.Location = new System.Drawing.Point(64, 266);
+            this.createUser.Location = new System.Drawing.Point(174, 266);
             this.createUser.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.createUser.Name = "createUser";
-            this.createUser.Size = new System.Drawing.Size(186, 31);
+            this.createUser.Size = new System.Drawing.Size(88, 31);
             this.createUser.TabIndex = 3;
             this.createUser.Text = "Sign Up";
             this.createUser.UseVisualStyleBackColor = true;
@@ -93,11 +94,23 @@
             this.loginToUserPanel.UseVisualStyleBackColor = true;
             this.loginToUserPanel.Click += new System.EventHandler(this.LoginToUserPanel_Click);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(73, 266);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(82, 31);
+            this.button1.TabIndex = 4;
+            this.button1.Text = "Home";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // LoginOrCreateUserForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(419, 393);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.loginToUserPanel);
             this.Controls.Add(this.createUser);
             this.Controls.Add(this.txtPassForLogin);
@@ -120,5 +133,6 @@
         private System.Windows.Forms.TextBox txtPassForLogin;
         private System.Windows.Forms.Button createUser;
         private System.Windows.Forms.Button loginToUserPanel;
+        private System.Windows.Forms.Button button1;
     }
 }
