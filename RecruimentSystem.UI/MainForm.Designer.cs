@@ -34,6 +34,8 @@
             this.label4 = new System.Windows.Forms.Label();
             this.BtnSignUser = new System.Windows.Forms.Button();
             this.BtnAdmin = new System.Windows.Forms.Button();
+            this.BtnSignUp = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -78,7 +80,7 @@
             // 
             // BtnSignUser
             // 
-            this.BtnSignUser.Location = new System.Drawing.Point(157, 260);
+            this.BtnSignUser.Location = new System.Drawing.Point(157, 214);
             this.BtnSignUser.Name = "BtnSignUser";
             this.BtnSignUser.Size = new System.Drawing.Size(110, 44);
             this.BtnSignUser.TabIndex = 0;
@@ -88,7 +90,7 @@
             // 
             // BtnAdmin
             // 
-            this.BtnAdmin.Location = new System.Drawing.Point(157, 332);
+            this.BtnAdmin.Location = new System.Drawing.Point(157, 275);
             this.BtnAdmin.Name = "BtnAdmin";
             this.BtnAdmin.Size = new System.Drawing.Size(110, 44);
             this.BtnAdmin.TabIndex = 1;
@@ -96,11 +98,32 @@
             this.BtnAdmin.UseVisualStyleBackColor = true;
             this.BtnAdmin.Click += new System.EventHandler(this.BtnAdmin_Click);
             // 
+            // BtnSignUp
+            // 
+            this.BtnSignUp.Location = new System.Drawing.Point(157, 360);
+            this.BtnSignUp.Name = "BtnSignUp";
+            this.BtnSignUp.Size = new System.Drawing.Size(110, 44);
+            this.BtnSignUp.TabIndex = 2;
+            this.BtnSignUp.Text = "Sign Up";
+            this.BtnSignUp.UseVisualStyleBackColor = true;
+            this.BtnSignUp.Click += new System.EventHandler(this.BtnSignUp_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(133, 342);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(159, 15);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "Don\'t Have An Account Yet? ";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(434, 450);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.BtnSignUp);
             this.Controls.Add(this.BtnAdmin);
             this.Controls.Add(this.BtnSignUser);
             this.Controls.Add(this.label4);
@@ -122,5 +145,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button BtnSignUser;
         private System.Windows.Forms.Button BtnAdmin;
+        private System.Windows.Forms.Button BtnSignUp;
+        private System.Windows.Forms.Label label2;
     }
 }

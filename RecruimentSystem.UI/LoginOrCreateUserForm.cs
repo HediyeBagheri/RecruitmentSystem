@@ -21,15 +21,6 @@ namespace RecruimentSystem.UI
         {
             this.isAdmin = isAdmin;
         }
-
-        private void CreateUser_Click(object sender, EventArgs e)
-        {
-            var frm = new CreateUserForm();
-            frm.Show();
-            this.Hide();
-        }
-
-
         private void ValidateForLogin()
         {
             isValid = true;

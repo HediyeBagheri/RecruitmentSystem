@@ -32,5 +32,16 @@ namespace RecruitmentSystem.UI
             this.Hide();
             frm.Show();
         }
+
+        private void BtnSignUp_Click(object sender, EventArgs e)
+        {
+            var openForms = Application.OpenForms;
+            var x = openForms["CreateUserForm"];
+            if (x != null)
+                x.Close();
+            var frm = new CreateUserForm();
+            this.Hide();
+            frm.Show();
+        }
     }
 }
