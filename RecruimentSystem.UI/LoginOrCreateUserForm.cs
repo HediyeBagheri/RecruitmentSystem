@@ -10,21 +10,17 @@ namespace RecruimentSystem.UI
     {
         private readonly IUserRepository userRepository;
         private bool isValid;
+        private bool isAdmin = false;
 
         public LoginOrCreateUserForm()
         {
             InitializeComponent();
             userRepository = new UserRepository();
         }
-
-        private void CreateUser_Click(object sender, EventArgs e)
+        public LoginOrCreateUserForm(bool isAdmin) : this()
         {
-            var frm = new CreateUserForm();
-            frm.Show();
-            this.Hide();
+            this.isAdmin = isAdmin;
         }
-
-
         private void ValidateForLogin()
         {
             isValid = true;
@@ -73,10 +69,24 @@ namespace RecruimentSystem.UI
                     comFrm.Show();
                     this.Hide();
                 }
+                else if (userTypeId == 3 && isAdmin)
+                {
+                    var comFrm = new AdminPanelForm();
+                    comFrm.Show();
+                    this.Hide();
+                }
                 else
-                    MessageBox.Show("No User Found");
+                    MessageBox.Show("User Not Found");
+
             }
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            var openForms = Application.OpenForms;
+            var x = openForms["MainForm"];
+            this.Hide();
+            x.Show();
+        }
     }
 }

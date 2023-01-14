@@ -32,8 +32,8 @@
             this.passwordForLogin = new System.Windows.Forms.Label();
             this.txtUserNameLogin = new System.Windows.Forms.TextBox();
             this.txtPassForLogin = new System.Windows.Forms.TextBox();
-            this.createUser = new System.Windows.Forms.Button();
             this.loginToUserPanel = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // userNameForLogin
@@ -71,20 +71,9 @@
             this.txtPassForLogin.Size = new System.Drawing.Size(198, 23);
             this.txtPassForLogin.TabIndex = 1;
             // 
-            // createUser
-            // 
-            this.createUser.Location = new System.Drawing.Point(64, 266);
-            this.createUser.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.createUser.Name = "createUser";
-            this.createUser.Size = new System.Drawing.Size(186, 31);
-            this.createUser.TabIndex = 3;
-            this.createUser.Text = "Sign Up";
-            this.createUser.UseVisualStyleBackColor = true;
-            this.createUser.Click += new System.EventHandler(this.CreateUser_Click);
-            // 
             // loginToUserPanel
             // 
-            this.loginToUserPanel.Location = new System.Drawing.Point(278, 266);
+            this.loginToUserPanel.Location = new System.Drawing.Point(278, 235);
             this.loginToUserPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.loginToUserPanel.Name = "loginToUserPanel";
             this.loginToUserPanel.Size = new System.Drawing.Size(82, 31);
@@ -93,13 +82,24 @@
             this.loginToUserPanel.UseVisualStyleBackColor = true;
             this.loginToUserPanel.Click += new System.EventHandler(this.LoginToUserPanel_Click);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(162, 235);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(82, 31);
+            this.button1.TabIndex = 4;
+            this.button1.Text = "Home";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // LoginOrCreateUserForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(419, 393);
+            this.ClientSize = new System.Drawing.Size(421, 361);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.loginToUserPanel);
-            this.Controls.Add(this.createUser);
             this.Controls.Add(this.txtPassForLogin);
             this.Controls.Add(this.txtUserNameLogin);
             this.Controls.Add(this.passwordForLogin);
@@ -118,7 +118,7 @@
         private System.Windows.Forms.Label passwordForLogin;
         private System.Windows.Forms.TextBox txtUserNameLogin;
         private System.Windows.Forms.TextBox txtPassForLogin;
-        private System.Windows.Forms.Button createUser;
         private System.Windows.Forms.Button loginToUserPanel;
+        private System.Windows.Forms.Button button1;
     }
 }
