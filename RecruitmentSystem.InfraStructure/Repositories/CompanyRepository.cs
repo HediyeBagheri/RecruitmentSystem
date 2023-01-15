@@ -18,7 +18,7 @@ namespace RecruitmentSystem.InfraStructure.Repositories
             cmd.Parameters.AddWithValue("@ManagerName", company.ManagerName);
             cmd.Parameters.AddWithValue("@Business", company.Business);
             cmd.Parameters.AddWithValue("@Address", company.Address);
-
+            cmd.Parameters.AddWithValue("@ImagePath", company.ImagePath);
 
             sqlConnection.Open();
 
