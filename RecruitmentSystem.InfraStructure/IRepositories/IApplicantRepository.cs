@@ -13,6 +13,7 @@ namespace RecruitmentSystem.InfraStructure.IRepositories
         void Update(Applicant applicant, int applicantId);
         DataTable GetServeStatusData();
         DataTable GetJobData();
-        DataTable GetAll(int applicantId);
+        DataTable GetAllById(int applicantId);
+        DataTable GetAll();
     }
 }

@@ -20,7 +20,7 @@ namespace RecruitmentSystem.UI
 
         private void PutData()
         {
-            var dt = applicantRepository.GetAll(applicantId);
+            var dt = applicantRepository.GetAllById(applicantId);
             var drs = dt.Select();
             var dr = drs[0];
 
@@ -108,6 +108,11 @@ namespace RecruitmentSystem.UI
             var frm = new ApplicantPanelForm(applicantId);
             this.Hide();
             frm.Show();
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }

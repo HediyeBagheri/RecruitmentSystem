@@ -70,12 +70,31 @@ namespace RecruitmentSystem.InfraStructure.Repositories
             sqlConnection.Close();
             return dataTable;
         }
-        public DataTable GetAll(int applicantId)
+        public DataTable GetAllById(int applicantId)
         {
             DataTable dataTable = new DataTable();
 
             var cmd = new SqlCommand("Usp_Applicant_GetData", sqlConnection);
             cmd.Parameters.AddWithValue("@Id", applicantId);
+
+            cmd.CommandType = CommandType.StoredProcedure;
+
+
+
+            sqlConnection.Open();
+
+            var reader = cmd.ExecuteReader();
+
+            dataTable.Load(reader);
+            sqlConnection.Close();
+            return dataTable;
+        }
+
+        public DataTable GetAll()
+        {
+            DataTable dataTable = new DataTable();
+
+            var cmd = new SqlCommand("Usp_Applicant_Select", sqlConnection);
 
             cmd.CommandType = CommandType.StoredProcedure;
 

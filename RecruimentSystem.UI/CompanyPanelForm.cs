@@ -4,6 +4,7 @@ using RecruitmentSystem.InfraStructure.Repositories;
 using RecruitmentSystem.Model.Models.Users;
 using System;
 using System.Data;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace RecruitmentSystem.UI
@@ -20,18 +21,24 @@ namespace RecruitmentSystem.UI
             this.companyId = companyId;
         }
         private void FillWelcomeData()
+
         {
-            companyData = companyRepository.GetAll(companyId);
+            companyData = companyRepository.GetAllById(companyId);
             string name = "";
             foreach (var dataRow in companyData.Select())
             {
                 name = dataRow["Name"].ToString();
+                if (dataRow["ImagePath"].ToString() != "")
+                {
+                    PicBoxCompanyPanel.Image = Image.FromFile(dataRow["ImagePath"].ToString());
+                }
             }
 
             string x = LblWelcome.Text;
             string y = x + " " + name;
             LblWelcome.Text = y;
         }
+
 
         private void CompanyRecruitBtn_Click(object sender, EventArgs e)
         {
@@ -84,6 +91,11 @@ namespace RecruitmentSystem.UI
             var frm = new LoginOrCreateUserForm();
             this.Hide();
             frm.Show();
+        }
+
+        private void LblWelcome_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

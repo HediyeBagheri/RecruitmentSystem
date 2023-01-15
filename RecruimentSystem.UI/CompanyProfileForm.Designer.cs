@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.BtnPic = new System.Windows.Forms.Button();
+            this.PicBoxCompany = new System.Windows.Forms.PictureBox();
             this.TxtAddress = new System.Windows.Forms.RichTextBox();
             this.TxtBusiness = new System.Windows.Forms.TextBox();
             this.TxtManagerName = new System.Windows.Forms.TextBox();
@@ -38,11 +40,15 @@
             this.LblAddress = new System.Windows.Forms.Label();
             this.LblCompanyName = new System.Windows.Forms.Label();
             this.BtnSave = new System.Windows.Forms.Button();
+            this.openFileDialog2 = new System.Windows.Forms.OpenFileDialog();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PicBoxCompany)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.BtnPic);
+            this.groupBox1.Controls.Add(this.PicBoxCompany);
             this.groupBox1.Controls.Add(this.TxtAddress);
             this.groupBox1.Controls.Add(this.TxtBusiness);
             this.groupBox1.Controls.Add(this.TxtManagerName);
@@ -57,6 +63,24 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "groupBox1";
+            // 
+            // BtnPic
+            // 
+            this.BtnPic.Location = new System.Drawing.Point(45, 212);
+            this.BtnPic.Name = "BtnPic";
+            this.BtnPic.Size = new System.Drawing.Size(146, 29);
+            this.BtnPic.TabIndex = 9;
+            this.BtnPic.Text = "انتخاب تصویر";
+            this.BtnPic.UseVisualStyleBackColor = true;
+            this.BtnPic.Click += new System.EventHandler(this.BtnPic_Click);
+            // 
+            // PicBoxCompany
+            // 
+            this.PicBoxCompany.Location = new System.Drawing.Point(45, 41);
+            this.PicBoxCompany.Name = "PicBoxCompany";
+            this.PicBoxCompany.Size = new System.Drawing.Size(146, 141);
+            this.PicBoxCompany.TabIndex = 8;
+            this.PicBoxCompany.TabStop = false;
             // 
             // TxtAddress
             // 
@@ -133,6 +157,10 @@
             this.BtnSave.UseVisualStyleBackColor = true;
             this.BtnSave.Click += new System.EventHandler(this.BtnSave_Click);
             // 
+            // openFileDialog2
+            // 
+            this.openFileDialog2.FileName = "openFileDialog1";
+            // 
             // CompanyProfileForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -145,6 +173,7 @@
             this.Load += new System.EventHandler(this.Form_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PicBoxCompany)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -161,5 +190,8 @@
         private System.Windows.Forms.Label LblCompanyName;
         private System.Windows.Forms.RichTextBox TxtAddress;
         private System.Windows.Forms.Button BtnSave;
+        private System.Windows.Forms.PictureBox PicBoxCompany;
+        private System.Windows.Forms.Button BtnPic;
+        private System.Windows.Forms.OpenFileDialog openFileDialog2;
     }
 }

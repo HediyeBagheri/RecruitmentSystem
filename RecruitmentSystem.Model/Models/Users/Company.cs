@@ -17,7 +17,8 @@ namespace RecruitmentSystem.Model.Models.Users
 
         [StringLength(128)]
         public string Address { get; set; }
-        
 
+        [StringLength(128)]
+        public string ImagePath { get; set; }
     }
 }

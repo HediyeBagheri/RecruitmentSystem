@@ -18,7 +18,7 @@ namespace RecruitmentSystem.InfraStructure.Repositories
             cmd.Parameters.AddWithValue("@ManagerName", company.ManagerName);
             cmd.Parameters.AddWithValue("@Business", company.Business);
             cmd.Parameters.AddWithValue("@Address", company.Address);
-
+            cmd.Parameters.AddWithValue("@ImagePath", company.ImagePath);
 
             sqlConnection.Open();
 
@@ -26,12 +26,31 @@ namespace RecruitmentSystem.InfraStructure.Repositories
 
             sqlConnection.Close();
         }
-        public DataTable GetAll(int companyId)
+        public DataTable GetAllById(int companyId)
         {
             DataTable dataTable = new DataTable();
 
             var cmd = new SqlCommand("Usp_Company_GetData", sqlConnection);
             cmd.Parameters.AddWithValue("@Id", companyId);
+
+            cmd.CommandType = CommandType.StoredProcedure;
+
+
+
+            sqlConnection.Open();
+
+            var reader = cmd.ExecuteReader();
+
+            dataTable.Load(reader);
+            sqlConnection.Close();
+            return dataTable;
+        }
+
+        public DataTable GetAll()
+        {
+            DataTable dataTable = new DataTable();
+
+            var cmd = new SqlCommand("Usp_Company_Select", sqlConnection);
 
             cmd.CommandType = CommandType.StoredProcedure;
 
