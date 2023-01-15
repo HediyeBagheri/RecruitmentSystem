@@ -18,7 +18,7 @@ namespace RecruimentSystem.UI
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new LoginOrCreateUserForm());
+            Application.Run(new MainForm());
         }
     }
 }
