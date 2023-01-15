@@ -24,7 +24,7 @@ namespace RecruitmentSystem.UI
 
         private void Form_Load(object sender, EventArgs e)
         {
-            var dt = companyRepository.GetAll(companyId);
+            var dt = companyRepository.GetAllById(companyId);
             var drs = dt.Select();
             var dr = drs[0];
 

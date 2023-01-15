@@ -20,8 +20,6 @@ namespace RecruitmentSystem.UI
     {
         private readonly ICompanyJobRepository companyJobRepository;
         private int offerId;
-        private int applicantId;
-        private int companyId;
 
 
         public CompanyOfferControl(int offerId)
@@ -58,6 +56,11 @@ namespace RecruitmentSystem.UI
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CompanyOfferControl_Load(object sender, EventArgs e)
         {
 
         }
