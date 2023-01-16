@@ -23,7 +23,7 @@ namespace RecruitmentSystem.UI
 
         private void FillWelcomeData()
         {
-            applicantData = applicantRepository.GetAll(applicantId);
+            applicantData = applicantRepository.GetAllById(applicantId);
             string name = "";
             foreach (var dataRow in applicantData.Select())
             {

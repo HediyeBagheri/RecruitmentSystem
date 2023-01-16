@@ -52,6 +52,7 @@
             this.groupBox1.Size = new System.Drawing.Size(302, 520);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // lblDate
             // 
@@ -119,6 +120,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "CompanyOfferControl";
             this.Size = new System.Drawing.Size(373, 555);
+            this.Load += new System.EventHandler(this.CompanyOfferControl_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PicBoxOfferControll)).EndInit();

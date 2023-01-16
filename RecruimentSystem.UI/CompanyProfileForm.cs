@@ -2,6 +2,7 @@
 using RecruitmentSystem.InfraStructure.Repositories;
 using RecruitmentSystem.Model.Models.Users;
 using System;
+using System.IO;
 using System.Windows.Forms;
 
 namespace RecruitmentSystem.UI
@@ -10,6 +11,8 @@ namespace RecruitmentSystem.UI
     {
         private readonly ICompanyRepository companyRepository;
         private int companyId;
+        private string imagePath = default;
+        private string imageName = default;
 
         public CompanyProfileForm(int companyId)
         {
@@ -21,7 +24,7 @@ namespace RecruitmentSystem.UI
 
         private void Form_Load(object sender, EventArgs e)
         {
-            var dt = companyRepository.GetAll(companyId);
+            var dt = companyRepository.GetAllById(companyId);
             var drs = dt.Select();
             var dr = drs[0];
 
@@ -37,12 +40,14 @@ namespace RecruitmentSystem.UI
         private void BtnSave_Click(object sender, EventArgs e)
         {
             ValidateCompany();
+            SaveFile(imagePath);
             var company = new Company()
             {
                 Name = TxtCompanyName.Text,
                 ManagerName = TxtManagerName.Text,
                 Business = TxtBusiness.Text,
-                Address = TxtAddress.Text
+                Address = TxtAddress.Text,
+                ImagePath = imageName
             };
             companyRepository.Update(company, companyId);
             var openForms = Application.OpenForms;
@@ -51,6 +56,30 @@ namespace RecruitmentSystem.UI
             var frm = new CompanyPanelForm(companyId);
             this.Hide();
             frm.Show();
+        }
+
+        private void SaveFile(string imagePath)
+        {
+            using Stream stream = new FileStream(imagePath, FileMode.Open);
+            using var memoryStream = new MemoryStream();
+            stream.CopyTo(memoryStream);
+
+            string directory = string.Concat(AppDomain.CurrentDomain.BaseDirectory);
+            if (!Directory.Exists(directory))
+                Directory.CreateDirectory(directory);
+
+            File.WriteAllBytes(string.Concat(directory, imageName), memoryStream.ToArray());
+        }
+
+        private void BtnPic_Click(object sender, EventArgs e)
+        {
+            if (openFileDialog2.ShowDialog() == DialogResult.OK)
+            {
+                // PicBoxComRequest.BackgroundImage = new Bitmap(openFileDialog1.FileName);
+
+                imagePath = openFileDialog2.FileName;
+                imageName = "Images\\" + openFileDialog2.SafeFileName;
+            }
         }
     }
 }

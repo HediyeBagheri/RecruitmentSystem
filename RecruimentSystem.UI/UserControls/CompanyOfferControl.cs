@@ -1,6 +1,8 @@
 ﻿using RecruitmentSystem.InfraStructure.IRepositories;
+using RecruitmentSystem.InfraStructure.Repositories;
 using RecruitmentSystem.Model.Models.Users;
 using RecruitmentSystem.Model.Offers;
+using RecruitmentSystem.UI.UserControls;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,21 +18,24 @@ namespace RecruitmentSystem.UI
 {
     public partial class CompanyOfferControl : UserControl
     {
+        private readonly ICompanyJobRepository companyJobRepository;
         private int offerId;
+
+
         public CompanyOfferControl(int offerId)
         {
             InitializeComponent();
             this.offerId = offerId;
+            companyJobRepository = new CompanyJobRepository();
         }
 
         private void SendingResumeBtn_Click(object sender, EventArgs e)
         {
-             
+
         }
 
         private void ShowDetailsBtn_Click(object sender, EventArgs e)
         {
-            var detail = new CompanyJob();
 
         }
 
@@ -48,6 +53,16 @@ namespace RecruitmentSystem.UI
         {
             
         
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CompanyOfferControl_Load(object sender, EventArgs e)
+        {
+
         }
     }
 
