@@ -34,7 +34,7 @@ namespace RecruitmentSystem.UI
             var companyOfferDetails = companyJobRepository.GetById(companyId);
             foreach (var companyOfferDetail in companyOfferDetails.Select())
             {
-                var myOffer = new MyOffer(Convert.ToInt32(companyOfferDetail["Id"].ToString()));
+                var myOffer = new MyOffer(companyId,Convert.ToInt32(companyOfferDetail["Id"].ToString()));
                 myOffer.LblJob.Text = companyOfferDetail["JobName"].ToString();
                 myOffer.LblDate.Text = companyOfferDetail["Date"].ToString();
                 myOffer.PicBoxMyOffer.Image =Image.FromFile(companyOfferDetail["ImagePath"].ToString());

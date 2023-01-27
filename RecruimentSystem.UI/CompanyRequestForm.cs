@@ -22,18 +22,42 @@ namespace RecruitmentSystem.UI
     public partial class CompanyRequestForm : Form
     {
         private readonly ICompanyJobRepository companyJobRepository;
-       
+        private bool isUpdating = false;
         private int companyId;
+        private int companyJobId;
         private string imagePath = default;
         private string imageName = default;
 
         public CompanyRequestForm(int companyId)
         {
             InitializeComponent();
-            companyJobRepository = new CompanyJobRepository();
             
+            companyJobRepository = new CompanyJobRepository();
             this.companyId = companyId;
             FillCmbJob();
+        }
+        public CompanyRequestForm(int companyId,int companyJobId) : this(companyId)
+        {
+            this.companyJobId = companyJobId;
+            isUpdating = true;
+            FillForm();
+        }
+
+        private void FillForm()
+        {
+            var dt = companyJobRepository.GetByJobId(companyJobId);
+            var drs = dt.Select();
+            var dr = drs[0];
+
+            TxtCompanyName.Text = dr["CompanyName"].ToString() + "";
+            TxtSalaryPropose.Text = dr["SalaryPropose"].ToString() + "";
+            CmbJobName.Text = dr["JobName"].ToString() + "";
+            TxtLocation.Text = dr["Location"].ToString() + "";
+            TxtMinWorkExperience.Text = dr["MinimumWorkExperience"].ToString() + "";
+            TxtMinEducationDegree.Text = dr["MinimumEducationDegree"].ToString() + "";
+            CmbTypeOfCooperation.Text = dr["TypeOfCooperationId"].ToString() + "";
+            TxtDescription.Text = dr["Description"].ToString() + "";
+            imagePath = dr["ImagePath"].ToString() + "";
         }
 
         private void Form_Load(object sender, EventArgs e)
@@ -94,13 +118,12 @@ namespace RecruitmentSystem.UI
 
         private void BtnCompanyReq_Click(object sender, EventArgs e)
         {
-            
             ValidateCompanyOffer();
             SaveFile(imagePath);
-            
             var companyOfferDetail = new CompanyJob()
             {
-                CompanyId= this.companyId,
+                Id = companyJobId,
+                CompanyId = this.companyId,
                 CompanyName = TxtCompanyName.Text,
                 JobName = CmbJobName.Text,
                 SalaryPropose = Convert.ToDecimal(TxtSalaryPropose.Text),
@@ -112,12 +135,23 @@ namespace RecruitmentSystem.UI
                 Date = DateTime.Now,
                 ImagePath = imageName
             };
-            companyJobRepository.Add(companyOfferDetail);
-            var openForms = Application.OpenForms;
-            var x = openForms["CompanyPanelForm"];
-            MessageBox.Show("Request Sent SuccessFully !");
-            this.Hide();
-            x.Show();
+            if (isUpdating)
+            {
+                companyJobRepository.Update(companyOfferDetail);
+                MessageBox.Show("Request Updated SuccessFully !");
+                var frm = new MyOffers(companyId);
+                frm.Show();
+                this.Hide();
+            }
+            else
+            {
+                companyJobRepository.Add(companyOfferDetail);
+                var openForms = Application.OpenForms;
+                var x = openForms["CompanyPanelForm"];
+                MessageBox.Show("Request Sent SuccessFully !");
+                this.Hide();
+                x.Show();
+            }
         }
 
         private void SaveFile(string imagePath)
