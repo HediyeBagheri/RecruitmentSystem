@@ -39,10 +39,11 @@
             // 
             // PicBoxMyOffer
             // 
-            this.PicBoxMyOffer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.PicBoxMyOffer.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.PicBoxMyOffer.Location = new System.Drawing.Point(29, 22);
             this.PicBoxMyOffer.Name = "PicBoxMyOffer";
             this.PicBoxMyOffer.Size = new System.Drawing.Size(237, 150);
+            this.PicBoxMyOffer.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.PicBoxMyOffer.TabIndex = 0;
             this.PicBoxMyOffer.TabStop = false;
             // 
@@ -63,6 +64,7 @@
             this.BtnUpdate.TabIndex = 1;
             this.BtnUpdate.Text = "آپدیت";
             this.BtnUpdate.UseVisualStyleBackColor = true;
+            this.BtnUpdate.Click += new System.EventHandler(this.BtnUpdate_Click);
             // 
             // BtnDelete
             // 

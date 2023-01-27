@@ -15,7 +15,9 @@ namespace RecruitmentSystem.InfraStructure.IRepositories
         void Add(CompanyJob companyOffer);
         DataTable GetJobData();
         DataTable GetAll();
+        void Update(CompanyJob companyOffer);
         DataTable GetById(int id);
+        DataTable GetByJobId(int id);
 
         void Delete(int id);
         DataTable GetName(int id);

@@ -16,11 +16,13 @@ namespace RecruitmentSystem.UI.UserControls
     {
         private readonly ICompanyJobRepository companyJobRepository;
         private int companyJobId;
-        public MyOffer(int companyJobId)
+        private int companyId;
+        public MyOffer(int companyId,int companyJobId)
         {
             InitializeComponent();
             companyJobRepository = new CompanyJobRepository();
             this.companyJobId = companyJobId;
+            this.companyId = companyId;
         }
 
         private void BtnDelete_Click(object sender, EventArgs e)
@@ -32,6 +34,20 @@ namespace RecruitmentSystem.UI.UserControls
         private void MyOffer_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void BtnUpdate_Click(object sender, EventArgs e)
+        {
+            var openForms = Application.OpenForms;
+            var x = openForms["CompanyRequestForm"];
+            var y = openForms["MyOffers"];
+            if (x != null)
+                x.Close();
+
+            var frm = new CompanyRequestForm(companyId, companyJobId);
+            this.Hide();
+            y.Close();
+            frm.Show();
         }
     }
 }
