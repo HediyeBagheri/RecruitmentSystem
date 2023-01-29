@@ -17,21 +17,23 @@ namespace RecruitmentSystem.UI
 {
     public partial class AdminPanelForm : Form
     {
-        private readonly IApplicantRepository applicantRepository;
+        private readonly IForAdminRepository adminRepository;
         private readonly ICompanyRepository companyRepository;
 
         public AdminPanelForm()
         {
             InitializeComponent();
-            applicantRepository = new ApplicantRepository();
+            adminRepository = new ForAdminRepository();
             companyRepository = new CompanyRepository();
         }
 
 
         public void FillTabApplicantList()
         {
-            var applicants = applicantRepository.GetAll();
-            dataGridView3.DataSource = applicants;
+            var applicants = adminRepository.GetApplicantInfo();
+            DgvApplicant.DataSource = applicants;
+            
+            
         }
 
         public void FillTabCompanyList()
