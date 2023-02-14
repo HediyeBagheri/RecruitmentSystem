@@ -32,4 +32,12 @@ namespace RecruitmentSystem.Model.Offers
         public DateTime Date { get; set; }
 
     }
+    public class RequestForCompanyJob
+    {
+        public int Id { get; set; }
+        public int CompanyJobId { get; set; }
+        public string UserId { get; set; }
+        public DateTime Date { get; set; }
+        public string ResumePath { get; set; }
+    }
 }

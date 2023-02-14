@@ -39,6 +39,7 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.tabRecProcess = new System.Windows.Forms.TabPage();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.btnClick = new System.Windows.Forms.DataGridViewButtonColumn();
             this.tabControl.SuspendLayout();
             this.TabPApplicantList.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
@@ -103,6 +104,8 @@
             // DgvApplicant
             // 
             this.DgvApplicant.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DgvApplicant.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.btnClick});
             this.DgvApplicant.Location = new System.Drawing.Point(3, 6);
             this.DgvApplicant.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.DgvApplicant.Name = "DgvApplicant";
@@ -173,6 +176,13 @@
             this.dataGridView3.Size = new System.Drawing.Size(764, 228);
             this.dataGridView3.TabIndex = 0;
             // 
+            // btnClick
+            // 
+            this.btnClick.Frozen = true;
+            this.btnClick.HeaderText = "Choose";
+            this.btnClick.Name = "btnClick";
+            this.btnClick.Text = "Choose";
+            // 
             // AdminPanelForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -209,5 +219,6 @@
         private System.Windows.Forms.TabPage tabRecProcess;
         private System.Windows.Forms.DataGridView DvgEmpReq;
         private System.Windows.Forms.DataGridView dataGridView3;
+        private System.Windows.Forms.DataGridViewButtonColumn btnClick;
     }
 }

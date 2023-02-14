@@ -23,8 +23,5 @@ namespace RecruitmentSystem.Model.Models.Users
 
         [StringLength(64)]
         public string Email { get; set; }
-       
-       
-
     }
 }
