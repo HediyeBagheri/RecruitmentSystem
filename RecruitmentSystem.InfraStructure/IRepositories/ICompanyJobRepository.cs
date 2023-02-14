@@ -21,8 +21,9 @@ namespace RecruitmentSystem.InfraStructure.IRepositories
 
         void Delete(int id);
         DataTable GetName(int id);
-
-
-
+        DataTable GetAllRequestForOffers(int companyJobId);
+        DataTable GetAllRequestForOffersById(int requestForCJId);
+        void AddToRequestForCompanyJobId(RequestForCompanyJob rfcj);
+        void DeleteToRequestForCompanyJobId(int rfcjId);
     }
 }

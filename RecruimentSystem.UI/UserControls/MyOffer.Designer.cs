@@ -55,6 +55,7 @@
             this.BtnShow.TabIndex = 0;
             this.BtnShow.Text = "نمایش";
             this.BtnShow.UseVisualStyleBackColor = true;
+            this.BtnShow.Click += new System.EventHandler(this.BtnShow_Click);
             // 
             // BtnUpdate
             // 
