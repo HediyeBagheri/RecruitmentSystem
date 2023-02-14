@@ -35,9 +35,7 @@
             this.LblWelcome = new System.Windows.Forms.Label();
             this.BtnMyRequests = new System.Windows.Forms.Button();
             this.BtnExit = new System.Windows.Forms.Button();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.PicBoxCompanyPanel = new System.Windows.Forms.PictureBox();
-            this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PicBoxCompanyPanel)).BeginInit();
             this.SuspendLayout();
             // 
@@ -47,7 +45,7 @@
             this.companyRecruitBtn.Name = "companyRecruitBtn";
             this.companyRecruitBtn.Size = new System.Drawing.Size(122, 51);
             this.companyRecruitBtn.TabIndex = 0;
-            this.companyRecruitBtn.Text = "استخدام";
+            this.companyRecruitBtn.Text = "ارسال درخواست نیرو";
             this.companyRecruitBtn.UseVisualStyleBackColor = true;
             this.companyRecruitBtn.Click += new System.EventHandler(this.CompanyRecruitBtn_Click);
             // 
@@ -67,14 +65,14 @@
             this.Request.Name = "Request";
             this.Request.Size = new System.Drawing.Size(122, 51);
             this.Request.TabIndex = 1;
-            this.Request.Text = "ارسال درخواست";
+            this.Request.Text = "ارسال درخواست شغل";
             this.Request.UseVisualStyleBackColor = true;
             this.Request.Click += new System.EventHandler(this.Request_Click);
             // 
             // label1
             // 
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(103, 33);
+            this.label1.Location = new System.Drawing.Point(153, 33);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(310, 67);
             this.label1.TabIndex = 3;
@@ -83,7 +81,7 @@
             // LblWelcome
             // 
             this.LblWelcome.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.LblWelcome.Location = new System.Drawing.Point(103, 100);
+            this.LblWelcome.Location = new System.Drawing.Point(153, 100);
             this.LblWelcome.Name = "LblWelcome";
             this.LblWelcome.Size = new System.Drawing.Size(310, 35);
             this.LblWelcome.TabIndex = 4;
@@ -110,22 +108,13 @@
             this.BtnExit.UseVisualStyleBackColor = true;
             this.BtnExit.Click += new System.EventHandler(this.BtnExit_Click);
             // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.PicBoxCompanyPanel);
-            this.groupBox1.Location = new System.Drawing.Point(60, 172);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(325, 245);
-            this.groupBox1.TabIndex = 5;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "groupBox1";
-            // 
             // PicBoxCompanyPanel
             // 
-            this.PicBoxCompanyPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.PicBoxCompanyPanel.Location = new System.Drawing.Point(43, 47);
+            this.PicBoxCompanyPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.PicBoxCompanyPanel.Location = new System.Drawing.Point(14, 15);
             this.PicBoxCompanyPanel.Name = "PicBoxCompanyPanel";
-            this.PicBoxCompanyPanel.Size = new System.Drawing.Size(236, 158);
+            this.PicBoxCompanyPanel.Size = new System.Drawing.Size(133, 125);
+            this.PicBoxCompanyPanel.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.PicBoxCompanyPanel.TabIndex = 0;
             this.PicBoxCompanyPanel.TabStop = false;
             // 
@@ -134,7 +123,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(616, 429);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.PicBoxCompanyPanel);
             this.Controls.Add(this.BtnExit);
             this.Controls.Add(this.BtnMyRequests);
             this.Controls.Add(this.LblWelcome);
@@ -145,7 +134,6 @@
             this.Name = "CompanyPanelForm";
             this.Text = "CompanyPanelForm";
             this.Load += new System.EventHandler(this.CompanyPanelForm_Load);
-            this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.PicBoxCompanyPanel)).EndInit();
             this.ResumeLayout(false);
 
@@ -160,7 +148,6 @@
         private System.Windows.Forms.Label LblWelcome;
         private System.Windows.Forms.Button BtnMyRequests;
         private System.Windows.Forms.Button BtnExit;
-        private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.PictureBox PicBoxCompanyPanel;
     }
 }

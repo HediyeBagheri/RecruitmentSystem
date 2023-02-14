@@ -58,6 +58,30 @@ namespace RecruitmentSystem.InfraStructure.Repositories
             sqlConnection.Close();
         }
 
+        public void Update(CompanyJob companyOffer)
+        {
+            var cmd = new SqlCommand("Usp_CompanyJob_Update", sqlConnection);
+
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@Id", companyOffer.Id);
+            cmd.Parameters.AddWithValue("@CompanyName", companyOffer.CompanyName);
+            cmd.Parameters.AddWithValue("@SalaryPropose", companyOffer.SalaryPropose);
+            cmd.Parameters.AddWithValue("@JobName", companyOffer.JobName);
+            cmd.Parameters.AddWithValue("@Location", companyOffer.Location);
+            cmd.Parameters.AddWithValue("@MinimumWorkExperience", companyOffer.MinimumWorkExperience);
+            cmd.Parameters.AddWithValue("@TypeOfCooperationId", companyOffer.TypeOfCooperationId);
+            cmd.Parameters.AddWithValue("@MinimumEducationDegree", companyOffer.MinimumEducationDegree);
+            cmd.Parameters.AddWithValue("@Description", companyOffer.Description);
+            cmd.Parameters.AddWithValue("@ImagePath", companyOffer.ImagePath);
+
+
+            sqlConnection.Open();
+
+            cmd.ExecuteNonQuery();
+
+            sqlConnection.Close();
+        }
+
         public DataTable GetJobData()
         {
             DataTable dataTable = new DataTable();
@@ -125,6 +149,25 @@ namespace RecruitmentSystem.InfraStructure.Repositories
 
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@CompanyId", id);
+
+            sqlConnection.Open();
+
+            var reader = cmd.ExecuteReader();
+
+            dataTable.Load(reader);
+            sqlConnection.Close();
+            return dataTable;
+        }
+
+        public DataTable GetByJobId(int id)
+        {
+
+            DataTable dataTable = new DataTable();
+
+            var cmd = new SqlCommand("Usp_CompanyJob_GetByJobId", sqlConnection);
+
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@Id", id);
 
             sqlConnection.Open();
 
