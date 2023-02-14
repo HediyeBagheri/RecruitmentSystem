@@ -6,8 +6,9 @@ namespace RecruitmentSystem.Model.Offers
     {
         public int Id { get; set; }
         public int CompanyJobId { get; set; }
-        public string UserId { get; set; }
+        public int UserId { get; set; }
         public DateTime Date { get; set; }
         public string ResumePath { get; set; }
+
     }
 }

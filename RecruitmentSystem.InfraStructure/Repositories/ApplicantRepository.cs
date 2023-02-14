@@ -108,5 +108,25 @@ namespace RecruitmentSystem.InfraStructure.Repositories
             sqlConnection.Close();
             return dataTable;
         }
+
+        public DataTable GetResumeById(int applicantId)
+        {
+            DataTable dataTable = new DataTable();
+
+            var cmd = new SqlCommand("Usp_Applicant_GetResumeById", sqlConnection);
+            cmd.Parameters.AddWithValue("@ApplicantId", applicantId);
+
+            cmd.CommandType = CommandType.StoredProcedure;
+
+
+
+            sqlConnection.Open();
+
+            var reader = cmd.ExecuteReader();
+
+            dataTable.Load(reader);
+            sqlConnection.Close();
+            return dataTable;
+        }
     }
 }

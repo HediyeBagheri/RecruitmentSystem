@@ -10,10 +10,10 @@ using System.Windows.Forms;
 
 namespace RecruitmentSystem.UI
 {
-    public partial class RequestForCompanyJob : Form
+    public partial class RequestForCompanyJobForm : Form
     {
         private int companyJobId;
-        public RequestForCompanyJob(int companyJobId)
+        public RequestForCompanyJobForm(int companyJobId)
         {
             InitializeComponent();
             this.companyJobId = companyJobId;

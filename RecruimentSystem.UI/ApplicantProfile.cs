@@ -32,7 +32,7 @@ namespace RecruitmentSystem.UI
             TxtWorkExperience.Text = dr["WorkExperience"].ToString();
             TxtSalaryPropose.Text = dr["SalaryRequest"].ToString();
             JobCmbBox.SelectedIndex = Convert.ToInt32(dr["JobId"].ToString()) - 1;
-            TxtDescription.Text = dr["ResumeDescription"].ToString();
+            
         }
 
         private void ValidateUser()
@@ -98,7 +98,7 @@ namespace RecruitmentSystem.UI
                 WorkExperience = TxtWorkExperience.Text,
                 SalaryRequest = Convert.ToDecimal(TxtSalaryPropose.Text),
                 JobId = JobCmbBox.SelectedIndex + 1,
-                ResumeDescription = TxtDescription.Text
+                
             };
             applicantRepository.Update(applicant, applicantId);
 

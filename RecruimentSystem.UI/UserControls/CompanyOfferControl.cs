@@ -19,19 +19,35 @@ namespace RecruitmentSystem.UI
     public partial class CompanyOfferControl : UserControl
     {
         private readonly ICompanyJobRepository companyJobRepository;
+        private readonly IApplicantRepository applicantRepository;
         private int offerId;
+        private int applicantId;
 
-
-        public CompanyOfferControl(int offerId)
+        public CompanyOfferControl(int offerId,int applicantId)
         {
             InitializeComponent();
             this.offerId = offerId;
+            this.applicantId = applicantId;
             companyJobRepository = new CompanyJobRepository();
+            applicantRepository = new ApplicantRepository();
         }
 
         private void SendingResumeBtn_Click(object sender, EventArgs e)
         {
+            var y = applicantRepository.GetResumeById(applicantId);
+            var z=y.Select();
+            var s = z[0];
+            string resumePath = s["ResumePath"].ToString();
 
+            var x = new RequestForCompanyJob()
+            {
+                Date = DateTime.Now,
+                CompanyJobId = offerId,
+                ResumePath = resumePath,
+                UserId=applicantId
+            };
+            companyJobRepository.AddToRequestForCompanyJobId(x);
+            
         }
 
         private void ShowDetailsBtn_Click(object sender, EventArgs e)
