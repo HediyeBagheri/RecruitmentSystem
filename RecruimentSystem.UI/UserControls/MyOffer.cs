@@ -49,5 +49,18 @@ namespace RecruitmentSystem.UI.UserControls
             y.Close();
             frm.Show();
         }
+
+        private void BtnShow_Click(object sender, EventArgs e)
+        {
+            var openForms = Application.OpenForms;
+            var x = openForms["MyOfferInfo"];
+            var y = openForms["MyOffers"];
+            if (x != null)
+                x.Close();
+
+            var frm = new MyOfferInfo(companyJobId,companyId);
+            frm.Show();
+            y.Close();
+        }
     }
 }

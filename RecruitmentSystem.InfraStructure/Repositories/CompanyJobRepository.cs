@@ -38,7 +38,7 @@ namespace RecruitmentSystem.InfraStructure.Repositories
             var cmd = new SqlCommand("Usp_CompanyJob_Add", sqlConnection);
 
             cmd.CommandType = CommandType.StoredProcedure;
-           cmd.Parameters.AddWithValue("@CompanyId", companyOffer.CompanyId);
+            cmd.Parameters.AddWithValue("@CompanyId", companyOffer.CompanyId);
             cmd.Parameters.AddWithValue("@CompanyName", companyOffer.CompanyName);
             cmd.Parameters.AddWithValue("@SalaryPropose", companyOffer.SalaryPropose);
             cmd.Parameters.AddWithValue("@JobName", companyOffer.JobName);
@@ -191,6 +191,70 @@ namespace RecruitmentSystem.InfraStructure.Repositories
             sqlConnection.Close();
             
         }
+
+        public DataTable GetAllRequestForOffers(int companyJobId)
+        {
+            DataTable dataTable = new DataTable();
+
+            var cmd = new SqlCommand("Usp_CompanyJob_GetAllRequestForOffer", sqlConnection);
+
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@CompanyJobId", companyJobId);
+
+            sqlConnection.Open();
+
+            var reader = cmd.ExecuteReader();
+
+            dataTable.Load(reader);
+            sqlConnection.Close();
+            return dataTable;
+        }
+        public DataTable GetAllRequestForOffersById(int requestForCJId)
+        {
+            DataTable dataTable = new DataTable();
+
+            var cmd = new SqlCommand("Usp_CompanyJob_GetAllInfoForOffer", sqlConnection);
+
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@RequestForCompanyJobId", requestForCJId);
+
+            sqlConnection.Open();
+
+            var reader = cmd.ExecuteReader();
+
+            dataTable.Load(reader);
+            sqlConnection.Close();
+            return dataTable;
+        }
+        public void AddToRequestForCompanyJobId(RequestForCompanyJob rfcj)
+        {
+            var cmd = new SqlCommand("Usp_RequestForCompanyJob_Add", sqlConnection);
+
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@CompanyJobId", rfcj.CompanyJobId);
+            cmd.Parameters.AddWithValue("@UserId", rfcj.UserId);
+            cmd.Parameters.AddWithValue("@Date", rfcj.Date);
+            cmd.Parameters.AddWithValue("@ResumePath", rfcj.ResumePath);
+            sqlConnection.Open();
+
+            cmd.ExecuteNonQuery();
+
+            sqlConnection.Close();
+        }
+        public void DeleteToRequestForCompanyJobId(int rfcjId)
+        {
+            var cmd = new SqlCommand("Usp_RequestForCompanyJob_Delete", sqlConnection);
+
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@RequestForCompanyJobId", rfcjId);
+
+            sqlConnection.Open();
+
+            cmd.ExecuteNonQuery();
+            sqlConnection.Close();
+
+        }
+
     }
 }
 
