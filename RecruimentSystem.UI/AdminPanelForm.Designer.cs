@@ -80,8 +80,8 @@
             // 
             // flowLayoutPanel1
             // 
-            this.flowLayoutPanel1.Controls.Add(this.dataGridView2);
             this.flowLayoutPanel1.Controls.Add(this.DgvApplicant);
+            this.flowLayoutPanel1.Controls.Add(this.dataGridView2);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 2);
             this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -93,7 +93,7 @@
             // 
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView2.Location = new System.Drawing.Point(3, 2);
+            this.dataGridView2.Location = new System.Drawing.Point(3, 230);
             this.dataGridView2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowHeadersWidth = 51;
@@ -106,7 +106,7 @@
             this.DgvApplicant.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DgvApplicant.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.btnClick});
-            this.DgvApplicant.Location = new System.Drawing.Point(3, 6);
+            this.DgvApplicant.Location = new System.Drawing.Point(3, 2);
             this.DgvApplicant.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.DgvApplicant.Name = "DgvApplicant";
             this.DgvApplicant.RowHeadersWidth = 20;

@@ -15,5 +15,6 @@ namespace RecruitmentSystem.InfraStructure.IRepositories
         DataTable GetJobData();
         DataTable GetAllById(int applicantId);
         DataTable GetAll();
+        DataTable GetResumeById(int applicantId);
     }
 }
