@@ -47,6 +47,10 @@ namespace RecruitmentSystem.UI
             FillTabCompanyList();
         }
 
-        
+        private void BtnHome_Click(object sender, EventArgs e)
+        {
+            var mainFrm = new MainForm();
+            mainFrm.Show();
+        }
     }
 }
