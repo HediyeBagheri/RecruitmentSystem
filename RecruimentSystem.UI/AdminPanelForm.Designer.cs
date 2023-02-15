@@ -31,9 +31,9 @@
             this.tabControl = new System.Windows.Forms.TabControl();
             this.TabPApplicantList = new System.Windows.Forms.TabPage();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.DgvApplicant = new System.Windows.Forms.DataGridView();
             this.btnClick = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.tabPEmployeeOffer = new System.Windows.Forms.TabPage();
             this.DvgEmpReq = new System.Windows.Forms.DataGridView();
             this.tabPCompanyList = new System.Windows.Forms.TabPage();
@@ -44,8 +44,8 @@
             this.tabControl.SuspendLayout();
             this.TabPApplicantList.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DgvApplicant)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.tabPEmployeeOffer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DvgEmpReq)).BeginInit();
             this.tabPCompanyList.SuspendLayout();
@@ -71,7 +71,7 @@
             this.TabPApplicantList.Controls.Add(this.flowLayoutPanel1);
             this.TabPApplicantList.Location = new System.Drawing.Point(4, 29);
             this.TabPApplicantList.Name = "TabPApplicantList";
-            this.TabPApplicantList.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.TabPApplicantList.Padding = new System.Windows.Forms.Padding(3);
             this.TabPApplicantList.Size = new System.Drawing.Size(881, 316);
             this.TabPApplicantList.TabIndex = 0;
             this.TabPApplicantList.Text = "لیست کاربران";
@@ -79,31 +79,20 @@
             // 
             // flowLayoutPanel1
             // 
-            this.flowLayoutPanel1.Controls.Add(this.dataGridView2);
             this.flowLayoutPanel1.Controls.Add(this.DgvApplicant);
+            this.flowLayoutPanel1.Controls.Add(this.dataGridView2);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 3);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(875, 310);
             this.flowLayoutPanel1.TabIndex = 0;
             // 
-            // dataGridView2
-            // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView2.Location = new System.Drawing.Point(3, 3);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.RowHeadersWidth = 51;
-            this.dataGridView2.RowTemplate.Height = 29;
-            this.dataGridView2.Size = new System.Drawing.Size(299, 0);
-            this.dataGridView2.TabIndex = 0;
-            // 
             // DgvApplicant
             // 
             this.DgvApplicant.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DgvApplicant.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.btnClick});
-            this.DgvApplicant.Location = new System.Drawing.Point(3, 9);
+            this.DgvApplicant.Location = new System.Drawing.Point(3, 3);
             this.DgvApplicant.Name = "DgvApplicant";
             this.DgvApplicant.RowHeadersWidth = 20;
             this.DgvApplicant.RowTemplate.Height = 29;
@@ -118,6 +107,17 @@
             this.btnClick.Name = "btnClick";
             this.btnClick.Text = "Choose";
             this.btnClick.Width = 125;
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView2.Location = new System.Drawing.Point(3, 308);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.RowHeadersWidth = 51;
+            this.dataGridView2.RowTemplate.Height = 29;
+            this.dataGridView2.Size = new System.Drawing.Size(299, 0);
+            this.dataGridView2.TabIndex = 0;
             // 
             // tabPEmployeeOffer
             // 
@@ -145,7 +145,7 @@
             this.tabPCompanyList.Controls.Add(this.dataGridView1);
             this.tabPCompanyList.Location = new System.Drawing.Point(4, 29);
             this.tabPCompanyList.Name = "tabPCompanyList";
-            this.tabPCompanyList.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPCompanyList.Padding = new System.Windows.Forms.Padding(3);
             this.tabPCompanyList.Size = new System.Drawing.Size(881, 316);
             this.tabPCompanyList.TabIndex = 1;
             this.tabPCompanyList.Text = "لیست شرکت ها";
@@ -185,7 +185,7 @@
             // 
             // BtnHome
             // 
-            this.BtnHome.Location = new System.Drawing.Point(21, 445);
+            this.BtnHome.Location = new System.Drawing.Point(21, 456);
             this.BtnHome.Name = "BtnHome";
             this.BtnHome.Size = new System.Drawing.Size(94, 29);
             this.BtnHome.TabIndex = 5;
@@ -207,8 +207,8 @@
             this.tabControl.ResumeLayout(false);
             this.TabPApplicantList.ResumeLayout(false);
             this.flowLayoutPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DgvApplicant)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.tabPEmployeeOffer.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.DvgEmpReq)).EndInit();
             this.tabPCompanyList.ResumeLayout(false);
