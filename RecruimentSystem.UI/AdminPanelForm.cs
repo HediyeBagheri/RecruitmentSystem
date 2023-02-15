@@ -51,6 +51,7 @@ namespace RecruitmentSystem.UI
         {
             var mainFrm = new MainForm();
             mainFrm.Show();
+            this.Hide();
         }
     }
 }
