@@ -119,7 +119,7 @@ namespace RecruitmentSystem.UI
         private void BtnCompanyReq_Click(object sender, EventArgs e)
         {
             ValidateCompanyOffer();
-            SaveFile(imagePath);
+            FilesWork.SaveFile(imagePath,imageName);
             var companyOfferDetail = new CompanyJob()
             {
                 Id = companyJobId,
@@ -154,23 +154,13 @@ namespace RecruitmentSystem.UI
             }
         }
 
-        private void SaveFile(string imagePath)
-        {
-            using Stream stream = new FileStream(imagePath, FileMode.Open);
-            using var memoryStream = new MemoryStream();
-            stream.CopyTo(memoryStream);
-
-            string directory = string.Concat(AppDomain.CurrentDomain.BaseDirectory);
-            if (!Directory.Exists(directory))
-                Directory.CreateDirectory(directory);
-
-            File.WriteAllBytes(string.Concat(directory, imageName), memoryStream.ToArray());
-        }
+       
 
         private void openFileDialog1_FileOk(object sender, CancelEventArgs e)
         {
 
         }
+       
 
         private void Button1_Click(object sender, EventArgs e)
         {

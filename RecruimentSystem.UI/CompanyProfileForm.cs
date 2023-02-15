@@ -40,7 +40,7 @@ namespace RecruitmentSystem.UI
         private void BtnSave_Click(object sender, EventArgs e)
         {
             ValidateCompany();
-            SaveFile(imagePath);
+            FilesWork.SaveFile(imagePath,imageName);
             var company = new Company()
             {
                 Name = TxtCompanyName.Text,
@@ -57,19 +57,8 @@ namespace RecruitmentSystem.UI
             this.Hide();
             frm.Show();
         }
+       
 
-        private void SaveFile(string imagePath)
-        {
-            using Stream stream = new FileStream(imagePath, FileMode.Open);
-            using var memoryStream = new MemoryStream();
-            stream.CopyTo(memoryStream);
-
-            string directory = string.Concat(AppDomain.CurrentDomain.BaseDirectory);
-            if (!Directory.Exists(directory))
-                Directory.CreateDirectory(directory);
-
-            File.WriteAllBytes(string.Concat(directory, imageName), memoryStream.ToArray());
-        }
 
         private void BtnPic_Click(object sender, EventArgs e)
         {

@@ -3,6 +3,7 @@ using RecruitmentSystem.InfraStructure.Repositories;
 using RecruitmentSystem.Model.Models.Users;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Windows.Forms;
 
 namespace RecruitmentSystem.UI
@@ -11,6 +12,10 @@ namespace RecruitmentSystem.UI
     {
         private readonly IApplicantRepository applicantRepository;
         private int applicantId;
+        private string imageName;
+        private string imagePath;
+        private string resumeName;
+        private string resumePath;
         public ApplicantProfile(int applicantId)
         {
             applicantRepository = new ApplicantRepository();
@@ -32,7 +37,7 @@ namespace RecruitmentSystem.UI
             TxtWorkExperience.Text = dr["WorkExperience"].ToString();
             TxtSalaryPropose.Text = dr["SalaryRequest"].ToString();
             JobCmbBox.SelectedIndex = Convert.ToInt32(dr["JobId"].ToString()) - 1;
-            TxtDescription.Text = dr["ResumeDescription"].ToString();
+            
         }
 
         private void ValidateUser()
@@ -88,6 +93,8 @@ namespace RecruitmentSystem.UI
         private void SaveApplicant_Click(object sender, EventArgs e)
         {
             ValidateUser();
+            FilesWork.SaveFile(imagePath, imageName);
+            FilesWork.SaveFile(resumePath, resumeName);
             var applicant = new Applicant()
             {
                 Name = TxtBoxName.Text,
@@ -98,8 +105,9 @@ namespace RecruitmentSystem.UI
                 WorkExperience = TxtWorkExperience.Text,
                 SalaryRequest = Convert.ToDecimal(TxtSalaryPropose.Text),
                 JobId = JobCmbBox.SelectedIndex + 1,
-                ResumeDescription = TxtDescription.Text
-            };
+                ImagePath = imageName,
+                ResumePath = resumeName
+             };
             applicantRepository.Update(applicant, applicantId);
 
             var openForms = Application.OpenForms;
@@ -114,5 +122,28 @@ namespace RecruitmentSystem.UI
         {
 
         }
+
+        private void btnPhoto_Click(object sender, EventArgs e)
+        {
+            if (ofdPhoto.ShowDialog() == DialogResult.OK)
+            {
+                // PicBoxComRequest.BackgroundImage = new Bitmap(openFileDialog1.FileName);
+
+                imagePath = ofdPhoto.FileName;
+                imageName = "Images\\" + ofdPhoto.SafeFileName;
+            }
+        }
+
+        private void btnResume_Click(object sender, EventArgs e)
+        {
+            if (ofdResume.ShowDialog() == DialogResult.OK)
+            {
+                resumePath = ofdResume.FileName;
+                resumeName = "Resumes\\" + ofdResume.SafeFileName;
+                txtResumeName.Text = resumePath;
+            }
+        }
+       
     }
+
 }

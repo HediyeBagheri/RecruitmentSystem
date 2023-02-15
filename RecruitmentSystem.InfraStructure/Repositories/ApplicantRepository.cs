@@ -22,7 +22,9 @@ namespace RecruitmentSystem.InfraStructure.Repositories
             cmd.Parameters.AddWithValue("@WorkExperience", applicant.WorkExperience);
             cmd.Parameters.AddWithValue("@SalaryRequest", applicant.SalaryRequest);
             cmd.Parameters.AddWithValue("@JobId", applicant.JobId);
-            cmd.Parameters.AddWithValue("@ResumeDescription", applicant.ResumeDescription);
+            cmd.Parameters.AddWithValue("@ImagePath",applicant.ImagePath);
+            cmd.Parameters.AddWithValue("@ResumePath",applicant.ResumePath);
+            
 
 
             sqlConnection.Open();
@@ -95,6 +97,26 @@ namespace RecruitmentSystem.InfraStructure.Repositories
             DataTable dataTable = new DataTable();
 
             var cmd = new SqlCommand("Usp_Applicant_Select", sqlConnection);
+
+            cmd.CommandType = CommandType.StoredProcedure;
+
+
+
+            sqlConnection.Open();
+
+            var reader = cmd.ExecuteReader();
+
+            dataTable.Load(reader);
+            sqlConnection.Close();
+            return dataTable;
+        }
+
+        public DataTable GetResumeById(int applicantId)
+        {
+            DataTable dataTable = new DataTable();
+
+            var cmd = new SqlCommand("Usp_Applicant_GetResumeById", sqlConnection);
+            cmd.Parameters.AddWithValue("@ApplicantId", applicantId);
 
             cmd.CommandType = CommandType.StoredProcedure;
 

@@ -1,6 +1,6 @@
 ﻿namespace RecruitmentSystem.UI
 {
-    partial class RequestForCompanyJob
+    partial class RequestForCompanyJobForm
     {
         /// <summary>
         /// Required designer variable.

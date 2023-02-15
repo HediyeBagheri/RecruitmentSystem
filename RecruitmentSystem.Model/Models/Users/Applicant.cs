@@ -26,6 +26,7 @@ namespace RecruitmentSystem.Model.Models.Users
         [StringLength(64)]
         public int JobId { get; set; }
 
-        public string ResumeDescription { get; set; }
+        public string ImagePath { get; set; }
+        public string ResumePath { get; set; }
     }
 }

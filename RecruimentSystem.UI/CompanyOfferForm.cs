@@ -34,7 +34,7 @@ namespace RecruitmentSystem.UI
             foreach (var companyOfferDetail in companyOfferDetails.Select())
             {
                 
-                var companyOfferControl = new CompanyOfferControl(Convert.ToInt16(companyOfferDetail["Id"].ToString()));
+                var companyOfferControl = new CompanyOfferControl(Convert.ToInt16(companyOfferDetail["Id"].ToString()),applicantId);
                 companyOfferControl.LblCompanyName.Text = companyOfferDetail["CompanyName"].ToString();
                 companyOfferControl.JobName.Text = companyOfferDetail["JobName"].ToString();
                 //companyOfferControl.SalaryProposeLbl.Text = companyOfferDetail["SalaryPropose"].ToString();
