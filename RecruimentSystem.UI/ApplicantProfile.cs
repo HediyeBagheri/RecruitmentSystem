@@ -3,6 +3,7 @@ using RecruitmentSystem.InfraStructure.Repositories;
 using RecruitmentSystem.Model.Models.Users;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Windows.Forms;
 
 namespace RecruitmentSystem.UI
@@ -11,6 +12,10 @@ namespace RecruitmentSystem.UI
     {
         private readonly IApplicantRepository applicantRepository;
         private int applicantId;
+        private string imageName;
+        private string imagePath;
+        private string resumeName;
+        private string resumePath;
         public ApplicantProfile(int applicantId)
         {
             applicantRepository = new ApplicantRepository();
@@ -88,6 +93,8 @@ namespace RecruitmentSystem.UI
         private void SaveApplicant_Click(object sender, EventArgs e)
         {
             ValidateUser();
+            SaveFile(imagePath, imageName);
+            SaveFile(resumePath, resumeName);
             var applicant = new Applicant()
             {
                 Name = TxtBoxName.Text,
@@ -98,8 +105,9 @@ namespace RecruitmentSystem.UI
                 WorkExperience = TxtWorkExperience.Text,
                 SalaryRequest = Convert.ToDecimal(TxtSalaryPropose.Text),
                 JobId = JobCmbBox.SelectedIndex + 1,
-                
-            };
+                ImagePath = imageName,
+                ResumePath = resumeName
+             };
             applicantRepository.Update(applicant, applicantId);
 
             var openForms = Application.OpenForms;
@@ -113,6 +121,39 @@ namespace RecruitmentSystem.UI
         private void groupBox1_Enter(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnPhoto_Click(object sender, EventArgs e)
+        {
+            if (ofdPhoto.ShowDialog() == DialogResult.OK)
+            {
+                // PicBoxComRequest.BackgroundImage = new Bitmap(openFileDialog1.FileName);
+
+                imagePath = ofdPhoto.FileName;
+                imageName = "Images\\" + ofdPhoto.SafeFileName;
+            }
+        }
+
+        private void btnResume_Click(object sender, EventArgs e)
+        {
+            if (ofdResume.ShowDialog() == DialogResult.OK)
+            {
+                resumePath = ofdResume.FileName;
+                resumeName = "Resumes\\" + ofdResume.SafeFileName;
+                txtResumeName.Text = resumePath;
+            }
+        }
+        public void SaveFile(string filePath,string fileName)
+        {
+            using Stream stream = new FileStream(imagePath, FileMode.Open);
+            using var memoryStream = new MemoryStream();
+            stream.CopyTo(memoryStream);
+
+            string directory = string.Concat(AppDomain.CurrentDomain.BaseDirectory);
+            if (!Directory.Exists(directory))
+                Directory.CreateDirectory(directory);
+
+            File.WriteAllBytes(string.Concat(directory, imageName), memoryStream.ToArray());
         }
     }
 }

@@ -22,7 +22,9 @@ namespace RecruitmentSystem.InfraStructure.Repositories
             cmd.Parameters.AddWithValue("@WorkExperience", applicant.WorkExperience);
             cmd.Parameters.AddWithValue("@SalaryRequest", applicant.SalaryRequest);
             cmd.Parameters.AddWithValue("@JobId", applicant.JobId);
-            cmd.Parameters.AddWithValue("@ResumeDescription", applicant.ResumeDescription);
+            cmd.Parameters.AddWithValue("@ImagePath",applicant.ImagePath);
+            cmd.Parameters.AddWithValue("@ResumePath",applicant.ResumePath);
+            
 
 
             sqlConnection.Open();

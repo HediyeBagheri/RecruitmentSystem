@@ -84,7 +84,7 @@
             this.LblWelcome.Name = "LblWelcome";
             this.LblWelcome.Size = new System.Drawing.Size(244, 34);
             this.LblWelcome.TabIndex = 5;
-            this.LblWelcome.Text = "welcome";
+            this.LblWelcome.Text = "Welcome";
             // 
             // BtnExit
             // 
@@ -98,9 +98,11 @@
             // 
             // pictureBox1
             // 
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pictureBox1.Location = new System.Drawing.Point(22, 32);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(132, 97);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
             // 

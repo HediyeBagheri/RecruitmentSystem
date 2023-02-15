@@ -18,18 +18,22 @@ namespace RecruitmentSystem.UI
         private readonly ICompanyJobRepository companyJobRepository;
         private int companyId;
         private int companyJobId;
+        private DataTable dt;
         public MyOfferInfo(int companyJobId, int companyId)
         {
             InitializeComponent();
             this.companyId = companyId;
             this.companyJobId = companyJobId;
             companyJobRepository = new CompanyJobRepository();
+            dt=new DataTable();
             FillDataGrid();
         }
 
         private void FillDataGrid()
         {
+
             var data = companyJobRepository.GetAllRequestForOffers(companyJobId);
+           
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -40,6 +44,7 @@ namespace RecruitmentSystem.UI
                 x.Close();
 
             var frm = new MyOffers(companyId);
+            this.Hide();
             frm.Show();
             
         }
