@@ -3,6 +3,7 @@ using RecruitmentSystem.InfraStructure.IRepositories;
 using RecruitmentSystem.InfraStructure.Repositories;
 using System;
 using System.Data;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace RecruitmentSystem.UI
@@ -18,21 +19,22 @@ namespace RecruitmentSystem.UI
             InitializeComponent();
             applicantRepository = new ApplicantRepository();
             applicantId = id;
+            FillWelcomeData();
 
         }
-
         private void FillWelcomeData()
         {
             applicantData = applicantRepository.GetAllById(applicantId);
-            string name = "";
+            string name = " ";
             foreach (var dataRow in applicantData.Select())
             {
-                name = dataRow["Name"].ToString();
+                name += dataRow["Name"].ToString() +" "+ dataRow["LastName"].ToString();
+                if (dataRow["ImagePath"].ToString() != "")
+                {
+                    pictureBox1.Image = Image.FromFile(dataRow["ImagePath"].ToString());
+                }
             }
-
-            string x = LblWelcome.Text;
-            string y = x + " " + name;
-            LblWelcome.Text = y;
+            LblWelcome.Text += name;
         }
 
         private void RecruitBtn_Click(object sender, EventArgs e)
@@ -62,7 +64,7 @@ namespace RecruitmentSystem.UI
 
         private void ApplicantPanelForm_Load(object sender, EventArgs e)
         {
-            FillWelcomeData();
+            
 
         }
 

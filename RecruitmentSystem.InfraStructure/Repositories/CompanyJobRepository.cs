@@ -234,6 +234,7 @@ namespace RecruitmentSystem.InfraStructure.Repositories
             cmd.Parameters.AddWithValue("@CompanyJobId", rfcj.CompanyJobId);
             cmd.Parameters.AddWithValue("@UserId", rfcj.UserId);
             cmd.Parameters.AddWithValue("@Date", rfcj.Date);
+            cmd.Parameters.AddWithValue("@ResumePath", rfcj.ResumePath);
             
             sqlConnection.Open();
 

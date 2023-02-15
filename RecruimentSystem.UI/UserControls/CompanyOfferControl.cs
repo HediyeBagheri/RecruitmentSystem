@@ -34,20 +34,27 @@ namespace RecruitmentSystem.UI
 
         private void SendingResumeBtn_Click(object sender, EventArgs e)
         {
-            var y = applicantRepository.GetResumeById(applicantId);
-            var z=y.Select();
-            var s = z[0];
-            string resumePath = s["ResumePath"].ToString();
-
-            var x = new RequestForCompanyJob()
+            var dt = applicantRepository.GetResumeById(applicantId);
+            var dr=dt.Select();
+            var cell = dr[0];
+            string resumePath = cell["ResumePath"].ToString();
+            if (resumePath==null)
             {
-                Date = DateTime.Now,
-                CompanyJobId = offerId,
-                ResumePath = resumePath,
-                UserId=applicantId
-            };
-            companyJobRepository.AddToRequestForCompanyJobId(x);
-            
+                MessageBox.Show("You Don't Have A Resume, Please Upload Yours In Your Profile");
+            }
+            else
+            {
+                var x = new RequestForCompanyJob()
+                {
+                    Date = DateTime.Now,
+                    CompanyJobId = offerId,
+                    ResumePath = resumePath,
+                    UserId = applicantId
+                };
+                
+                companyJobRepository.AddToRequestForCompanyJobId(x);
+                MessageBox.Show("Your Resume Sent Successfully, The Company Will Contact You Soon!");
+            }
         }
 
         private void ShowDetailsBtn_Click(object sender, EventArgs e)

@@ -31,6 +31,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.dgvRequests = new System.Windows.Forms.DataGridView();
+            this.btnChoose = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRequests)).BeginInit();
             this.SuspendLayout();
             // 
@@ -47,11 +48,20 @@
             // dgvRequests
             // 
             this.dgvRequests.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvRequests.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.btnChoose});
             this.dgvRequests.Location = new System.Drawing.Point(27, 51);
             this.dgvRequests.Name = "dgvRequests";
             this.dgvRequests.RowTemplate.Height = 25;
             this.dgvRequests.Size = new System.Drawing.Size(477, 234);
             this.dgvRequests.TabIndex = 1;
+            // 
+            // btnChoose
+            // 
+            this.btnChoose.HeaderText = "Choose";
+            this.btnChoose.Name = "btnChoose";
+            this.btnChoose.Text = "Choose";
+            this.btnChoose.UseColumnTextForButtonValue = true;
             // 
             // MyOfferInfo
             // 
@@ -72,5 +82,6 @@
         private System.Windows.Forms.Button button1;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.DataGridView dgvRequests;
+        private System.Windows.Forms.DataGridViewButtonColumn btnChoose;
     }
 }
