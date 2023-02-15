@@ -128,12 +128,12 @@
 
         #endregion
 
-        private System.Windows.Forms.Button recruitBtn;
-        private System.Windows.Forms.Button trainingBtn;
-        private System.Windows.Forms.Button BtnProfileUpdate;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label LblWelcome;
-        private System.Windows.Forms.Button BtnExit;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        public System.Windows.Forms.Button recruitBtn;
+        public System.Windows.Forms.Button trainingBtn;
+        public System.Windows.Forms.Button BtnProfileUpdate;
+        public System.Windows.Forms.Label label1;
+        public System.Windows.Forms.Label LblWelcome;
+        public System.Windows.Forms.Button BtnExit;
+        public System.Windows.Forms.PictureBox pictureBox1;
     }
 }
