@@ -93,8 +93,8 @@ namespace RecruitmentSystem.UI
         private void SaveApplicant_Click(object sender, EventArgs e)
         {
             ValidateUser();
-            SaveFile(imagePath, imageName);
-            SaveFile(resumePath, resumeName);
+            FilesWork.SaveFile(imagePath, imageName);
+            FilesWork.SaveFile(resumePath, resumeName);
             var applicant = new Applicant()
             {
                 Name = TxtBoxName.Text,
@@ -143,17 +143,7 @@ namespace RecruitmentSystem.UI
                 txtResumeName.Text = resumePath;
             }
         }
-        public void SaveFile(string filePath,string fileName)
-        {
-            using Stream stream = new FileStream(imagePath, FileMode.Open);
-            using var memoryStream = new MemoryStream();
-            stream.CopyTo(memoryStream);
-
-            string directory = string.Concat(AppDomain.CurrentDomain.BaseDirectory);
-            if (!Directory.Exists(directory))
-                Directory.CreateDirectory(directory);
-
-            File.WriteAllBytes(string.Concat(directory, imageName), memoryStream.ToArray());
-        }
+       
     }
+
 }

@@ -5,7 +5,7 @@ namespace RecruitmentSystem.UI
 {
     public class FilesWork
     {
-        public void SaveFile(string imagePath, string imageName)
+        public static void SaveFile(string imagePath, string imageName)
         {
             using Stream stream = new FileStream(imagePath, FileMode.Open);
             using var memoryStream = new MemoryStream();
