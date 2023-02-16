@@ -15,7 +15,7 @@ namespace RecruitmentSystem.UI
             if (!Directory.Exists(directory))
                 Directory.CreateDirectory(directory);
 
-            File.WriteAllBytes(string.Concat(directory, imageName), memoryStream.ToArray());
+           File.WriteAllBytes(string.Concat(directory, imageName), memoryStream.ToArray());
         }
     }
 }

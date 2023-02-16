@@ -1,20 +1,10 @@
-﻿using Microsoft.Data.SqlClient;
-using RecruimentSystem.UI;
-using RecruitmentSystem.InfraStructure.IRepositories;
+﻿using RecruitmentSystem.InfraStructure.IRepositories;
 using RecruitmentSystem.InfraStructure.Repositories;
 using RecruitmentSystem.Model.Models.Users;
 using RecruitmentSystem.Model.Offers;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.ComponentModel.Design;
-using System.Data;
-using System.Data.SqlClient;
-using System.Drawing;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace RecruitmentSystem.UI
@@ -31,16 +21,17 @@ namespace RecruitmentSystem.UI
         public CompanyRequestForm(int companyId)
         {
             InitializeComponent();
-            
+
             companyJobRepository = new CompanyJobRepository();
             this.companyId = companyId;
             FillCmbJob();
         }
-        public CompanyRequestForm(int companyId,int companyJobId) : this(companyId)
+        public CompanyRequestForm(int companyId, int companyJobId) : this(companyId)
         {
             this.companyJobId = companyJobId;
             isUpdating = true;
             FillForm();
+
         }
 
         private void FillForm()
@@ -57,7 +48,7 @@ namespace RecruitmentSystem.UI
             TxtMinEducationDegree.Text = dr["MinimumEducationDegree"].ToString() + "";
             CmbTypeOfCooperation.Text = dr["TypeOfCooperationId"].ToString() + "";
             TxtDescription.Text = dr["Description"].ToString() + "";
-            imagePath = dr["ImagePath"].ToString() + "";
+            imageName = dr["ImagePath"].ToString() + "";
         }
 
         private void Form_Load(object sender, EventArgs e)
@@ -112,14 +103,17 @@ namespace RecruitmentSystem.UI
 
         private void ValidateCompanyOffer()
         {
-            
+
 
         }
 
         private void BtnCompanyReq_Click(object sender, EventArgs e)
         {
             ValidateCompanyOffer();
-            FilesWork.SaveFile(imagePath,imageName);
+            if (imagePath != null)
+                FilesWork.SaveFile(imagePath, imageName);
+
+
             var companyOfferDetail = new CompanyJob()
             {
                 Id = companyJobId,
@@ -154,22 +148,22 @@ namespace RecruitmentSystem.UI
             }
         }
 
-       
+
 
         private void openFileDialog1_FileOk(object sender, CancelEventArgs e)
         {
 
         }
-       
+
 
         private void Button1_Click(object sender, EventArgs e)
         {
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
-              // PicBoxComRequest.BackgroundImage = new Bitmap(openFileDialog1.FileName);
+                // PicBoxComRequest.BackgroundImage = new Bitmap(openFileDialog1.FileName);
 
                 imagePath = openFileDialog1.FileName;
-                imageName = "Images\\"+openFileDialog1.SafeFileName;
+                imageName = "Images\\" + openFileDialog1.SafeFileName;
             }
 
         }
