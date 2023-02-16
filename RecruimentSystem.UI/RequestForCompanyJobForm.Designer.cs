@@ -53,6 +53,7 @@
             this.btnDelete.TabIndex = 0;
             this.btnDelete.Text = "Delete This Request";
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnExit
             // 
@@ -86,6 +87,7 @@
             this.pictureBox2.Location = new System.Drawing.Point(12, 12);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(130, 136);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 4;
             this.pictureBox2.TabStop = false;
             // 
@@ -161,7 +163,7 @@
             this.label7.TabIndex = 12;
             this.label7.Text = "Phone Number";
             // 
-            // RequestForCompanyJob
+            // RequestForCompanyJobForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -179,7 +181,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnDelete);
-            this.Name = "RequestForCompanyJob";
+            this.Name = "RequestForCompanyJobForm";
             this.Text = "RequestForCompanyJob";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
