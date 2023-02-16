@@ -2,7 +2,6 @@
 using RecruitmentSystem.InfraStructure.Repositories;
 using RecruitmentSystem.Model.Models.Users;
 using System;
-using System.IO;
 using System.Windows.Forms;
 
 namespace RecruitmentSystem.UI
@@ -32,6 +31,7 @@ namespace RecruitmentSystem.UI
             TxtManagerName.Text = dr["ManagerName"].ToString() + "";
             TxtBusiness.Text = dr["Business"].ToString() + "";
             TxtAddress.Text = dr["Address"].ToString() + "";
+            imageName = dr["ImagePath"].ToString()+"";
         }
         private void ValidateCompany()
         {
@@ -40,7 +40,9 @@ namespace RecruitmentSystem.UI
         private void BtnSave_Click(object sender, EventArgs e)
         {
             ValidateCompany();
-            FilesWork.SaveFile(imagePath,imageName);
+            if (imagePath != null)
+                FilesWork.SaveFile(imagePath, imageName);
+
             var company = new Company()
             {
                 Name = TxtCompanyName.Text,
@@ -57,7 +59,7 @@ namespace RecruitmentSystem.UI
             this.Hide();
             frm.Show();
         }
-       
+
 
 
         private void BtnPic_Click(object sender, EventArgs e)

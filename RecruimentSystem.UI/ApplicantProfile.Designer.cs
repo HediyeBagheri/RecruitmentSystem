@@ -224,7 +224,7 @@
             // 
             // TxtBoxName
             // 
-            this.TxtBoxName.Location = new System.Drawing.Point(458, 28);
+            this.TxtBoxName.Location = new System.Drawing.Point(458, 31);
             this.TxtBoxName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TxtBoxName.Name = "TxtBoxName";
             this.TxtBoxName.Size = new System.Drawing.Size(110, 23);

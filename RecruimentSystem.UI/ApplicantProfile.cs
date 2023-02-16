@@ -3,7 +3,6 @@ using RecruitmentSystem.InfraStructure.Repositories;
 using RecruitmentSystem.Model.Models.Users;
 using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Windows.Forms;
 
 namespace RecruitmentSystem.UI
@@ -37,7 +36,8 @@ namespace RecruitmentSystem.UI
             TxtWorkExperience.Text = dr["WorkExperience"].ToString();
             TxtSalaryPropose.Text = dr["SalaryRequest"].ToString();
             JobCmbBox.SelectedIndex = Convert.ToInt32(dr["JobId"].ToString()) - 1;
-            
+            resumeName = dr["ResumePath"].ToString();
+            imageName = dr["ImagePath"].ToString();
         }
 
         private void ValidateUser()
@@ -48,6 +48,12 @@ namespace RecruitmentSystem.UI
         private void Form_Load(object sender, EventArgs e)
         {
             FormLoadJob();
+            
+            //Must Change Later
+            var openForms = Application.OpenForms;
+            var x = openForms["ApplicantPanelForm"];
+            x.Close();
+
             var dt = applicantRepository.GetServeStatusData();
             KeyValue keyValue1;
 
@@ -93,8 +99,13 @@ namespace RecruitmentSystem.UI
         private void SaveApplicant_Click(object sender, EventArgs e)
         {
             ValidateUser();
-            FilesWork.SaveFile(imagePath, imageName);
-            FilesWork.SaveFile(resumePath, resumeName);
+            if (imagePath != null)
+                FilesWork.SaveFile(imagePath, imageName);
+
+            if (resumePath != null)
+                FilesWork.SaveFile(resumePath, resumeName);
+
+
             var applicant = new Applicant()
             {
                 Name = TxtBoxName.Text,
@@ -107,12 +118,9 @@ namespace RecruitmentSystem.UI
                 JobId = JobCmbBox.SelectedIndex + 1,
                 ImagePath = imageName,
                 ResumePath = resumeName
-             };
+            };
             applicantRepository.Update(applicant, applicantId);
 
-            var openForms = Application.OpenForms;
-            var x = openForms["ApplicantPanelForm"];
-            x.Close();
             var frm = new ApplicantPanelForm(applicantId);
             this.Hide();
             frm.Show();
@@ -143,7 +151,7 @@ namespace RecruitmentSystem.UI
                 txtResumeName.Text = resumePath;
             }
         }
-       
+
     }
 
 }
