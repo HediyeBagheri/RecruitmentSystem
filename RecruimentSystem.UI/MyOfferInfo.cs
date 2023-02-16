@@ -33,6 +33,7 @@ namespace RecruitmentSystem.UI
         {
 
             var data = companyJobRepository.GetAllRequestForOffers(companyJobId);
+            dgvRequests.DataSource = data;
            
         }
 
@@ -47,6 +48,19 @@ namespace RecruitmentSystem.UI
             this.Hide();
             frm.Show();
             
+        }
+
+        private void dgvRequests_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int index = e.RowIndex;
+            int id = Convert.ToInt32(dgvRequests["Id", index].Value);
+            var openforms = Application.OpenForms;
+            var x = openforms["RequestForCompanyJobForm"];
+            if (x!=null)
+                x.Close();
+            var form = new RequestForCompanyJobForm(companyJobId,companyId,id);
+            form.Show();
+            this.Hide();
         }
     }
 }
