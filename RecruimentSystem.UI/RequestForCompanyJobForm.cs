@@ -34,7 +34,7 @@ namespace RecruitmentSystem.UI
             var drs = dt.Select();
             var dr = drs[0];
             lblFullName.Text= dr["Name"].ToString() + " " + dr["LastName"].ToString();
-            lblAge.Text = Convert.ToDateTime(dr["Date"]).ToString();
+            lblDate.Text = Convert.ToDateTime(dr["Date"]).ToString();
             lblEmail.Text = dr["Email"].ToString();
             lblPhoneNumber.Text = dr["TelephoneNumber"].ToString();
             pictureBox2.Image = Image.FromFile(dr["ImagePath"].ToString());
