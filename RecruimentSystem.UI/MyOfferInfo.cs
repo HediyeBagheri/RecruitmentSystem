@@ -37,7 +37,7 @@ namespace RecruitmentSystem.UI
            
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnBack_Click(object sender, EventArgs e)
         {
             var openForms = Application.OpenForms;
             var x = openForms["MyOffers"];
