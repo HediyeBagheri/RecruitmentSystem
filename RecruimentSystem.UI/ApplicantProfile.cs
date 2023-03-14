@@ -13,7 +13,7 @@ namespace RecruitmentSystem.UI
         private readonly IApplicantRepository applicantRepository;
         private int applicantId;
         private string imageName;
-        private string imagePath;
+        private string imagePhysicalPath;
         private string resumeName;
         private string resumePath;
         public ApplicantProfile(int applicantId)
@@ -37,7 +37,8 @@ namespace RecruitmentSystem.UI
             TxtWorkExperience.Text = dr["WorkExperience"].ToString();
             TxtSalaryPropose.Text = dr["SalaryRequest"].ToString();
             JobCmbBox.SelectedIndex = Convert.ToInt32(dr["JobId"].ToString()) - 1;
-            
+            resumeName = dr["ResumePath"].ToString();
+            imageName = dr["ImagePath"].ToString();
         }
 
         private void ValidateUser()
@@ -48,6 +49,12 @@ namespace RecruitmentSystem.UI
         private void Form_Load(object sender, EventArgs e)
         {
             FormLoadJob();
+            
+            //Must Change Later
+            var openForms = Application.OpenForms;
+            var x = openForms["ApplicantPanelForm"];
+            x.Close();
+
             var dt = applicantRepository.GetServeStatusData();
             KeyValue keyValue1;
 
@@ -93,8 +100,13 @@ namespace RecruitmentSystem.UI
         private void SaveApplicant_Click(object sender, EventArgs e)
         {
             ValidateUser();
-            FilesWork.SaveFile(imagePath, imageName);
-            FilesWork.SaveFile(resumePath, resumeName);
+            if (imagePhysicalPath != null)
+                SaveImagePath();
+
+            if (resumePath != null)
+                SaveImagePath();
+
+
             var applicant = new Applicant()
             {
                 Name = TxtBoxName.Text,
@@ -107,29 +119,36 @@ namespace RecruitmentSystem.UI
                 JobId = JobCmbBox.SelectedIndex + 1,
                 ImagePath = imageName,
                 ResumePath = resumeName
-             };
+            };
             applicantRepository.Update(applicant, applicantId);
 
-            var openForms = Application.OpenForms;
-            var x = openForms["ApplicantPanelForm"];
-            x.Close();
             var frm = new ApplicantPanelForm(applicantId);
             this.Hide();
             frm.Show();
         }
-
-        private void groupBox1_Enter(object sender, EventArgs e)
+        private void SaveImagePath()
         {
+            if (!string.IsNullOrEmpty(imageName))
+            {
+                var currentDirectory = Directory.GetCurrentDirectory();
+                var targetDirectory = string.Concat(currentDirectory, "/");
+                var imagePath = string.Concat(targetDirectory, imageName);
 
+                if (!Directory.Exists(targetDirectory))
+                    Directory.CreateDirectory(targetDirectory);
+
+
+                File.Copy(imagePhysicalPath, imagePath, true);
+            }
         }
-
+        
         private void btnPhoto_Click(object sender, EventArgs e)
         {
             if (ofdPhoto.ShowDialog() == DialogResult.OK)
             {
                 // PicBoxComRequest.BackgroundImage = new Bitmap(openFileDialog1.FileName);
 
-                imagePath = ofdPhoto.FileName;
+                imagePhysicalPath = ofdPhoto.FileName;
                 imageName = "Images\\" + ofdPhoto.SafeFileName;
             }
         }
@@ -143,7 +162,7 @@ namespace RecruitmentSystem.UI
                 txtResumeName.Text = resumePath;
             }
         }
-       
+
     }
 
 }
