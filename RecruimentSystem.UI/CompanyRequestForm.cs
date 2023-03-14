@@ -5,6 +5,7 @@ using RecruitmentSystem.Model.Offers;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.IO;
 using System.Windows.Forms;
 
 namespace RecruitmentSystem.UI
@@ -15,7 +16,7 @@ namespace RecruitmentSystem.UI
         private bool isUpdating = false;
         private int companyId;
         private int companyJobId;
-        private string imagePath = default;
+        private string imagePhysicalPath = default;
         private string imageName = default;
 
         public CompanyRequestForm(int companyId)
@@ -110,8 +111,8 @@ namespace RecruitmentSystem.UI
         private void BtnCompanyReq_Click(object sender, EventArgs e)
         {
             ValidateCompanyOffer();
-            if (imagePath != null)
-                FilesWork.SaveFile(imagePath, imageName);
+            if (imagePhysicalPath != null)
+                SaveImagePath();
 
 
             var companyOfferDetail = new CompanyJob()
@@ -148,7 +149,21 @@ namespace RecruitmentSystem.UI
             }
         }
 
+        private void SaveImagePath()
+        {
+            if (!string.IsNullOrEmpty(imageName))
+            {
+                var currentDirectory = Directory.GetCurrentDirectory();
+                var targetDirectory = string.Concat(currentDirectory, "/");
+                var imagePath = string.Concat(targetDirectory, imageName);
 
+                if (!Directory.Exists(targetDirectory))
+                    Directory.CreateDirectory(targetDirectory);
+
+
+                File.Copy(imagePhysicalPath, imagePath, true);
+            }
+        }
 
         private void openFileDialog1_FileOk(object sender, CancelEventArgs e)
         {
@@ -162,7 +177,7 @@ namespace RecruitmentSystem.UI
             {
                 // PicBoxComRequest.BackgroundImage = new Bitmap(openFileDialog1.FileName);
 
-                imagePath = openFileDialog1.FileName;
+                imagePhysicalPath = openFileDialog1.FileName;
                 imageName = "Images\\" + openFileDialog1.SafeFileName;
             }
 

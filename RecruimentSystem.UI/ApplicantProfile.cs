@@ -3,6 +3,7 @@ using RecruitmentSystem.InfraStructure.Repositories;
 using RecruitmentSystem.Model.Models.Users;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Windows.Forms;
 
 namespace RecruitmentSystem.UI
@@ -12,7 +13,7 @@ namespace RecruitmentSystem.UI
         private readonly IApplicantRepository applicantRepository;
         private int applicantId;
         private string imageName;
-        private string imagePath;
+        private string imagePhysicalPath;
         private string resumeName;
         private string resumePath;
         public ApplicantProfile(int applicantId)
@@ -99,11 +100,11 @@ namespace RecruitmentSystem.UI
         private void SaveApplicant_Click(object sender, EventArgs e)
         {
             ValidateUser();
-            if (imagePath != null)
-                FilesWork.SaveFile(imagePath, imageName);
+            if (imagePhysicalPath != null)
+                SaveImagePath();
 
             if (resumePath != null)
-                FilesWork.SaveFile(resumePath, resumeName);
+                SaveImagePath();
 
 
             var applicant = new Applicant()
@@ -125,19 +126,29 @@ namespace RecruitmentSystem.UI
             this.Hide();
             frm.Show();
         }
-
-        private void groupBox1_Enter(object sender, EventArgs e)
+        private void SaveImagePath()
         {
+            if (!string.IsNullOrEmpty(imageName))
+            {
+                var currentDirectory = Directory.GetCurrentDirectory();
+                var targetDirectory = string.Concat(currentDirectory, "/");
+                var imagePath = string.Concat(targetDirectory, imageName);
 
+                if (!Directory.Exists(targetDirectory))
+                    Directory.CreateDirectory(targetDirectory);
+
+
+                File.Copy(imagePhysicalPath, imagePath, true);
+            }
         }
-
+        
         private void btnPhoto_Click(object sender, EventArgs e)
         {
             if (ofdPhoto.ShowDialog() == DialogResult.OK)
             {
                 // PicBoxComRequest.BackgroundImage = new Bitmap(openFileDialog1.FileName);
 
-                imagePath = ofdPhoto.FileName;
+                imagePhysicalPath = ofdPhoto.FileName;
                 imageName = "Images\\" + ofdPhoto.SafeFileName;
             }
         }
