@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnBack = new System.Windows.Forms.Button();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.dgvRequests = new System.Windows.Forms.DataGridView();
@@ -39,9 +39,10 @@
             // 
             // btnBack
             // 
-            this.btnBack.Location = new System.Drawing.Point(462, 301);
+            this.btnBack.Location = new System.Drawing.Point(528, 401);
+            this.btnBack.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(100, 43);
+            this.btnBack.Size = new System.Drawing.Size(114, 57);
             this.btnBack.TabIndex = 0;
             this.btnBack.Text = "Back";
             this.btnBack.UseVisualStyleBackColor = true;
@@ -54,22 +55,23 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvRequests.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dgvRequests.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvRequests.Location = new System.Drawing.Point(27, 51);
+            this.dgvRequests.Location = new System.Drawing.Point(31, 68);
+            this.dgvRequests.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dgvRequests.Name = "dgvRequests";
             this.dgvRequests.ReadOnly = true;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.NullValue = "Go To Offer";
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvRequests.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.NullValue = "Go To Offer";
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvRequests.RowHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvRequests.RowHeadersWidth = 80;
             this.dgvRequests.RowTemplate.Height = 25;
             this.dgvRequests.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvRequests.Size = new System.Drawing.Size(535, 234);
+            this.dgvRequests.Size = new System.Drawing.Size(611, 312);
             this.dgvRequests.TabIndex = 1;
             this.dgvRequests.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRequests_CellDoubleClick);
             // 
@@ -77,9 +79,9 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(27, 9);
+            this.label1.Location = new System.Drawing.Point(31, 12);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(282, 25);
+            this.label1.Size = new System.Drawing.Size(341, 30);
             this.label1.TabIndex = 2;
             this.label1.Text = "Applicants Who Want This Job :";
             // 
@@ -87,21 +89,22 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(27, 288);
+            this.label2.Location = new System.Drawing.Point(31, 384);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(199, 19);
+            this.label2.Size = new System.Drawing.Size(248, 23);
             this.label2.TabIndex = 3;
             this.label2.Text = "Double Click To See The Details";
             // 
             // MyOfferInfo
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(589, 356);
+            this.ClientSize = new System.Drawing.Size(673, 475);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dgvRequests);
             this.Controls.Add(this.btnBack);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "MyOfferInfo";
             this.Text = "MyOfferInfo";
             ((System.ComponentModel.ISupportInitialize)(this.dgvRequests)).EndInit();

@@ -2,6 +2,7 @@
 using RecruitmentSystem.InfraStructure.Repositories;
 using RecruitmentSystem.Model.Models.Users;
 using System;
+using System.IO;
 using System.Windows.Forms;
 
 namespace RecruitmentSystem.UI
@@ -10,7 +11,7 @@ namespace RecruitmentSystem.UI
     {
         private readonly ICompanyRepository companyRepository;
         private int companyId;
-        private string imagePath = default;
+        private string imagePhysicalPath = default;
         private string imageName = default;
 
         public CompanyProfileForm(int companyId)
@@ -40,8 +41,8 @@ namespace RecruitmentSystem.UI
         private void BtnSave_Click(object sender, EventArgs e)
         {
             ValidateCompany();
-            if (imagePath != null)
-                FilesWork.SaveFile(imagePath, imageName);
+            if (imagePhysicalPath != null)
+                SaveImagePath();
 
             var company = new Company()
             {
@@ -60,7 +61,21 @@ namespace RecruitmentSystem.UI
             frm.Show();
         }
 
+        private void SaveImagePath()
+        {
+            if (!string.IsNullOrEmpty(imageName))
+            {
+                var currentDirectory = Directory.GetCurrentDirectory();
+                var targetDirectory = string.Concat(currentDirectory, "/");
+                var imagePath = string.Concat(targetDirectory, imageName);
 
+                if (!Directory.Exists(targetDirectory))
+                    Directory.CreateDirectory(targetDirectory);
+
+
+                File.Copy(imagePhysicalPath, imagePath, true);
+            }
+        }
 
         private void BtnPic_Click(object sender, EventArgs e)
         {
@@ -68,8 +83,9 @@ namespace RecruitmentSystem.UI
             {
                 // PicBoxComRequest.BackgroundImage = new Bitmap(openFileDialog1.FileName);
 
-                imagePath = openFileDialog2.FileName;
+                imagePhysicalPath = openFileDialog2.FileName;
                 imageName = "Images\\" + openFileDialog2.SafeFileName;
+
             }
         }
     }
