@@ -101,10 +101,10 @@ namespace RecruitmentSystem.UI
         {
             ValidateUser();
             if (imagePhysicalPath != null)
-                SaveImagePath();
+                FileManagement.SaveFile(imageName,imagePhysicalPath);
 
             if (resumePath != null)
-                SaveImagePath();
+                FileManagement.SaveFile(resumeName,resumePath);
 
 
             var applicant = new Applicant()
@@ -126,21 +126,7 @@ namespace RecruitmentSystem.UI
             this.Hide();
             frm.Show();
         }
-        private void SaveImagePath()
-        {
-            if (!string.IsNullOrEmpty(imageName))
-            {
-                var currentDirectory = Directory.GetCurrentDirectory();
-                var targetDirectory = string.Concat(currentDirectory, "/");
-                var imagePath = string.Concat(targetDirectory, imageName);
-
-                if (!Directory.Exists(targetDirectory))
-                    Directory.CreateDirectory(targetDirectory);
-
-
-                File.Copy(imagePhysicalPath, imagePath, true);
-            }
-        }
+      
         
         private void btnPhoto_Click(object sender, EventArgs e)
         {
