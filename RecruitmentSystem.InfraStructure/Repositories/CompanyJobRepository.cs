@@ -140,7 +140,7 @@ namespace RecruitmentSystem.InfraStructure.Repositories
         }
 
 
-        public DataTable GetById(int id)
+        public DataTable GetById(int companyId)
         {
 
             DataTable dataTable = new DataTable();
@@ -148,7 +148,7 @@ namespace RecruitmentSystem.InfraStructure.Repositories
             var cmd = new SqlCommand("Usp_CompanyJob_GetById", sqlConnection);
 
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("@CompanyId", id);
+            cmd.Parameters.AddWithValue("@CompanyId", companyId);
 
             sqlConnection.Open();
 

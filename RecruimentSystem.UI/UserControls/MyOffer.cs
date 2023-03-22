@@ -31,11 +31,6 @@ namespace RecruitmentSystem.UI.UserControls
             this.Hide();
         }
 
-        private void MyOffer_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void BtnUpdate_Click(object sender, EventArgs e)
         {
             var openForms = Application.OpenForms;

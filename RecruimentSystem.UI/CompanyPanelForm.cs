@@ -42,7 +42,7 @@ namespace RecruitmentSystem.UI
 
         private void CompanyRecruitBtn_Click(object sender, EventArgs e)
         {
-            var frm = new RecruitmentForm();
+             var frm = new RecruitmentForm();
             frm.Show();
             this.Hide();
         }
