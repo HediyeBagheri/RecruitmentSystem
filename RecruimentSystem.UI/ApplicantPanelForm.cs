@@ -50,9 +50,6 @@ namespace RecruitmentSystem.UI
 
         private void TrainingBtn_Click(object sender, EventArgs e)
         {
-            var frm = new TrainingForm();
-            frm.Show();
-            this.Hide();
         }
 
         private void BtnProfileUpdate_Click(object sender, EventArgs e)

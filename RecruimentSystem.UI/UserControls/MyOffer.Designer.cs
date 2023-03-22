@@ -107,7 +107,6 @@
             this.Controls.Add(this.PicBoxMyOffer);
             this.Name = "MyOffer";
             this.Size = new System.Drawing.Size(291, 308);
-            this.Load += new System.EventHandler(this.MyOffer_Load);
             ((System.ComponentModel.ISupportInitialize)(this.PicBoxMyOffer)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
