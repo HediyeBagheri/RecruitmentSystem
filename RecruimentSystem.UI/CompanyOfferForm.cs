@@ -4,6 +4,7 @@ using RecruitmentSystem.Model.Models.Users;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.ComponentModel.Design;
 using System.Data;
 using System.Drawing;
 using System.Linq;
@@ -17,10 +18,13 @@ namespace RecruitmentSystem.UI
     {
         private readonly ICompanyJobRepository companyJobRepository;
         private int applicantId;
+        private int companyId;
+
         public CompanyOfferForm(int applicantId)
         {
             InitializeComponent();
             this.applicantId = applicantId;
+            this.companyId = companyId;
             companyJobRepository = new CompanyJobRepository();
             FillForm();
         }
@@ -34,7 +38,8 @@ namespace RecruitmentSystem.UI
             foreach (var companyOfferDetail in companyOfferDetails.Select())
             {
                 
-                var companyOfferControl = new CompanyOfferControl(Convert.ToInt16(companyOfferDetail["Id"].ToString()),applicantId);
+                var companyOfferControl = new CompanyOfferControl(Convert.ToInt16(companyOfferDetail["Id"].ToString()),
+                    applicantId, companyId);
                 companyOfferControl.LblCompanyName.Text = companyOfferDetail["CompanyName"].ToString();
                 companyOfferControl.JobName.Text = companyOfferDetail["JobName"].ToString();
                 //companyOfferControl.SalaryProposeLbl.Text = companyOfferDetail["SalaryPropose"].ToString();
@@ -57,11 +62,6 @@ namespace RecruitmentSystem.UI
             var x = openForms["ApplicantPanelForm"];
             this.Hide();
             x.Show();
-        }
-
-        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
         }
 
         private void CompanyOfferForm_Load(object sender, EventArgs e)

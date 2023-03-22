@@ -22,12 +22,15 @@ namespace RecruitmentSystem.UI
         private readonly IApplicantRepository applicantRepository;
         private int offerId;
         private int applicantId;
+        private int companyId;
 
-        public CompanyOfferControl(int offerId,int applicantId)
+
+        public CompanyOfferControl(int offerId,int applicantId, int companyId)
         {
             InitializeComponent();
             this.offerId = offerId;
             this.applicantId = applicantId;
+            this.companyId = companyId;
             companyJobRepository = new CompanyJobRepository();
             applicantRepository = new ApplicantRepository();
         }
@@ -59,34 +62,10 @@ namespace RecruitmentSystem.UI
 
         private void ShowDetailsBtn_Click(object sender, EventArgs e)
         {
-
+            var frm = new MoreJobInfoForm(companyId);
+            frm.Show();
         }
 
-        private void JobName_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tabPage1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tabPage2_Click(object sender, EventArgs e)
-        {
-            
-        
-        }
-
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void CompanyOfferControl_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 
 }
