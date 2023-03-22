@@ -41,8 +41,6 @@
             this.LblWorkExperience = new System.Windows.Forms.Label();
             this.LblServeStatus = new System.Windows.Forms.Label();
             this.LblAge = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // BtnBack
@@ -157,21 +155,12 @@
             this.LblAge.TabIndex = 45;
             this.LblAge.Text = "CompanyName";
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(450, 58);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(133, 115);
-            this.pictureBox1.TabIndex = 57;
-            this.pictureBox1.TabStop = false;
-            // 
             // MoreJobInfoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(643, 580);
-            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.LblLoc);
             this.Controls.Add(this.LblMinEducDegree);
             this.Controls.Add(this.LblMinWorkExperience);
@@ -188,7 +177,6 @@
             this.Name = "MoreJobInfoForm";
             this.Text = "MoreJobInfoForm";
             this.Load += new System.EventHandler(this.MoreJobInfoForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -208,6 +196,5 @@
         public System.Windows.Forms.Label LblWorkExperience;
         public System.Windows.Forms.Label LblServeStatus;
         public System.Windows.Forms.Label LblAge;
-        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

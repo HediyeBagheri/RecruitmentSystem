@@ -38,7 +38,6 @@ namespace RecruitmentSystem.UI
               LblLoc.Text = companyOfferDetail["Location"].ToString();
               LblMinWorkExperience.Text = companyOfferDetail["MinimumWorkExperience"].ToString();
               LblMinEducDegree.Text = companyOfferDetail["MinimumEducationDegree"].ToString();
-                pictureBox1.Image = Image.FromFile(companyOfferDetail["ImagePath"].ToString());
             }
         }
 
